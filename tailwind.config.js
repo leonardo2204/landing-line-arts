@@ -1,0 +1,97 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./app/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: 'rgb(var(--color-primary), 0.05)',
+          100: 'rgb(var(--color-primary), 0.1)',
+          200: 'rgb(var(--color-primary), 0.2)',
+          300: 'rgb(var(--color-primary), 0.3)',
+          400: 'rgb(var(--color-primary), 0.4)',
+          500: 'rgb(var(--color-primary), 0.5)',
+          600: 'rgb(var(--color-primary), 0.6)',
+          700: 'rgb(var(--color-primary), 0.7)',
+          800: 'rgb(var(--color-primary), 0.8)',
+          900: 'rgb(var(--color-primary), 0.9)',
+        },
+        secondary: {
+          50: 'rgb(var(--color-secondary), 0.05)',
+          100: 'rgb(var(--color-secondary), 0.1)',
+          200: 'rgb(var(--color-secondary), 0.2)',
+          300: 'rgb(var(--color-secondary), 0.3)',
+          400: 'rgb(var(--color-secondary), 0.4)',
+          500: 'rgb(var(--color-secondary), 0.5)',
+          600: 'rgb(var(--color-secondary), 0.6)',
+          700: 'rgb(var(--color-secondary), 0.7)',
+          800: 'rgb(var(--color-secondary), 0.8)',
+          900: 'rgb(var(--color-secondary), 0.9)',
+        },
+        accent: {
+          50: 'rgb(var(--color-accent), 0.05)',
+          100: 'rgb(var(--color-accent), 0.1)',
+          200: 'rgb(var(--color-accent), 0.2)',
+          300: 'rgb(var(--color-accent), 0.3)',
+          400: 'rgb(var(--color-accent), 0.4)',
+          500: 'rgb(var(--color-accent), 0.5)',
+          600: 'rgb(var(--color-accent), 0.6)',
+          700: 'rgb(var(--color-accent), 0.7)',
+          800: 'rgb(var(--color-accent), 0.8)',
+          900: 'rgb(var(--color-accent), 0.9)',
+        },
+        success: {
+          50: 'rgb(var(--color-success), 0.05)',
+          100: 'rgb(var(--color-success), 0.1)',
+          200: 'rgb(var(--color-success), 0.2)',
+          300: 'rgb(var(--color-success), 0.3)',
+          400: 'rgb(var(--color-success), 0.4)',
+          500: 'rgb(var(--color-success), 0.5)',
+          600: 'rgb(var(--color-success), 0.6)',
+          700: 'rgb(var(--color-success), 0.7)',
+          800: 'rgb(var(--color-success), 0.8)',
+          900: 'rgb(var(--color-success), 0.9)',
+        },
+        warning: {
+          50: 'rgb(var(--color-warning), 0.05)',
+          100: 'rgb(var(--color-warning), 0.1)',
+          200: 'rgb(var(--color-warning), 0.2)',
+          300: 'rgb(var(--color-warning), 0.3)',
+          400: 'rgb(var(--color-warning), 0.4)',
+          500: 'rgb(var(--color-warning), 0.5)',
+          600: 'rgb(var(--color-warning), 0.6)',
+          700: 'rgb(var(--color-warning), 0.7)',
+          800: 'rgb(var(--color-warning), 0.8)',
+          900: 'rgb(var(--color-warning), 0.9)',
+        },
+        error: {
+          50: 'rgb(var(--color-error), 0.05)',
+          100: 'rgb(var(--color-error), 0.1)',
+          200: 'rgb(var(--color-error), 0.2)',
+          300: 'rgb(var(--color-error), 0.3)',
+          400: 'rgb(var(--color-error), 0.4)',
+          500: 'rgb(var(--color-error), 0.5)',
+          600: 'rgb(var(--color-error), 0.6)',
+          700: 'rgb(var(--color-error), 0.7)',
+          800: 'rgb(var(--color-error), 0.8)',
+          900: 'rgb(var(--color-error), 0.9)',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      animation: {
+        'bounce-slow': 'bounce 3s ease-in-out infinite',
+        'wiggle': 'wiggle 1s ease-in-out infinite',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
+      }
+    },
+  },
+  plugins: [],
+};

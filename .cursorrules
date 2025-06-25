@@ -1,0 +1,42 @@
+# Capitalization Rules for Content
+
+## General Rule
+- Only the first word of each heading, paragraph, or text block should be capitalized
+- All other words should be in lowercase, except for proper nouns
+
+## Proper Nouns (Always Capitalized)
+- Product names (e.g., "Boobie Goods", "MyLineArts")
+- Brand names
+- Person names (e.g., "Stefanie Szabo")
+- Platform names (e.g., "Facebook", "Twitter", "Pinterest")
+
+## Examples of Correct Capitalization
+- Headings:
+  - "Boobie Goods: o guia completo para desenhos para colorir e imprimir"
+  - "O que são Boobie Goods?"
+  - "Benefícios dos desenhos para colorir"
+
+- Card Titles:
+  - "Arte terapêutica"
+  - "Decoração personalizada"
+  - "Presentes especiais"
+
+- Dates:
+  - "14 de junho, 2025"
+  - "20 de março, 2024"
+
+- Instructions:
+  - "Como começar"
+  - "Dica pro"
+  - "Escolha o papel ideal"
+
+## Implementation Notes
+- This rule applies to all text content including:
+  - Headers (h1, h2, h3, etc.)
+  - Paragraphs
+  - Card titles
+  - List items
+  - Button text
+  - Footer content
+  - Dates and times
+  - Instructions and tips 
