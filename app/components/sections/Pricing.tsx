@@ -6,13 +6,12 @@ import posthog from 'posthog-js';
 const formatCurrency = (amount: number, currency: string) => {
   // Map currency codes to locale strings for proper formatting
   const currencyLocaleMap: Record<string, string> = {
-    'eur': 'de-DE',
+    'eur': 'en-GB',
     'usd': 'en-US',
     'brl': 'pt-BR',
-    'gbp': 'en-GB'
   };
 
-  const locale = currencyLocaleMap[currency] || 'de-DE';
+  const locale = currencyLocaleMap[currency] || 'en-US';
 
   return new Intl.NumberFormat(locale, {
     style: 'currency',
@@ -24,8 +23,7 @@ const getCurrencySymbol = (currency: string) => {
   const symbols: Record<string, string> = {
     'eur': '€',
     'usd': '$',
-    'brl': 'R$',
-    'gbp': '£'
+    'brl': 'R$'
   };
   return symbols[currency] || '€';
 }
