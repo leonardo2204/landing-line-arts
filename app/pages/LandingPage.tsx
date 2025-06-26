@@ -166,14 +166,11 @@ export default function LandingPage() {
       {/* Social Media Section */}
       <SocialMedia />
 
-      {/* FAQ Section */}
-      <FAQ />
 
-      {/* CTA Section */}
       <section className="py-20 bg-linear-to-br from-primary-100 to-secondary-50 paper-texture">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   {t('landing.cta.title')}
@@ -195,6 +192,10 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ />
+
     </div>
   );
 }
