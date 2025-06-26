@@ -46,17 +46,17 @@ export default function LandingPage() {
               <p className="text-xl text-gray-700 mb-8 max-w-lg">
                 {t('landing.hero.subtitle')}
               </p>
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 cursor-pointer">
                 <button
                   onClick={handleGetStartedClick}
-                  className="btn btn-primary flex items-center justify-center"
+                  className="btn btn-primary flex items-center justify-center cursor-pointer"
                 >
                   {t('nav.getStarted')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
                 <button
                   onClick={handleHowItWorksClick}
-                  className="btn btn-outline flex items-center justify-center"
+                  className="btn btn-outline flex items-center justify-center cursor-pointer"
                 >
                   {t('nav.howItWorks')}
                 </button>
@@ -181,13 +181,15 @@ export default function LandingPage() {
                 <p className="text-lg text-gray-700 mb-8">
                   {t('landing.cta.subtitle')}
                 </p>
-                <button
-                  onClick={handleGetStartedClick}
+                <a
+                  href={`https://web.whatsapp.com/send/?phone=5513974043819&text=Olá, gostaria de cotar um livro no MyLineArts.`}
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className="btn btn-primary inline-flex items-center"
                 >
                   {t('landing.cta.button')}
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </button>
+                </a>
               </div>
             </div>
           </div>

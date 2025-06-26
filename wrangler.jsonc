@@ -18,23 +18,5 @@
   "vars": {
     "VITE_POSTHOG_API_KEY": "phc_LPqbRjBsBw8uGbzLfIoocPm12AGJqbVBAhMQHyVGirO",
     "VITE_POSTHOG_HOST": "https://us.i.posthog.com"
-  },
-  "cf": {
-    "country": true,
-    "city": true,
-    "timezone": true,
-    "continent": true,
-    "latitude": true,
-    "longitude": true,
-    "postal_code": true,
-    "region": true,
-    "asn": true,
-    "colo": true,
-    "ip_version": true,
-    "metro_code": true,
-    "network": true,
-    "bot_management": true,
-    "tls_version": true,
-    "tls_cipher": true
   }
 }

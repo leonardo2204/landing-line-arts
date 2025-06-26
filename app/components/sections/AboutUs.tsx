@@ -40,7 +40,7 @@ const AboutUs = () => {
       cta: {
         title: 'Faça parte da nossa história',
         description: 'Junte-se a milhares de pessoas que já transformaram suas memórias em arte.',
-        button: 'Criar meu livro'
+        button: 'Criar minha primeira imagem'
       }
     },
     'en': {
@@ -78,7 +78,7 @@ const AboutUs = () => {
       cta: {
         title: 'Be part of our story',
         description: 'Join thousands of people who have already transformed their memories into art.',
-        button: 'Create my book'
+        button: 'Generate my first image'
       }
     }
   };
@@ -179,7 +179,7 @@ const AboutUs = () => {
               </p>
               <button
                 onClick={handleGetStartedClick}
-                className="bg-white text-primary-600 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white text-primary-600 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
               >
                 {currentData.cta.button}
               </button>

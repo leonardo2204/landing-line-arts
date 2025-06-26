@@ -1,6 +1,7 @@
 import { ImageIcon, Star, Crown } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { Await, useLoaderData } from 'react-router';
+import posthog from 'posthog-js';
 
 const formatCurrency = (amount: number, currency: string) => {
   // Map currency codes to locale strings for proper formatting
@@ -10,9 +11,9 @@ const formatCurrency = (amount: number, currency: string) => {
     'brl': 'pt-BR',
     'gbp': 'en-GB'
   };
-  
+
   const locale = currencyLocaleMap[currency] || 'de-DE';
-  
+
   return new Intl.NumberFormat(locale, {
     style: 'currency',
     currency: currency.toUpperCase()
@@ -198,7 +199,7 @@ const Pricing = () => {
             {(data) => data.plans.map((plan: any, index: any) => (
               <div
                 key={`plan-${plan.name}-${index}`}
-                className={`relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 ${plan.popular ? 'ring-2 ring-primary-500 scale-105' : ''
+                className={`relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 ${plan.popular ? 'ring-2 ring-primary-500' : ''
                   }`}
               >
                 {plan.popular && (
@@ -223,6 +224,29 @@ const Pricing = () => {
                       {plan.plan.credits === 1 ? '1 Crédito = 1 Imagem' : `${plan.plan.credits} Créditos = ${plan.plan.credits} Imagens`}
                     </p>
                   </div>
+                </div>
+                <div className='flex justify-center py-4 mx-8'>
+                  <a href={`https://app.mylinearts.com/`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='bg-primary-500 text-white rounded-xl p-4 w-full cursor-pointer text-center'
+                    onClick={() => {
+                      posthog.capture('pricing_page_button_clicked', {
+                        plan: plan.name,
+                        price: plan.price.unitAmount,
+                        currency: plan.price.currency,
+                        credits: plan.plan.credits,
+                      });
+                      <a href={`https://app.mylinearts.com/`}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                        {currentData.plans[index]?.buttonText}
+                      </a>
+                    }}
+                  >
+                    {currentData.plans[index]?.buttonText}
+                  </a>
                 </div>
               </div>
             ))}
