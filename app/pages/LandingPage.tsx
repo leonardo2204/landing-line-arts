@@ -9,6 +9,7 @@ import FAQ from "../components/sections/FAQ";
 import { mockBeforeAfterImages } from "../utils/mockData";
 import { pricingLoader } from "../loaders/pricing-loader";
 import type { Route } from "./+types/LandingPage";
+import Trustedby from "../components/sections/Trustedby";
 
 export const loader = async ({
   context,
@@ -167,6 +168,9 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* Trusted by Section */}
+      <Trustedby />
 
       {/* How It Works Section */}
       <HowItWorks />
