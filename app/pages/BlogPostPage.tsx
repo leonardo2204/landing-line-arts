@@ -1,6 +1,7 @@
 import { Link, useLocation, useParams } from 'react-router';
 import { useLanguage } from '../context/LanguageContext';
 import SEOHead from '../components/SEOHead';
+import { blogPostSEOData } from '../utils/seoData';
 import posthog from 'posthog-js';
 
 const BlogPostPage: React.FC = () => {
@@ -10,21 +11,21 @@ const BlogPostPage: React.FC = () => {
     
     // Get the current language prefix for navigation
     const getLanguagePrefix = () => {
-        return location.pathname.startsWith('/en') ? '/en' : '';
+        return language === 'en' ? '/en' : '';
     };
 
     const handleBackClick = () => {
         posthog.capture('blog_back_button_clicked', {
-            post_title: 'Boobie Goods: o guia completo para desenhos para colorir e imprimir',
-            language: language
+            language: language,
+            page: 'blog_post'
         });
     };
 
     const handleCTAClick = (ctaName: string) => {
         posthog.capture('blog_cta_clicked', {
-            post_title: 'Boobie Goods: o guia completo para desenhos para colorir e imprimir',
             cta_name: ctaName,
-            language: language
+            language: language,
+            page: 'blog_post'
         });
     };
 
@@ -53,16 +54,18 @@ const BlogPostPage: React.FC = () => {
                 </Link>
             </div>
 
-            <SEOHead
-                title={language === 'en' ? "Boobie Goods: The Complete Guide to Coloring Drawings and Printing | MylineArts" : "Boobie Goods: O Guia Completo para Desenhos para Colorir e Imprimir | MylineArts"}
-                description={language === 'en' ? "Discover the world of Boobie Goods: coloring drawings, printing tips, creative ideas and how to create your own personalized drawings. A complete guide for parents and educators." : "Descubra o mundo dos Boobie Goods: desenhos para colorir, dicas de impressão, ideias criativas e como criar seus próprios desenhos personalizados. Um guia completo para pais e educadores."}
-                keywords={language === 'en' ? "boobie goods, coloring drawings, boobie goods to print, boobie goods generator, children's drawing generator, children's activities, creative education, drawings to print" : "boobie goods, desenhos para colorir, boobie goods para imprimir, gerador de boobie goods, gerador de desenho infantil, atividades infantis, educação criativa, desenhos para imprimir"}
+            <SEOHead 
+                seoData={blogPostSEOData}
+                type="article"
+                publishedTime="2024-03-20T00:00:00Z"
+                author="Stefanie Szabo"
+                image="/blog/1/banner.jpeg"
             />
 
             <article className="prose lg:prose-xl">
                 <header className="mb-12">
                     <h1 className="text-4xl font-bold text-center mb-4">
-                        {language === 'en' ? 'Boobie Goods: the complete guide to coloring drawings and printing 🎨' : 'Boobie Goods: o guia completo para desenhos para colorir e imprimir 🎨'}
+                        {language === 'en' ? 'Bobbie Goods: the complete guide to coloring drawings and printing 🎨' : 'Bobbie Goods: o guia completo para desenhos para colorir e imprimir 🎨'}
                     </h1>
                     <div className="text-gray-600 mb-8">
                         <time dateTime="2024-03-20">14 de junho, 2025</time> • {language === 'en' ? '8 min read' : '8 min de leitura'}
@@ -80,7 +83,7 @@ const BlogPostPage: React.FC = () => {
                     <div className="mb-8">
                         <img
                             src="/blog/1/banner.jpeg"
-                            alt={language === 'en' ? "Boobie Goods - Coloring Drawings" : "Boobie Goods - Desenhos para Colorir"}
+                            alt={language === 'en' ? "Bobbie Goods - Coloring Drawings" : "Bobbie Goods - Desenhos para Colorir"}
                             className="w-full h-128 object-cover rounded-lg shadow-lg"
                         />
                     </div>
@@ -88,36 +91,36 @@ const BlogPostPage: React.FC = () => {
 
                 <section className="mb-12">
                     <h2 className="text-2xl font-bold mb-4">
-                        {language === 'en' ? 'What are Boobie Goods? 🤔' : 'O que são Boobie Goods? 🤔'}
+                        {language === 'en' ? 'What are Bobbie Goods? 🤔' : 'O que são Bobbie Goods? 🤔'}
                     </h2>
                     <p className="text-lg mb-4">
                         {language === 'en' 
-                            ? 'Boobie Goods are unique and charming drawings that have won the hearts of children and adults around the world. Originating from a creative trend that mixes simplicity with charm, these drawings have become a valuable tool for education, therapy and fun.'
-                            : 'Boobie Goods são desenhos únicos e encantadores que conquistaram o coração de crianças e adultos em todo o mundo. Originários de uma tendência criativa que mistura simplicidade com charme, esses desenhos se tornaram uma ferramenta valiosa para educação, terapia e diversão.'
+                            ? 'Bobbie Goods are unique and charming drawings that have won the hearts of children and adults around the world. Originating from a creative trend that mixes simplicity with charm, these drawings have become a valuable tool for education, therapy and fun.'
+                            : 'Bobbie Goods são desenhos únicos e encantadores que conquistaram o coração de crianças e adultos em todo o mundo. Originários de uma tendência criativa que mistura simplicidade com charme, esses desenhos se tornaram uma ferramenta valiosa para educação, terapia e diversão.'
                         }
                     </p>
                     <p className="text-lg mb-4">
                         {language === 'en'
-                            ? 'What makes Boobie Goods special is their ability to convey emotions and tell stories through simple and expressive strokes. They are perfect for coloring, personalizing and using in various educational and recreational contexts.'
-                            : 'O que torna os Boobie Goods especiais é sua capacidade de transmitir emoções e contar histórias através de traços simples e expressivos. Eles são perfeitos para colorir, personalizar e usar em diversos contextos educacionais e recreativos.'
+                            ? 'What makes Bobbie Goods special is their ability to convey emotions and tell stories through simple and expressive strokes. They are perfect for coloring, personalizing and using in various educational and recreational contexts.'
+                            : 'O que torna os Bobbie Goods especiais é sua capacidade de transmitir emoções e contar histórias através de traços simples e expressivos. Eles são perfeitos para colorir, personalizar e usar em diversos contextos educacionais e recreativos.'
                         }
                     </p>
                     <div className="bg-blue-50 p-6 rounded-lg my-8">
                         <h3 className="text-xl font-bold mb-4">
-                            {language === 'en' ? 'Create your own Boobie Goods with MyLineArts 🎨' : 'Crie seus próprios Boobie Goods com MyLineArts 🎨'}
+                            {language === 'en' ? 'Create your own Bobbie Goods with MyLineArts 🎨' : 'Crie seus próprios Bobbie Goods com MyLineArts 🎨'}
                         </h3>
                         <p className="mb-4">
                             {language === 'en'
-                                ? 'With MyLineArts, you can transform your photos into personalized Boobie Goods-style drawings! Our platform uses artificial intelligence to create unique drawings that preserve the essence and emotions of your favorite memories.'
-                                : 'Com o MyLineArts, você pode transformar suas fotos em desenhos estilo Boobie Goods personalizados! Nossa plataforma utiliza inteligência artificial para criar desenhos únicos que preservam a essência e as emoções das suas memórias favoritas.'
+                                ? 'With MyLineArts, you can transform your photos into personalized Bobbie Goods-style drawings! Our platform uses artificial intelligence to create unique drawings that preserve the essence and emotions of your favorite memories.'
+                                : 'Com o MyLineArts, você pode transformar suas fotos em desenhos estilo Bobbie Goods personalizados! Nossa plataforma utiliza inteligência artificial para criar desenhos únicos que preservam a essência e as emoções das suas memórias favoritas.'
                             }
                         </p>
                         <Link
                             to={`${getLanguagePrefix()}/`}
                             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-                            onClick={() => handleCTAClick('criar_boobie_goods_agora')}
+                            onClick={() => handleCTAClick('criar_bobbie_goods_agora')}
                         >
-                            {language === 'en' ? 'Create My Boobie Goods Now' : 'Criar Meu Boobie Goods Agora'}
+                            {language === 'en' ? 'Create My Bobbie Goods Now' : 'Criar Meu Bobbie Goods Agora'}
                         </Link>
                     </div>
                 </section>
@@ -154,9 +157,9 @@ const BlogPostPage: React.FC = () => {
                 </section>
 
                 <section className="mb-12">
-                    <h2 className="text-2xl font-bold mb-4">Boobie Goods para adultos: arte e terapia 🎨</h2>
+                    <h2 className="text-2xl font-bold mb-4">Bobbie Goods para adultos: arte e terapia 🎨</h2>
                     <p className="text-lg mb-4">
-                        Os Boobie Goods não são apenas para crianças! Adultos em todo o mundo estão descobrindo os benefícios
+                        Os Bobbie Goods não são apenas para crianças! Adultos em todo o mundo estão descobrindo os benefícios
                         terapêuticos e criativos desses desenhos. Com o MyLineArts, você pode transformar suas próprias fotos
                         em desenhos personalizados, criando uma experiência única de arte e memória.
                     </p>
@@ -167,7 +170,7 @@ const BlogPostPage: React.FC = () => {
                         </div>
                         <div className="bg-white p-4 rounded-lg shadow-md">
                             <h3 className="text-lg font-semibold mb-2">Decoração personalizada</h3>
-                            <p>Crie quadros e murais únicos com seus próprios Boobie Goods, adicionando um toque pessoal à sua casa.</p>
+                            <p>Crie quadros e murais únicos com seus próprios Bobbie Goods, adicionando um toque pessoal à sua casa.</p>
                         </div>
                         <div className="bg-white p-4 rounded-lg shadow-md">
                             <h3 className="text-lg font-semibold mb-2">Presentes especiais</h3>
@@ -175,9 +178,9 @@ const BlogPostPage: React.FC = () => {
                         </div>
                     </div>
                     <div className="bg-yellow-50 p-6 rounded-lg my-8">
-                        <h3 className="text-xl font-bold mb-4">Crie seus próprios Boobie Goods 🎯</h3>
+                        <h3 className="text-xl font-bold mb-4">Crie seus próprios Bobbie Goods 🎯</h3>
                         <p className="mb-4">
-                            Com o MyLineArts, você pode transformar qualquer foto em um desenho estilo Boobie Goods.
+                            Com o MyLineArts, você pode transformar qualquer foto em um desenho estilo Bobbie Goods.
                             Nossa tecnologia de IA preserva as características únicas e as emoções das suas fotos,
                             criando desenhos que são verdadeiramente seus.
                         </p>
@@ -194,7 +197,7 @@ const BlogPostPage: React.FC = () => {
                 <section className="mb-12">
                     <h2 className="text-2xl font-bold mb-4">Como imprimir e usar os desenhos 📝</h2>
                     <p className="text-lg mb-4">
-                        Imprimir seus Boobie Goods favoritos é mais fácil do que você imagina! Aqui está um guia passo a passo:
+                        Imprimir seus Bobbie Goods favoritos é mais fácil do que você imagina! Aqui está um guia passo a passo:
                     </p>
                     <ol className="list-decimal pl-6 space-y-4 mb-8">
                         <li>
@@ -247,7 +250,7 @@ const BlogPostPage: React.FC = () => {
                 <section className="mb-12">
                     <h2 className="text-2xl font-bold mb-4">Criando seus próprios desenhos com MyLineArts 🎯</h2>
                     <p className="text-lg mb-4">
-                        O MyLineArts torna mais fácil do que nunca criar seus próprios Boobie Goods personalizados!
+                        O MyLineArts torna mais fácil do que nunca criar seus próprios Bobbie Goods personalizados!
                         Nossa plataforma utiliza tecnologia de ponta para transformar suas fotos em desenhos únicos
                         que preservam a essência e as emoções das suas memórias.
                     </p>
@@ -257,7 +260,7 @@ const BlogPostPage: React.FC = () => {
                             <li>Escolha suas fotos favoritas</li>
                             <li>Selecione o estilo que mais combina com sua visão</li>
                             <li>Deixe nossa IA criar seu desenho único</li>
-                            <li>Baixe e imprima seu Boobie Goods personalizado</li>
+                            <li>Baixe e imprima seu Bobbie Goods personalizado</li>
                         </ol>
                         <div className="mt-6">
                             <Link
@@ -305,7 +308,7 @@ const BlogPostPage: React.FC = () => {
                 <section className="mb-12">
                     <h2 className="text-2xl font-bold mb-4">Conclusão 🌟</h2>
                     <p className="text-lg mb-4">
-                        Os Boobie Goods são mais do que simples desenhos para colorir - são ferramentas poderosas para
+                        Os bobbie Goods são mais do que simples desenhos para colorir - são ferramentas poderosas para
                         desenvolvimento, criatividade e diversão. Com o MyLineArts, você pode transformar suas próprias
                         fotos em desenhos únicos que preservam suas memórias especiais.
                     </p>
@@ -313,9 +316,9 @@ const BlogPostPage: React.FC = () => {
                         Que tal começar sua jornada criativa hoje? <Link
                             to="/"
                             className="text-blue-600 hover:text-blue-800"
-                            onClick={() => handleCTAClick('criar_primeiro_boobie_goods')}
+                            onClick={() => handleCTAClick('criar_primeiro_bobbie_goods')}
                         >
-                            Crie seu primeiro Boobie Goods personalizado</Link> e descubra um mundo de possibilidades!
+                            Crie seu primeiro Bobbie Goods personalizado</Link> e descubra um mundo de possibilidades!
                     </p>
                 </section>
 

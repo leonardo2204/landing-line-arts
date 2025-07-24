@@ -16,4 +16,5 @@ export default [
     route("/en/terms-of-service", "pages/TermsOfServicePage.tsx", { id: "terms-en" }),
     route("/en/cookie-policy", "pages/CookiePolicyPage.tsx", { id: "cookies-en" }),
     route("/en/lgpd", "pages/LGPDPage.tsx", { id: "lgpd-en" }),
+    route("*", "pages/NotFoundPage.tsx", { id: "not-found" }),
 ] satisfies RouteConfig;

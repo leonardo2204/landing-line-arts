@@ -56,12 +56,17 @@ type Pages = {
   "/en/lgpd": {
     params: {};
   };
+  "/*": {
+    params: {
+      "*": string;
+    };
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/blog" | "/blog/:slug" | "/politica-de-privacidade" | "/termos-de-servico" | "/politica-de-cookies" | "/lgpd" | "/en" | "/en/blog" | "/en/blog/:slug" | "/en/privacy-policy" | "/en/terms-of-service" | "/en/cookie-policy" | "/en/lgpd";
+    page: "/" | "/blog" | "/blog/:slug" | "/politica-de-privacidade" | "/termos-de-servico" | "/politica-de-cookies" | "/lgpd" | "/en" | "/en/blog" | "/en/blog/:slug" | "/en/privacy-policy" | "/en/terms-of-service" | "/en/cookie-policy" | "/en/lgpd" | "/*";
   };
   "pages/LandingPage.tsx": {
     id: "pages/LandingPage";
@@ -111,5 +116,9 @@ type RouteFiles = {
   } | {
     id: "lgpd-en";
     page: "/en/lgpd";
+  };
+  "pages/NotFoundPage.tsx": {
+    id: "not-found";
+    page: "/*";
   };
 };

@@ -23,7 +23,7 @@ export default function Trustedby() {
           </h2>
         </div>
         <div className="flex flex-col items-center text-center relative">
-          <a href="https://fazier.com/launches/my-line-arts" target="_blank">
+          <a href="https://fazier.com/launches/my-line-arts" target="_blank" rel="noopener">
             <img
               src="https://fazier.com/api/v1/public/badges/embed_image.svg?launch_id=4770&badge_type=weekly&theme=light"
               width="270"

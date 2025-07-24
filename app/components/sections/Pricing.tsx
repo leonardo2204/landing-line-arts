@@ -108,7 +108,9 @@ const Pricing = () => {
         included: '✅ Todos os planos incluem acesso completo à plataforma',
         details: `💳 Preços em ${getCurrencySymbol(currency)} • 🔒 Pagamento seguro • ❌ Sem taxas ocultas ou assinaturas`
       },
-      popularBadge: '⭐ MAIS POPULAR ⭐'
+      popularBadge: '⭐ MAIS POPULAR ⭐',
+      creditsLabel: 'por crédito',
+      creditsImage: '{1} créditos = {2} imagens'
     },
     'en': {
       title: 'Simple and transparent plans',
@@ -172,7 +174,9 @@ const Pricing = () => {
         included: '✅ All plans include full platform access',
         details: `💳 Prices in ${getCurrencySymbol(currency)} • 🔒 Secure payment • ❌ No hidden fees or subscriptions`
       },
-      popularBadge: '⭐ MOST POPULAR ⭐'
+      popularBadge: '⭐ MOST POPULAR ⭐',
+      creditsLabel: 'per credit',
+      creditsImage: '{1} credits = {2} images'
     }
   };
 
@@ -217,9 +221,9 @@ const Pricing = () => {
                   {/* Pricing */}
                   <div className="text-center">
                     <p className="text-5xl font-bold text-gray-900 mb-2">{formatCurrency(plan.price.unitAmount, plan.price.currency)}</p>
-                    <p className="text-gray-500 text-sm mb-1">{formatCurrency(plan.price.unitAmount / plan.plan.credits, plan.price.currency)} por crédito</p>
+                    <p className="text-gray-500 text-sm mb-1">{formatCurrency(plan.price.unitAmount / plan.plan.credits, plan.price.currency)} {currentData.creditsLabel}</p>
                     <p className="text-primary-600 font-semibold bg-primary-50 px-3 py-1 rounded-full inline-block">
-                      {plan.plan.credits === 1 ? '1 Crédito = 1 Imagem' : `${plan.plan.credits} Créditos = ${plan.plan.credits} Imagens`}
+                      {plan.plan.credits === 1 ? `${currentData.creditsImage.replace('{1}', '1').replace('{2}', '1')}` : `${currentData.creditsImage.replace('{1}', plan.plan.credits.toString()).replace('{2}', plan.plan.credits.toString())}`}
                     </p>
                   </div>
                 </div>

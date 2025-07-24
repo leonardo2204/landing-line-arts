@@ -1,4 +1,4 @@
-import { ArrowRight, ImageIcon, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import HowItWorks from "../components/sections/HowItWorks";
 import Benefits from "../components/sections/Benefits";
@@ -39,7 +39,7 @@ export default function LandingPage() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative py-12 md:py-16 bg-linear-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
+      <section className="relative py-4 md:py-6 bg-linear-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="lg:w-1/2 mb-12 lg:mb-0">
@@ -118,6 +118,8 @@ export default function LandingPage() {
           </div>
         </div>
 
+        <Trustedby />
+
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-10 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply opacity-20"></div>
@@ -169,9 +171,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Trusted by Section */}
-      <Trustedby />
-
       {/* How It Works Section */}
       <HowItWorks />
 
@@ -217,7 +216,7 @@ export default function LandingPage() {
       <FAQ />
 
       <div className="flex justify-center items-center">
-        <a href="https://fazier.com/launches/mylinearts.com" target="_blank">
+        <a href="https://fazier.com/launches/mylinearts.com" target="_blank" rel="noopener">
           <img
             src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=neutral"
             width={120}

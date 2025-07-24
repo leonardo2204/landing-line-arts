@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { useLanguage } from '../context/LanguageContext';
 import SEOHead from '../components/SEOHead';
+import { blogListSEOData } from '../utils/seoData';
 import posthog from 'posthog-js';
 
 interface BlogPost {
@@ -21,8 +22,8 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
     {
         id: '1',
-        title: 'Boobie Goods: o guia completo para desenhos para colorir e imprimir',
-        description: 'Descubra o mundo dos Boobie Goods: desenhos para colorir, dicas de impressão, ideias criativas e como criar seus próprios desenhos personalizados.',
+        title: 'Bobbie Goods: o guia completo para desenhos para colorir e imprimir',
+        description: 'Descubra o mundo dos Bobbie Goods: desenhos para colorir, dicas de impressão, ideias criativas e como criar seus próprios desenhos personalizados.',
         date: '14 de junho, 2025',
         readTime: '8 min de leitura',
         author: {
@@ -30,7 +31,7 @@ const blogPosts: BlogPost[] = [
             image: '/blog/1/ste.jpeg'
         },
         image: '/blog/1/banner.jpeg',
-        slug: 'boobie-goods-guia-completo'
+        slug: 'bobbie-goods-guia-completo'
     }
     // Add more blog posts here as they are created
 ];
@@ -65,11 +66,7 @@ const BlogListPage: React.FC = () => {
 
     return (
         <div className="max-w-6xl mx-auto px-4 py-12">
-            <SEOHead
-                title={language === 'en' ? "Blog | MyLineArts - Articles about Art and Creativity" : "Blog | MyLineArts - Artigos sobre Arte e Criatividade"}
-                description={language === 'en' ? "Explore our articles about art, creativity, education and much more. Tips, tutorials and inspiration for your artistic journey." : "Explore nossos artigos sobre arte, criatividade, educação e muito mais. Dicas, tutoriais e inspiração para sua jornada artística."}
-                keywords={language === 'en' ? "mylinearts blog, art articles, creativity, art education, art tips, art tutorials" : "blog mylinearts, artigos sobre arte, criatividade, educação artística, dicas de arte, tutoriais de arte"}
-            />
+            <SEOHead seoData={blogListSEOData} />
 
             <header className="text-center mb-16">
                 <h1 className="text-4xl font-bold mb-4">Blog</h1>

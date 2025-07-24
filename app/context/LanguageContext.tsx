@@ -102,7 +102,10 @@ const translations = {
     'faq.edit.question': 'Can I edit the coloring pages after they\'re created?',
     'faq.edit.answer': 'No, you cannot edit the coloring pages after they\'re generated. If you\'re not satisfied with the result, you\'ll need to generate a new image using another credit.',
     'faq.text.question': 'Can I include text or captions with my coloring pages?',
-    'faq.text.answer': 'Yes, you can add custom titles, captions, or messages to each page of your coloring book during the creation process.'
+    'faq.text.answer': 'Yes, you can add custom titles, captions, or messages to each page of your coloring book during the creation process.',
+    'not-found.title': 'Page Not Found',
+    'not-found.description': 'Sorry, we couldn\'t find the page you\'re looking for.',
+    'not-found.button': 'Back to Home'
   },
   'pt-BR': {
     'nav.howItWorks': 'Como funciona',
@@ -196,7 +199,10 @@ const translations = {
     'faq.edit.question': 'Posso editar as páginas para colorir depois de criadas?',
     'faq.edit.answer': 'Não, você não pode editar as páginas para colorir após serem geradas. Se não estiver satisfeito com o resultado, será necessário gerar uma nova imagem usando outro crédito.',
     'faq.text.question': 'Posso incluir texto ou legendas nas páginas para colorir?',
-    'faq.text.answer': 'Sim, você pode adicionar títulos personalizados, legendas ou mensagens em cada página do seu livro de colorir durante o processo de criação.'
+    'faq.text.answer': 'Sim, você pode adicionar títulos personalizados, legendas ou mensagens em cada página do seu livro de colorir durante o processo de criação.',
+    'not-found.title': 'Página não encontrada',
+    'not-found.description': 'Desculpe, não encontramos a página que você está procurando.',
+    'not-found.button': 'Voltar para a página inicial'
   }
 };
 

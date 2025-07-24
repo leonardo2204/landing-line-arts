@@ -11,7 +11,7 @@ const AboutUs = () => {
       story: {
         title: 'A inspiração por trás do MylineArts',
         content: [
-          'Tudo começou quando descobri o fenômeno "Boobie Goods", que está super em alta no momento. Vi uma influenciadora que criou um livro de colorir personalizado para a mãe dela no mesmo estilo, e fiquei impressionada com o resultado.',
+          'Tudo começou quando descobri o fenômeno "Bobbie Goods", que está super em alta no momento. Vi uma influenciadora que criou um livro de colorir personalizado para a mãe dela no mesmo estilo, e fiquei impressionada com o resultado.',
           'Percebi que nem todo mundo tem a habilidade artística para criar algo assim, mas todos merecem ter a mesma oportunidade de presentear alguém especial com algo tão único e pessoal.',
           'Foi assim que nasceu o MylineArts: para democratizar essa experiência e permitir que qualquer pessoa possa transformar suas memórias mais preciosas em páginas de colorir personalizadas.'
         ]
@@ -49,7 +49,7 @@ const AboutUs = () => {
       story: {
         title: 'The inspiration behind MylineArts',
         content: [
-          'It all started when I discovered the "Boobie Goods" phenomenon, which is super trending right now. I saw an influencer who created a personalized coloring book for her mother in the same style, and I was impressed with the result.',
+          'It all started when I discovered the "Bobbie Goods" phenomenon, which is super trending right now. I saw an influencer who created a personalized coloring book for her mother in the same style, and I was impressed with the result.',
           'I realized that not everyone has the artistic skills to create something like that, but everyone deserves the same opportunity to give someone special something so unique and personal.',
           'That\'s how MylineArts was born: to democratize this experience and allow anyone to transform their most precious memories into personalized coloring pages.'
         ]
