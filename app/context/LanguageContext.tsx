@@ -130,7 +130,7 @@ const translations = {
     'footer.colorful': 'para momentos coloridos',
     'landing.hero.title': 'Transforme suas fotos em lindos',
     'landing.hero.titleHighlight': 'livros de colorir',
-    'landing.hero.subtitle': 'Nossa tecnologia de IA transforma suas fotos favoritas em páginas para colorir personalizadas, criando experiências únicas e memoráveis para todas as idades.',
+    'landing.hero.subtitle': 'Nossa tecnologia de IA transforma suas fotos favoritas em páginas para colorir personalizadas, criando experiências únicas e memoráveis para todas as idades. E o melhor, é só imprimir e colorir!',
     'landing.seeTheMagic': 'Veja a mágica acontecer',
     'landing.seeTheMagicSubtitle': 'Deslize para ver como nossa IA transforma fotos comuns em extraordinárias páginas para colorir',
     'landing.pricing.title': 'Preços simples e transparentes',
