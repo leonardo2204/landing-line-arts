@@ -121,7 +121,9 @@ const Header = () => {
                   {t('nav.faq')}
                 </a>
                 <Link
-                  to={`${getLanguagePrefix()}/blog`}
+                  to={`https://blog.mylinearts.com`}
+                  target="_blank"
+                  rel="noopener"
                   className="text-gray-600 hover:text-primary-600 font-medium whitespace-nowrap"
                 >
                   {language === 'pt-BR' ? 'Blog' : 'Blog'}

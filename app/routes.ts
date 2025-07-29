@@ -8,6 +8,7 @@ export default [
     route("/termos-de-servico", "pages/TermsOfServicePage.tsx"),
     route("/politica-de-cookies", "pages/CookiePolicyPage.tsx"),
     route("/lgpd", "pages/LGPDPage.tsx"),
+    route("/pobre-goods-imprimir", "pages/PobreGoods.tsx"),
     // English routes with unique IDs
     route("/en", "pages/LandingPage.tsx", { id: "landing-en" }),
     route("/en/blog", "pages/BlogListPage.tsx", { id: "blog-list-en" }),
@@ -16,5 +17,7 @@ export default [
     route("/en/terms-of-service", "pages/TermsOfServicePage.tsx", { id: "terms-en" }),
     route("/en/cookie-policy", "pages/CookiePolicyPage.tsx", { id: "cookies-en" }),
     route("/en/lgpd", "pages/LGPDPage.tsx", { id: "lgpd-en" }),
+    route("/en/pobre-goods-imprimir", "pages/PobreGoods.tsx", { id: "pobre-goods-en" }),
+    route("/sitemap.xml", "pages/sitemap.xml.tsx"),
     route("*", "pages/NotFoundPage.tsx", { id: "not-found" }),
 ] satisfies RouteConfig;

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="https://www.w3.org/1999/xhtml">
+  
+  <!-- Landing Page -->
+  <url>
+    <loc>https://mylinearts.com/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/"/>
+  </url>
+  
+  <url>
+    <loc>https://mylinearts.com/en</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/"/>
+  </url>
+  
+  <!-- Blog List -->
+  <url>
+    <loc>https://blog.mylinearts.com</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blog.mylinearts.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blog.mylinearts.com"/>
+  </url>
+  
+  <url>
+    <loc>https://blog.mylinearts.com/en</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://blog.mylinearts.com"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blog.mylinearts.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blog.mylinearts.com"/>
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://mylinearts.com/politica-de-privacidade</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/politica-de-privacidade"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/politica-de-privacidade"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/politica-de-privacidade"/>
+  </url>
+  
+  <url>
+    <loc>https://mylinearts.com/en/privacy-policy</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/politica-de-privacidade"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/politica-de-privacidade"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/politica-de-privacidade"/>
+  </url>
+  
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://mylinearts.com/termos-de-servico</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/termos-de-servico"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/termos-de-servico"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/termos-de-servico"/>
+  </url>
+  
+  <url>
+    <loc>https://mylinearts.com/en/terms-of-service</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/termos-de-servico"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/termos-de-servico"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/termos-de-servico"/>
+  </url>
+  
+  <!-- Cookie Policy -->
+  <url>
+    <loc>https://mylinearts.com/politica-de-cookies</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/politica-de-cookies"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/politica-de-cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/politica-de-cookies"/>
+  </url>
+  
+  <url>
+    <loc>https://mylinearts.com/en/cookie-policy</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/politica-de-cookies"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/politica-de-cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/politica-de-cookies"/>
+  </url>
+  
+  <!-- LGPD -->
+  <url>
+    <loc>https://mylinearts.com/lgpd</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/lgpd"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/lgpd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/lgpd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/lgpd"/>
+  </url>
+  
+  <url>
+    <loc>https://mylinearts.com/en/lgpd</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/lgpd"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/lgpd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/lgpd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/lgpd"/>
+  </url>
+
+  <!-- Pobre Goods -->
+  <url>
+    <loc>https://mylinearts.com/pobre-goods-imprimir</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/pobre-goods-imprimir"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/pobre-goods-imprimir"/>
+  </url>
+</urlset>

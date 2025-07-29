@@ -79,7 +79,7 @@ export const blogListSEOData = {
     twitterDescription: 'Descubra dicas, tutoriais e ideias criativas para criar livros de colorir personalizados. Aprenda sobre Bobbie Goods, atividades infantis e muito mais.',
     locale: 'pt_BR',
     language: 'Portuguese',
-    hreflang: 'pt-br',
+    hreflang: 'pt',
     price: '5.00',
     currency: 'BRL'
   },
@@ -111,7 +111,7 @@ export const pricingSEOData = {
     twitterDescription: 'Preços transparentes e acessíveis para criar seu livro de colorir personalizado com IA.',
     locale: 'pt_BR',
     language: 'Portuguese',
-    hreflang: 'pt-br',
+    hreflang: 'pt',
     price: '5.00',
     currency: 'BRL'
   },

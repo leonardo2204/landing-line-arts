@@ -33,6 +33,9 @@ type Pages = {
   "/lgpd": {
     params: {};
   };
+  "/pobre-goods-imprimir": {
+    params: {};
+  };
   "/en": {
     params: {};
   };
@@ -56,6 +59,12 @@ type Pages = {
   "/en/lgpd": {
     params: {};
   };
+  "/en/pobre-goods-imprimir": {
+    params: {};
+  };
+  "/sitemap.xml": {
+    params: {};
+  };
   "/*": {
     params: {
       "*": string;
@@ -66,7 +75,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/blog" | "/blog/:slug" | "/politica-de-privacidade" | "/termos-de-servico" | "/politica-de-cookies" | "/lgpd" | "/en" | "/en/blog" | "/en/blog/:slug" | "/en/privacy-policy" | "/en/terms-of-service" | "/en/cookie-policy" | "/en/lgpd" | "/*";
+    page: "/" | "/blog" | "/blog/:slug" | "/politica-de-privacidade" | "/termos-de-servico" | "/politica-de-cookies" | "/lgpd" | "/pobre-goods-imprimir" | "/en" | "/en/blog" | "/en/blog/:slug" | "/en/privacy-policy" | "/en/terms-of-service" | "/en/cookie-policy" | "/en/lgpd" | "/en/pobre-goods-imprimir" | "/sitemap.xml" | "/*";
   };
   "pages/LandingPage.tsx": {
     id: "pages/LandingPage";
@@ -116,6 +125,17 @@ type RouteFiles = {
   } | {
     id: "lgpd-en";
     page: "/en/lgpd";
+  };
+  "pages/PobreGoods.tsx": {
+    id: "pages/PobreGoods";
+    page: "/pobre-goods-imprimir";
+  } | {
+    id: "pobre-goods-en";
+    page: "/en/pobre-goods-imprimir";
+  };
+  "pages/sitemap.xml.tsx": {
+    id: "pages/sitemap.xml";
+    page: "/sitemap.xml";
   };
   "pages/NotFoundPage.tsx": {
     id: "not-found";

@@ -78,13 +78,6 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     "potentialAction": {
       "@type": "UseAction",
       "target": "https://app.mylinearts.com"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "127",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   };
 
@@ -152,6 +145,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Alternate Languages */}
       <link rel="alternate" hrefLang="en" href={`${BASE_URL}/en`} />
       <link rel="alternate" hrefLang="pt-br" href={BASE_URL} />
+      <link rel="alternate" hrefLang="pt" href={`${BASE_URL}/`} />
       <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/en`} />
 
       {/* Structured Data */}
