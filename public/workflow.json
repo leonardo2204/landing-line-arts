@@ -1,0 +1,399 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1omHDl1jpjHyrtga2ZHBddUkbkdatEr1ga9vHc4fQ1pI",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1omHDl1jpjHyrtga2ZHBddUkbkdatEr1ga9vHc4fQ1pI/edit?usp=drivesdk",
+          "cachedResultName": "Invoice Reconciliation"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "id",
+          "value": "gid=0"
+        },
+        "columns": {
+          "value": {},
+          "schema": [
+            {
+              "id": "Invoice date",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Invoice date",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "invoice number",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "invoice number",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Purchase order number",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Purchase order number",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Supplier name",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Supplier name",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Supplier address",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Supplier address",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Supplier VAT identification number",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Supplier VAT identification number",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Customer name",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Customer name",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Customer address",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Customer address",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Customer VAT identification number",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Customer VAT identification number",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Shipping addresses",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Shipping addresses",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Line items",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Line items",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Subtotal without VAT",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Subtotal without VAT",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Subtotal with VAT",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Subtotal with VAT",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Total price",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "Total price",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "autoMapInputData",
+          "matchingColumns": [
+            "output"
+          ]
+        },
+        "options": {}
+      },
+      "id": "4884b3d4-9317-40e6-8a50-aa1170d6641a",
+      "name": "Append to Reconciliation Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        816,
+        96
+      ],
+      "typeVersion": 4.3
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $('Receiving Invoices').item.json.id }}",
+        "labelIds": [
+          "Label_5511644430826409825"
+        ]
+      },
+      "id": "47934906-3733-4248-bfab-8af25df6ff23",
+      "name": "Add \"invoice synced\" Label",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        1216,
+        112
+      ],
+      "typeVersion": 2.1,
+      "webhookId": "ad534b7f-b155-4294-813c-df4fe91975af"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "e5649a2b-6e12-4cc4-8001-4639cc9cc2c2",
+              "operator": {
+                "name": "filter.operator.equals",
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.mimeType }}",
+              "rightValue": "application/pdf"
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "4a759780-0d1c-4933-855b-8be7df669b16",
+      "name": "Should Process Email?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        -448,
+        144
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "fileSelector": "/data/*",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        -672,
+        144
+      ],
+      "id": "79e84487-61ed-449b-bda1-a2e2444e54f7",
+      "name": "Read/Write Files from Disk"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "277fb169-e580-4dc3-9865-206f8c78f6b6",
+              "leftValue": "={{ $itemIndex }}",
+              "rightValue": 4,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -96,
+        128
+      ],
+      "id": "753eb594-44c9-4f01-8114-ac8f84dda797",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -976,
+        144
+      ],
+      "id": "2abdfac0-afb6-42dd-9d74-594672910e9a",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "resource": "document",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "text": "Extract the following boleto line items from the provided input, mapping Portuguese terms to the specified JSON fields:|- \"Código Pix\" or \"Pix\" (pix code): a string, often a QR code or alphanumeric code, mapped to `pix_code`.- \"Código de Barras\" or \"Linha Digitável\" (bar code number): a fixed 44-digit numeric code, typically presented in blocks separated by spaces or dots (e.g., 34191.09180 82660.772938 85334.580009 5 10370000165480), which should be concatenated into a single 44-digit number without spaces or dots, mapped to `bar_code_number`.- \"Beneficiário\" (beneficiary): the name of the recipient or company, mapped to `beneficiary`.- \"Pagador\" (client name): the name of the payer or client, mapped to `client_name`.- \"Data de Vencimento\" or \"Vencimento\" (due date): in the format DD/MM/YYYY or DD-MM-YYYY, mapped to `due_date`.- \"Valor do Documento\" or \"Valor\" (value to be paid): a numeric value with two decimal places using a comma as the separator (e.g., 1234,56), mapped to `value_to_be_paid`.Return only the extracted items with their values in JSON format, with no additional text. If an item cannot be found, return \"N/A\" for that item. Example output:```json{  \"pix_code\": \"N/A\",  \"bar_code_number\": \"34191091808266077293885334580009510370000165480\",  \"beneficiary\": \"N/A\",  \"client_name\": \"N/A\",  \"due_date\": \"N/A\",  \"value_to_be_paid\": \"N/A\"}",
+        "inputType": "binary",
+        "simplify": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        336,
+        128
+      ],
+      "id": "63ffdc1e-80a6-4836-aaf5-66ed52350c43",
+      "name": "Analyze document",
+      "executeOnce": true,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "cq79DIsX8zmGDsZo",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Should Process Email?": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append to Reconciliation Sheet": {
+      "main": [
+        [
+          {
+            "node": "Add \"invoice synced\" Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk": {
+      "main": [
+        [
+          {
+            "node": "Should Process Email?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Analyze document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze document": {
+      "main": [
+        [
+          {
+            "node": "Append to Reconciliation Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "fe94aa71-5ce6-425a-a9bf-ab861363064d",
+  "meta": {
+    "instanceId": "6fc6d0b730172a39b8e439f075d80be53255c2e234bb3c23a23ecb1f3d3a78c1"
+  },
+  "id": "ZJIGO1JY6VawKsWG",
+  "tags": []
+}

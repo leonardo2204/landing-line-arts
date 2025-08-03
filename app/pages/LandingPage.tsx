@@ -10,6 +10,7 @@ import { mockBeforeAfterImages } from "../utils/mockData";
 import { pricingLoader } from "../loaders/pricing-loader";
 import type { Route } from "./+types/LandingPage";
 import Trustedby from "../components/sections/Trustedby";
+import ToPrint from "../components/sections/ToPrint";
 
 export const loader = async ({
   context,
@@ -120,6 +121,8 @@ export default function LandingPage() {
 
         <Trustedby />
 
+        <ToPrint />
+
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-10 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply opacity-20"></div>
@@ -216,7 +219,11 @@ export default function LandingPage() {
       <FAQ />
 
       <div className="flex justify-center items-center">
-        <a href="https://fazier.com/launches/mylinearts.com" target="_blank" rel="noopener">
+        <a
+          href="https://fazier.com/launches/mylinearts.com"
+          target="_blank"
+          rel="noopener"
+        >
           <img
             src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=neutral"
             width={120}

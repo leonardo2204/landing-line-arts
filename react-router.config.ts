@@ -8,6 +8,7 @@ export default {
         'blog/bobbie-goods-guia-completo',
         '/en/blog',
         '/en/blog/bobbie-goods-guia-completo',
+        '/pobre-goods-imprimir'
     ],
     future: {
         unstable_viteEnvironmentApi: true,

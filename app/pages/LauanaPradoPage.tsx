@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 
-export default function PobreGoods() {
+export default function LauanaPradoPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       {/* JSON-LD Structured Data */}
@@ -11,21 +11,21 @@ export default function PobreGoods() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
-            name: "Pobre Goods: pacote de 10 desenhos para imprimir e colorir",
+            name: "Lauana Prado: pacote de 15 desenhos para imprimir e colorir",
             description:
-              "Pacote com 10 desenhos únicos e exclusivos para colorir, criados especialmente para brasileiros, com situações engraçadas e cotidianas. Cada desenho é otimizado para impressão em alta qualidade.",
-            image: "/caramelo.png",
+              "O pacote Lauana Prado inclui 15 desenhos únicos e exclusivos para colorir, dos momentos mais bonitos de sua carreira",
+            image: "/lauana-antes.jpeg",
             brand: {
               "@type": "Brand",
               name: "My Line Arts",
             },
             offers: {
               "@type": "Offer",
-              price: "29.91",
+              price: "39.91",
               priceCurrency: "BRL",
               priceValidUntil: "2025-12-31",
               availability: "https://schema.org/InStock",
-              url: import.meta.env.VITE_PUBLIC_POBRE_GOODS_PACKAGE_URL,
+              url: import.meta.env.VITE_PUBLIC_LAUANA_PRADO_PACKAGE_URL,
               seller: {
                 "@type": "Organization",
                 name: "MyLineArts",
@@ -67,11 +67,11 @@ export default function PobreGoods() {
           </div>
           <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Pobre Goods: pacote de 10 desenhos para imprimir e colorir
+              Lauana Prado: pacote de 15 desenhos para imprimir e colorir
             </h1>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Compre o pacote com 10 desenhos únicos para colorir e imprimir{" "}
-              <span className="font-bold">por apenas R$29,91</span>
+              Compre o pacote com 15 desenhos únicos para colorir e imprimir{" "}
+              <span className="font-bold">por apenas R$39,91</span>
             </p>
           </div>
 
@@ -81,8 +81,8 @@ export default function PobreGoods() {
             <div className="order-1 lg:order-1">
               <div className="relative w-full h-80 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/caramelo.png"
-                  alt="Pobre Goods - Desenho para colorir de carro de polícia com cachorro"
+                  src="/lauana-depois.jpeg"
+                  alt="Lauana Prado - Desenho para colorir de momentos mais bonitos de sua carreira"
                   className="w-full h-full object-cover bg-white"
                 />
               </div>
@@ -96,10 +96,9 @@ export default function PobreGoods() {
                     O que inclui o pacote?
                   </h2>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    O pacote Pobre Goods inclui 10 desenhos únicos e exclusivos
-                    para colorir, criados especialmente para nós Brasileiros,
-                    com situações engraçadas e cotidianas. Cada desenho é
-                    otimizado para impressão em alta qualidade.
+                    O pacote Lauana Prado inclui 15 desenhos únicos e exclusivos
+                    para colorir, dos momentos mais bonitos de sua carreira. Cada
+                    desenho é otimizado para impressão em alta qualidade.
                   </p>
                 </div>
 
@@ -110,7 +109,7 @@ export default function PobreGoods() {
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      10 desenhos em alta resolução (HD)
+                      15 desenhos em alta resolução (HD)
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -128,17 +127,17 @@ export default function PobreGoods() {
                   <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-gray-900 mb-2">
-                        R$29,91
+                        R$39,91
                       </div>
                       <div className="text-gray-600 mb-4">
-                        Pacote com 10 desenhos
+                        Pacote com 15 desenhos
                       </div>
                       <div className="text-sm text-gray-500 mb-6">
                         Envio por email • Formato PNG Alta Qualidade • 100%
                         seguro
                       </div>
                       <Link
-                        to={import.meta.env.VITE_PUBLIC_POBRE_GOODS_PACKAGE_URL}
+                        to={import.meta.env.VITE_PUBLIC_LAUANA_PRADO_PACKAGE_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-primary flex items-center justify-center w-full cursor-pointer"
