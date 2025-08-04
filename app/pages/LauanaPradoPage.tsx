@@ -25,6 +25,9 @@ export default function LauanaPradoPage() {
               priceCurrency: "BRL",
               priceValidUntil: "2025-12-31",
               availability: "https://schema.org/InStock",
+              inStock: true,
+              description:
+                "O pacote Lauana Prado inclui 15 desenhos únicos e exclusivos para colorir, dos momentos mais bonitos de sua carreira",
               url: import.meta.env.VITE_PUBLIC_LAUANA_PRADO_PACKAGE_URL,
               seller: {
                 "@type": "Organization",
@@ -48,8 +51,8 @@ export default function LauanaPradoPage() {
             },
             category: "Arte e Entretenimento",
             keywords:
-              "desenhos para colorir, imprimir, brasileiro, pobre goods, arte digital, atividades infantis, bobbie goods",
-            url: "https://mylinearts.com/pobre-goods",
+              "desenhos para colorir, imprimir, brasileiro, arte digital, atividades infantis, bobbie goods, lauana prado, lauana prado bobbie goods",
+            url: "https://mylinearts.com/lauana-prado-bobbie-goods-imprimir",
           }),
         }}
       />
@@ -70,8 +73,8 @@ export default function LauanaPradoPage() {
               Lauana Prado: pacote de 15 desenhos para imprimir e colorir
             </h1>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Compre o pacote com 15 desenhos únicos para colorir e imprimir{" "}
-              <span className="font-bold">por apenas R$39,91</span>
+              Compre a versão Bobbie Goods dos famosos. Pacote com 15 desenhos únicos para colorir e imprimir{" "}
+              <span className="font-bold">por apenas R$39,91!</span>
             </p>
           </div>
 

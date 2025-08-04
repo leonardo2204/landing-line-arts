@@ -25,6 +25,9 @@ export default function PobreGoods() {
               priceCurrency: "BRL",
               priceValidUntil: "2025-12-31",
               availability: "https://schema.org/InStock",
+              inStock: true,
+              description:
+                "O pacote Pobre Goods inclui 10 desenhos únicos e exclusivos para colorir, criados especialmente para nós Brasileiros, com situações engraçadas e cotidianas. Cada desenho é otimizado para impressão em alta qualidade.",
               url: import.meta.env.VITE_PUBLIC_POBRE_GOODS_PACKAGE_URL,
               seller: {
                 "@type": "Organization",
@@ -49,7 +52,7 @@ export default function PobreGoods() {
             category: "Arte e Entretenimento",
             keywords:
               "desenhos para colorir, imprimir, brasileiro, pobre goods, arte digital, atividades infantis, bobbie goods",
-            url: "https://mylinearts.com/pobre-goods",
+            url: "https://mylinearts.com/pobre-goods-imprimir",
           }),
         }}
       />

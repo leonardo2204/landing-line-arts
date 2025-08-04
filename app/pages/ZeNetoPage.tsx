@@ -25,6 +25,8 @@ export default function ZeNetoPage() {
               priceCurrency: "BRL",
               priceValidUntil: "2025-12-31",
               availability: "https://schema.org/InStock",
+              inStock: true,
+              description: "O pacote Zé Neto e Cristiano inclui 15 desenhos únicos e exclusivos para colorir, momentos engraçados e marcantes da dupla sertaneja",
               url: import.meta.env.VITE_PUBLIC_ZE_NETO_PACKAGE_URL,
               seller: {
                 "@type": "Organization",
@@ -48,8 +50,8 @@ export default function ZeNetoPage() {
             },
             category: "Arte e Entretenimento",
             keywords:
-              "desenhos para colorir, imprimir, brasileiro, pobre goods, arte digital, atividades infantis, bobbie goods",
-            url: "https://mylinearts.com/pobre-goods",
+              "desenhos para colorir, imprimir, brasileiro, arte digital, atividades infantis, bobbie goods, ze neto, ze neto bobbie goods",
+            url: "https://mylinearts.com/ze-neto-bobbie-goods-imprimir",
           }),
         }}
       />
@@ -70,8 +72,8 @@ export default function ZeNetoPage() {
               Zé Neto e Cristiano: pacote de 15 desenhos para imprimir e colorir
             </h1>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Compre o pacote com 15 desenhos únicos para colorir e imprimir{" "}
-              <span className="font-bold">por apenas R$39,91</span>
+              Compre a versão Bobbie Goods dos famosos. Pacote com 15 desenhos únicos para colorir e imprimir{" "}
+              <span className="font-bold">por apenas R$39,91!</span>
             </p>
           </div>
 
