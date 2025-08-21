@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 
-export default function ZeNetoPage() {
+export default function LauanaPradoPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       {/* JSON-LD Structured Data */}
@@ -11,10 +11,10 @@ export default function ZeNetoPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
-            name: "Zé Neto e Cristiano: pacote de 15 desenhos para imprimir e colorir",
+            name: "Lauana Prado: pacote de 15 desenhos para imprimir e colorir",
             description:
-              "O pacote Zé Neto e Cristiano inclui 15 desenhos únicos e exclusivos para colorir, momentos engraçados e marcantes da dupla sertaneja",
-            image: "/ze-neto-antes.jpeg",
+              "O pacote Lauana Prado inclui 15 desenhos únicos e exclusivos para colorir, dos momentos mais bonitos de sua carreira",
+            image: "/lauana-depois.png",
             brand: {
               "@type": "Brand",
               name: "My Line Arts",
@@ -26,8 +26,9 @@ export default function ZeNetoPage() {
               priceValidUntil: "2025-12-31",
               availability: "https://schema.org/InStock",
               inStock: true,
-              description: "O pacote Zé Neto e Cristiano inclui 15 desenhos únicos e exclusivos para colorir, momentos engraçados e marcantes da dupla sertaneja",
-              url: import.meta.env.VITE_PUBLIC_ZE_NETO_PACKAGE_URL,
+              description:
+                "O pacote Lauana Prado inclui 15 desenhos únicos e exclusivos para colorir, dos momentos mais bonitos de sua carreira",
+              url: import.meta.env.VITE_PUBLIC_LAUANA_PRADO_PACKAGE_URL,
               seller: {
                 "@type": "Organization",
                 name: "MyLineArts",
@@ -50,8 +51,8 @@ export default function ZeNetoPage() {
             },
             category: "Arte e Entretenimento",
             keywords:
-              "desenhos para colorir, imprimir, brasileiro, arte digital, atividades infantis, bobbie goods, ze neto, ze neto bobbie goods",
-            url: "https://mylinearts.com/ze-neto-bobbie-goods-imprimir",
+              "desenhos para colorir, imprimir, brasileiro, arte digital, atividades infantis, bobbie goods, lauana prado, lauana prado bobbie goods",
+            url: "https://mylinearts.com/lauana-prado-bobbie-goods-imprimir",
           }),
         }}
       />
@@ -69,10 +70,11 @@ export default function ZeNetoPage() {
           </div>
           <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Zé Neto e Cristiano: pacote de 15 desenhos para imprimir e colorir
+              Lauana Prado: pacote de 15 desenhos para imprimir e colorir
             </h1>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Compre a versão Bobbie Goods dos famosos. Pacote com 15 desenhos únicos para colorir e imprimir{" "}
+              Compre a versão Bobbie Goods dos famosos. Pacote com 15 desenhos
+              únicos para colorir e imprimir{" "}
               <span className="font-bold">por apenas R$39,91!</span>
             </p>
           </div>
@@ -83,8 +85,8 @@ export default function ZeNetoPage() {
             <div className="order-1 lg:order-1">
               <div className="relative w-full h-80 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/ze-neto-depois.jpeg"
-                  alt="Zé Neto e Cristiano - Desenho para colorir de dupla sertaneja"
+                  src="/lauana-depois.png"
+                  alt="Lauana Prado - Desenho para colorir de momentos mais bonitos de sua carreira"
                   className="w-full h-full object-cover bg-white"
                 />
               </div>
@@ -98,10 +100,12 @@ export default function ZeNetoPage() {
                     O que inclui o pacote?
                   </h2>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    O pacote Zé Neto e Cristiano inclui 15 desenhos únicos e
-                    exclusivos para colorir, momentos engraçados e marcantes da
-                    dupla sertaneja. Cada desenho é otimizado para impressão em
-                    alta qualidade.
+                    O pacote Lauana Prado #myraizgoodies, foi criado em
+                    homenagem ao seu último álbum Raiz e inclui 15 desenhos
+                    únicos e exclusivos para colorir, com os momentos mais
+                    bonitos de sua carreira. Cada desenho foi feito a partir de
+                    imagens originais de seus shows e é otimizado para impressão
+                    em alta qualidade.
                   </p>
                 </div>
 
@@ -140,7 +144,9 @@ export default function ZeNetoPage() {
                         seguro
                       </div>
                       <Link
-                        to={import.meta.env.VITE_PUBLIC_ZE_NETO_PACKAGE_URL}
+                        to={
+                          import.meta.env.VITE_PUBLIC_LAUANA_PRADO_PACKAGE_URL
+                        }
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-primary flex items-center justify-center w-full cursor-pointer"

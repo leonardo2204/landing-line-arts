@@ -2,7 +2,7 @@
 
 import type { GetInfo, GetAnnotations } from "react-router/internal";
 
-type Module = typeof import("../ZeNetoPage.js")
+type Module = typeof import("../_ZeNetoPage.js")
 
 type Info = GetInfo<{
   file: "pages/ZeNetoPage.tsx",
@@ -14,13 +14,13 @@ type Matches = [{
   module: typeof import("../../root.js");
 }, {
   id: "pages/ZeNetoPage";
-  module: typeof import("../ZeNetoPage.js");
+  module: typeof import("../_ZeNetoPage.js");
 }] | [{
   id: "root";
   module: typeof import("../../root.js");
 }, {
   id: "ze-neto-bobbie-goods-en";
-  module: typeof import("../ZeNetoPage.js");
+  module: typeof import("../_ZeNetoPage.js");
 }];
 
 type Annotations = GetAnnotations<Info & { module: Module, matches: Matches }>;

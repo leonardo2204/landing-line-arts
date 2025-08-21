@@ -36,12 +36,6 @@ type Pages = {
   "/pobre-goods-imprimir": {
     params: {};
   };
-  "/ze-neto-bobbie-goods-imprimir": {
-    params: {};
-  };
-  "/lauana-prado-bobbie-goods-imprimir": {
-    params: {};
-  };
   "/en": {
     params: {};
   };
@@ -68,12 +62,6 @@ type Pages = {
   "/en/pobre-goods-imprimir": {
     params: {};
   };
-  "/en/ze-neto-bobbie-goods-imprimir": {
-    params: {};
-  };
-  "/en/lauana-prado-bobbie-goods-imprimir": {
-    params: {};
-  };
   "/sitemap.xml": {
     params: {};
   };
@@ -87,7 +75,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/blog" | "/blog/:slug" | "/politica-de-privacidade" | "/termos-de-servico" | "/politica-de-cookies" | "/lgpd" | "/pobre-goods-imprimir" | "/ze-neto-bobbie-goods-imprimir" | "/lauana-prado-bobbie-goods-imprimir" | "/en" | "/en/blog" | "/en/blog/:slug" | "/en/privacy-policy" | "/en/terms-of-service" | "/en/cookie-policy" | "/en/lgpd" | "/en/pobre-goods-imprimir" | "/en/ze-neto-bobbie-goods-imprimir" | "/en/lauana-prado-bobbie-goods-imprimir" | "/sitemap.xml" | "/*";
+    page: "/" | "/blog" | "/blog/:slug" | "/politica-de-privacidade" | "/termos-de-servico" | "/politica-de-cookies" | "/lgpd" | "/pobre-goods-imprimir" | "/en" | "/en/blog" | "/en/blog/:slug" | "/en/privacy-policy" | "/en/terms-of-service" | "/en/cookie-policy" | "/en/lgpd" | "/en/pobre-goods-imprimir" | "/sitemap.xml" | "/*";
   };
   "pages/LandingPage.tsx": {
     id: "pages/LandingPage";
@@ -144,20 +132,6 @@ type RouteFiles = {
   } | {
     id: "pobre-goods-en";
     page: "/en/pobre-goods-imprimir";
-  };
-  "pages/ZeNetoPage.tsx": {
-    id: "pages/ZeNetoPage";
-    page: "/ze-neto-bobbie-goods-imprimir";
-  } | {
-    id: "ze-neto-bobbie-goods-en";
-    page: "/en/ze-neto-bobbie-goods-imprimir";
-  };
-  "pages/LauanaPradoPage.tsx": {
-    id: "pages/LauanaPradoPage";
-    page: "/lauana-prado-bobbie-goods-imprimir";
-  } | {
-    id: "lauana-prado-bobbie-goods-en";
-    page: "/en/lauana-prado-bobbie-goods-imprimir";
   };
   "pages/sitemap.xml.tsx": {
     id: "pages/sitemap.xml";

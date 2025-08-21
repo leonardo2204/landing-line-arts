@@ -1,4 +1,3 @@
-import { Upload, Eye, CreditCard, Printer } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { Link } from "react-router";
 
@@ -20,27 +19,28 @@ const HowItWorks = () => {
           description:
             "O pacote Pobre Goods inclui 10 desenhos únicos e exclusivos para colorir, criados especialmente para nós Brasileiros",
         },
-        {
-          image: "/lauana-antes.jpeg",
-          afterImage: "/lauana-depois.jpeg",
-          title: "Lauana Prado",
-          link: "/lauana-prado-bobbie-goods-imprimir",
-          description:
-            "O pacote Lauana Prado inclui 15 desenhos únicos e exclusivos para colorir, dos momentos mais bonitos de sua carreira",
-        },
-        {
-          image: "/ze-neto-antes.jpeg",
-          afterImage: "/ze-neto-depois.jpeg",
-          title: "Zé Neto e Cristiano",
-          link: "/ze-neto-bobbie-goods-imprimir",
-          description:
-            "O pacote Zé Neto e Cristiano inclui 15 desenhos únicos e exclusivos para colorir, momentos engraçados e marcantes da dupla sertaneja",
-        },
+        // {
+        //   image: "/lauana-antes.jpeg",
+        //   afterImage: "/lauana-depois.png",
+        //   title: "Lauana Prado",
+        //   link: "/lauana-prado-bobbie-goods-imprimir",
+        //   description:
+        //     "O pacote Lauana Prado inclui 15 desenhos únicos e exclusivos para colorir, dos momentos mais bonitos de sua carreira",
+        // },
+        // {
+        //   image: "/ze-neto-antes.jpeg",
+        //   afterImage: "/ze-neto-depois.jpeg",
+        //   title: "Zé Neto e Cristiano",
+        //   link: "/ze-neto-bobbie-goods-imprimir",
+        //   description:
+        //     "O pacote Zé Neto e Cristiano inclui 15 desenhos únicos e exclusivos para colorir, momentos engraçados e marcantes da dupla sertaneja",
+        // },
       ],
     },
     en: {
-      title: "How it works",
-      subtitle: "Create your custom coloring book in just a few simple steps",
+      title: "Prefer to buy ready and print?",
+      subtitle:
+        "Instead of creating your own images, buy ready-made packages from Bobbie Goods, Pobre Goods, famous etc!",
       link: "/pobre-goods-imprimir",
       steps: [
         {
@@ -51,22 +51,22 @@ const HowItWorks = () => {
           description:
             "The Pobre Goods package includes 10 unique and exclusive coloring pages, created especially for Brazilian fans",
         },
-        {
-          image: "/lauana-antes.jpeg",
-          afterImage: "/lauana-depois.jpeg",
-          title: "Lauana Prado",
-          link: "/lauana-prado-bobbie-goods-imprimir",
-          description:
-            "The Lauana Prado package includes 15 unique and exclusive coloring pages, featuring the most beautiful moments in her career",
-        },
-        {
-          image: "/ze-neto-antes.jpeg",
-          afterImage: "/ze-neto-depois.jpeg",
-          title: "Zé Neto e Cristiano",
-          link: "/ze-neto-bobbie-goods-imprimir",
-          description:
-            "The Zé Neto and Cristiano package includes 15 unique and exclusive coloring pages, featuring funny and memorable moments from the duo",
-        },
+        // {
+        //   image: "/lauana-antes.jpeg",
+        //   afterImage: "/lauana-depois.png",
+        //   title: "Lauana Prado",
+        //   link: "/lauana-prado-bobbie-goods-imprimir",
+        //   description:
+        //     "The Lauana Prado package includes 15 unique and exclusive coloring pages, featuring the most beautiful moments in her career",
+        // },
+        // {
+        //   image: "/ze-neto-antes.jpeg",
+        //   afterImage: "/ze-neto-depois.jpeg",
+        //   title: "Zé Neto e Cristiano",
+        //   link: "/ze-neto-bobbie-goods-imprimir",
+        //   description:
+        //     "The Zé Neto and Cristiano package includes 15 unique and exclusive coloring pages, featuring funny and memorable moments from the duo",
+        // },
       ],
     },
   };
@@ -117,7 +117,7 @@ const HowItWorks = () => {
                   <p className="text-gray-600">{item.description}</p>
                 </div>
                 <div className="flex justify-center mt-4 p-2 border-2 rounded-lg border-primary-500 text-primary-800">
-                  Clique para ver mais
+                  {language === "pt-BR" ? "Clique para ver mais" : "Click to see more"}
                 </div>
               </div>
             </Link>

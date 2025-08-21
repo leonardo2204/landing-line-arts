@@ -151,24 +151,4 @@
     <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/pobre-goods-imprimir"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/pobre-goods-imprimir"/>
   </url>
-<url>
-    <loc>https://mylinearts.com/lauana-prado-bobbie-goods-imprimir</loc>
-    <lastmod>2025-07-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-    <image:loc>https://mylinearts.com/lauana-depois.jpeg</image:loc>
-    </image:image>
-    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/pobre-goods-imprimir"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/pobre-goods-imprimir"/>
-  </url>
-  <url>
-    <loc>https://mylinearts.com/ze-neto-bobbie-goods-imprimir</loc>
-    <lastmod>2025-07-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-    <image:loc>https://mylinearts.com/ze-neto-depois.jpeg</image:loc>
-    </image:image>
-  </url>
 </urlset>

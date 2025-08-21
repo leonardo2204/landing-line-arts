@@ -9,8 +9,6 @@ export default [
     route("/politica-de-cookies", "pages/CookiePolicyPage.tsx"),
     route("/lgpd", "pages/LGPDPage.tsx"),
     route("/pobre-goods-imprimir", "pages/PobreGoods.tsx"),
-    route("/ze-neto-bobbie-goods-imprimir", "pages/ZeNetoPage.tsx"),
-    route("/lauana-prado-bobbie-goods-imprimir", "pages/LauanaPradoPage.tsx"),
     // English routes with unique IDs
     route("/en", "pages/LandingPage.tsx", { id: "landing-en" }),
     route("/en/blog", "pages/BlogListPage.tsx", { id: "blog-list-en" }),
@@ -20,8 +18,6 @@ export default [
     route("/en/cookie-policy", "pages/CookiePolicyPage.tsx", { id: "cookies-en" }),
     route("/en/lgpd", "pages/LGPDPage.tsx", { id: "lgpd-en" }),
     route("/en/pobre-goods-imprimir", "pages/PobreGoods.tsx", { id: "pobre-goods-en" }),
-    route("/en/ze-neto-bobbie-goods-imprimir", "pages/ZeNetoPage.tsx", { id: "ze-neto-bobbie-goods-en" }),
-    route("/en/lauana-prado-bobbie-goods-imprimir", "pages/LauanaPradoPage.tsx", { id: "lauana-prado-bobbie-goods-en" }),
     route("/sitemap.xml", "pages/sitemap.xml.tsx"),
     route("*", "pages/NotFoundPage.tsx", { id: "not-found" }),
 ] satisfies RouteConfig;
