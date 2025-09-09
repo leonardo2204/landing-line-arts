@@ -1,4 +1,5 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play, X } from "lucide-react";
+import { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import HowItWorks from "../components/sections/HowItWorks";
 import Benefits from "../components/sections/Benefits";
@@ -24,6 +25,7 @@ export const loader = async ({
 
 export default function LandingPage() {
   const { t, language } = useLanguage();
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   const handleGetStartedClick = () => {
     window.location.href = "https://app.mylinearts.com";
@@ -35,6 +37,15 @@ export default function LandingPage() {
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleSeeDemoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsVideoModalOpen(true);
+  };
+
+  const closeVideoModal = () => {
+    setIsVideoModalOpen(false);
   };
 
   return (
@@ -53,19 +64,35 @@ export default function LandingPage() {
               <p className="text-xl text-gray-700 mb-8 max-w-lg">
                 {t("landing.hero.subtitle")}
               </p>
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 cursor-pointer">
+              <div className="flex flex-col gap-4 cursor-pointer">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button
+                    onClick={handleGetStartedClick}
+                    className="btn btn-primary flex items-center justify-center cursor-pointer flex-1"
+                  >
+                    {t("nav.getStarted")}
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </button>
+                  <button
+                    onClick={handleHowItWorksClick}
+                    className="btn btn-outline flex items-center justify-center cursor-pointer flex-1"
+                  >
+                    {t("nav.howItWorks")}
+                  </button>
+                  <button
+                    onClick={handleSeeDemoClick}
+                    className="btn btn-outline flex items-center justify-center cursor-pointer flex-1 hidden md:flex"
+                  >
+                    <Play className="mr-2 h-5 w-5" />
+                    {t("nav.seeDemo")}
+                  </button>
+                </div>
                 <button
-                  onClick={handleGetStartedClick}
-                  className="btn btn-primary flex items-center justify-center cursor-pointer"
+                  onClick={handleSeeDemoClick}
+                  className="btn btn-outline flex items-center justify-center cursor-pointer w-full md:hidden"
                 >
-                  {t("nav.getStarted")}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </button>
-                <button
-                  onClick={handleHowItWorksClick}
-                  className="btn btn-outline flex items-center justify-center cursor-pointer"
-                >
-                  {t("nav.howItWorks")}
+                  <Play className="mr-2 h-5 w-5" />
+                  {t("nav.seeDemo")}
                 </button>
               </div>
             </div>
@@ -231,6 +258,29 @@ export default function LandingPage() {
           />
         </a>
       </div>
+
+      {/* YouTube Video Modal */}
+      {isVideoModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+          <div className="relative bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            <button
+              onClick={closeVideoModal}
+              className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <div className="aspect-video w-full">
+              <iframe
+                src="https://www.youtube.com/embed/Ew90GsudpT4?autoplay=1&rel=0"
+                title="MyLineArts Demo"
+                className="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
