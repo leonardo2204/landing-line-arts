@@ -10,7 +10,7 @@ export const plans: Plan[] = [
     {
         id: 'initial',
         name: 'Inicial',
-        credits: 1,
+        credits: 2,
         amount: 500,
         priceIds: ['price_1RVw9sCM9vOz3izsDaNqZ8Lt',
             'price_1RX3cSGuwyzgJLTInmOae3JM',
@@ -20,14 +20,14 @@ export const plans: Plan[] = [
     {
         id: 'drawer',
         name: 'Artista principiante',
-        credits: 3,
+        credits: 6,
         amount: 1000,
         priceIds: ['price_1RYiEqGuwyzgJLTIyiRmfry0', 'price_1RYpAKCM9vOz3izsCKDlwaov', 'price_1RaFZbGuwyzgJLTIX49IwgS1', 'price_1RaFh3GfMzEu6x2Ey3BjmNZk'],
     },
     {
         id: 'artist',
         name: 'Desenhista',
-        credits: 10,
+        credits: 20,
         amount: 2500,
         priceIds: ['price_1RVwLBCM9vOz3izsGtGBUCYG',
             'price_1RX3c4GuwyzgJLTIR4hkOrAp',
@@ -38,7 +38,7 @@ export const plans: Plan[] = [
         id: 'professional',
         name: 'Profissional',
         amount: 4500,
-        credits: 30,
+        credits: 60,
         priceIds: ['price_1RVwMFCM9vOz3izsW4HX9Xgh',
             'price_1RX3bhGuwyzgJLTI5iUmKmCY',
             'price_1RaFboGuwyzgJLTI3TFkpG92'

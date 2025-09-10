@@ -8,8 +8,8 @@ export const mockBeforeAfterImages = [
       en: 'Pet companion',
       'pt-BR': 'Companheiro de estimação'
     },
-    before: '/dog-antes.jpeg',
-    after: '/dog-depois.jpeg',
+    before: '/dog-sleeping-before.jpg',
+    after: '/dog-sleeping-after.png',
     description: {
       en: 'Create a coloring page of your furry friend.',
       'pt-BR': 'Crie uma página para colorir do seu amigo peludo.'
@@ -18,14 +18,14 @@ export const mockBeforeAfterImages = [
   {
     id: '3',
     title: {
-      en: 'Vacation memories',
-      'pt-BR': 'Memórias de férias'
+      en: 'People',
+      'pt-BR': 'Pessoas'
     },
-    before: '/24.jpg',
-    after: '/23.png',
+    before: '/cantora-antes.jpg',
+    after: '/cantora-depois.png',
     description: {
-      en: 'Relive your favorite travel memories through coloring.',
-      'pt-BR': 'Reviva suas memórias favoritas de viagem colorindo.'
+      en: 'Draw your favorite moments and relive them!',
+      'pt-BR': 'Reviva suas memórias favoritas colorindo.'
     }
   }
 ];

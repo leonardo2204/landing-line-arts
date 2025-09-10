@@ -1,4 +1,4 @@
-import { ImageIcon, Star, Crown } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { Await, useLoaderData } from 'react-router';
 import posthog from 'posthog-js';
@@ -35,68 +35,26 @@ const Pricing = () => {
   // Pricing data for both languages
   const pricingData = {
     'pt-BR': {
-      title: 'Planos simples e transparentes',
-      subtitle: 'Escolha o plano ideal para transformar suas fotos em páginas para colorir',
-      plans: [
-        {
-          name: 'Inicial',
-          icon: <ImageIcon className="w-8 h-8 text-primary-500" />,
-          features: [
-            'Modelos de IA avançado',
-            'Suporte por e-mail',
-            'Acesso a todas as imagens geradas'
-          ],
-          buttonText: 'Escolher esse',
-          popular: false,
-          bgGradient: 'from-primary-50 to-primary-100'
-        },
-        {
-          name: 'Artista inicial',
-          icon: <ImageIcon className="w-8 h-8 text-primary-500" />,
-          features: [
-            'Modelos de IA avançado',
-            'Suporte por e-mail',
-            'Acesso a todas as imagens geradas'
-          ],
-          buttonText: 'Escolher esse',
-          popular: false,
-          bgGradient: 'from-primary-50 to-primary-100'
-        },
-        {
-          name: 'Desenhista',
-          icon: <Star className="w-8 h-8 text-warning-500" />,
-          features: [
-            'Prioridade na geração de imagens',
-            'Suporte rápido',
-            'Acesso a todas as imagens geradas'
-          ],
-          buttonText: 'Escolher esse',
-          popular: true,
-          bgGradient: 'from-warning-50 to-warning-100'
-        },
-        {
-          name: 'Profissional',
-          icon: <Crown className="w-8 h-8 text-accent-500" />,
-          features: [
-            'Prioridade na geração de imagens',
-            'Suporte rápido',
-            'Acesso a todas as imagens geradas'
-          ],
-          buttonText: 'Escolher esse',
-          popular: false,
-          bgGradient: 'from-accent-50 to-accent-100'
-        }
+      title: 'Planos e preços',
+      subtitle: 'Escolha o plano ideal para suas necessidades',
+      features: [
+        'Modelos de IA avançado',
+        'Suporte por e-mail',
+        'Acesso a todas as imagens geradas',
+        'Geração de adesivos personalizados'
       ],
+      newFeature: 'Novo: adesivos!',
+      buttonText: 'Começar agora',
       howItWorks: {
-        title: '💡 Como funciona o sistema de créditos?',
+        title: 'Como funciona o sistema de créditos',
         steps: [
           {
             title: 'Compre créditos',
             description: 'Escolha o plano que melhor se adapta às suas necessidades'
           },
           {
-            title: 'Use 1 crédito por imagem',
-            description: 'Cada foto transformada consome apenas 1 crédito'
+            title: 'Use créditos por imagem ou adesivo',
+            description: 'Cada foto transformada consome apenas 2 créditos. Adesivos somente 1!'
           },
           {
             title: 'Baixe suas criações',
@@ -105,64 +63,34 @@ const Pricing = () => {
         ]
       },
       trustIndicators: {
-        included: '✅ Todos os planos incluem acesso completo à plataforma',
-        details: `💳 Preços em ${getCurrencySymbol(currency)} • 🔒 Pagamento seguro • ❌ Sem taxas ocultas ou assinaturas`
+        included: 'Todos os planos incluem acesso completo à plataforma',
+        details: `Preços em ${getCurrencySymbol(currency)} • Pagamento seguro • Sem taxas ocultas`
       },
-      popularBadge: '⭐ MAIS POPULAR ⭐',
+      popularBadge: 'Mais popular',
       creditsLabel: 'por crédito',
-      creditsImage: '{1} créditos = {2} imagens'
+      creditsImage: '{1} créditos'
     },
     'en': {
-      title: 'Simple and transparent plans',
-      subtitle: 'Choose the ideal plan to transform your photos into coloring pages',
-      plans: [
-        {
-          name: 'Starter',
-          icon: <ImageIcon className="w-8 h-8 text-primary-500" />,
-          features: [
-            'Advanced AI models',
-            'Email support',
-            'Access to all generated images'
-          ],
-          buttonText: 'Choose this',
-          popular: false,
-          bgGradient: 'from-primary-50 to-primary-100'
-        },
-        {
-          name: 'Artist',
-          icon: <Star className="w-8 h-8 text-warning-500" />,
-          features: [
-            'Priority image generation',
-            'Fast support',
-            'Access to all generated images'
-          ],
-          buttonText: 'Choose this',
-          popular: true,
-          bgGradient: 'from-warning-50 to-warning-100'
-        },
-        {
-          name: 'Professional',
-          icon: <Crown className="w-8 h-8 text-accent-500" />,
-          features: [
-            'Priority image generation',
-            'Fast support',
-            'Access to all generated images'
-          ],
-          buttonText: 'Choose this',
-          popular: false,
-          bgGradient: 'from-accent-50 to-accent-100'
-        }
+      title: 'Plans and pricing',
+      subtitle: 'Choose the ideal plan for your needs',
+      features: [
+        'Advanced AI models',
+        'Email support',
+        'Access to all generated images',
+        'Custom sticker generation'
       ],
+      newFeature: 'New: stickers!',
+      buttonText: 'Get started',
       howItWorks: {
-        title: '💡 How does the credit system work?',
+        title: 'How the credit system works',
         steps: [
           {
             title: 'Buy credits',
             description: 'Choose the plan that best fits your needs'
           },
           {
-            title: 'Use 1 credit per image',
-            description: 'Each transformed photo consumes only 1 credit'
+            title: 'Use credits per image or stickers',
+            description: 'Each transformed photo consumes only 2 credits. Stickers only 1!'
           },
           {
             title: 'Download your creations',
@@ -171,19 +99,19 @@ const Pricing = () => {
         ]
       },
       trustIndicators: {
-        included: '✅ All plans include full platform access',
-        details: `💳 Prices in ${getCurrencySymbol(currency)} • 🔒 Secure payment • ❌ No hidden fees or subscriptions`
+        included: 'All plans include full platform access',
+        details: `Prices in ${getCurrencySymbol(currency)} • Secure payment • No hidden fees`
       },
-      popularBadge: '⭐ MOST POPULAR ⭐',
+      popularBadge: 'Most popular',
       creditsLabel: 'per credit',
-      creditsImage: '{1} credits = {2} images'
+      creditsImage: '{1} credits'
     }
   };
 
   const currentData = pricingData[language] || pricingData['en'];
 
   return (
-    <section id="pricing" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="pricing" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -194,85 +122,88 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <Await resolve={plans} errorElement={<div className='text-center text-red-500'>Error loading prices</div>}>
-            {(data) => data.plans.map((plan: any, index: any) => (
-              <div
-                key={`plan-${plan.name}-${index}`}
-                className={`relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 ${plan.popular ? 'ring-2 ring-primary-500' : ''
+            {(data) => data.plans.map((plan: any, planIndex: number) => {
+              const isPopular = planIndex === Math.floor(data.plans.length / 2);
+              return (
+                <div
+                  key={`plan-${plan.name}-${planIndex}`}
+                  className={`relative bg-white rounded-xl shadow-lg border transition-all duration-200 hover:shadow-xl ${
+                    isPopular ? 'border-primary-500 ring-1 ring-primary-500' : 'border-gray-200'
                   }`}
-              >
-                {plan.popular && (
-                  <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-primary-500 to-primary-600 text-white text-center py-3 text-sm font-bold">
-                    {currentData.popularBadge}
-                  </div>
-                )}
-
-                <div className={`p-8 ${plan.popular ? 'pt-16' : ''}`}>
-                  {/* Icon with gradient background */}
-                  <div className={`flex items-center justify-center mb-6`}>
-                    <div className={`p-4 rounded-full bg-gradient-to-br ${currentData.plans[index]?.bgGradient}`}>
-                      {currentData.plans[index]?.icon}
+                >
+                  {isPopular && (
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                      <span className="bg-primary-900 text-white text-sm font-medium px-3 py-1 rounded-full">
+                        {currentData.popularBadge}
+                      </span>
                     </div>
-                  </div>
+                  )}
 
-                  {/* Pricing */}
-                  <div className="text-center">
-                    <p className="text-5xl font-bold text-gray-900 mb-2">{formatCurrency(plan.price.unitAmount, plan.price.currency)}</p>
-                    <p className="text-gray-500 text-sm mb-1">{formatCurrency(plan.price.unitAmount / plan.plan.credits, plan.price.currency)} {currentData.creditsLabel}</p>
-                    <p className="text-primary-600 font-semibold bg-primary-50 px-3 py-1 rounded-full inline-block">
-                      {plan.plan.credits === 1 ? `${currentData.creditsImage.replace('{1}', '1').replace('{2}', '1')}` : `${currentData.creditsImage.replace('{1}', plan.plan.credits.toString()).replace('{2}', plan.plan.credits.toString())}`}
-                    </p>
+                  <div className="p-6">
+                    <div className="text-center mb-6">
+                      <div className="text-3xl font-bold text-gray-900 mb-1">
+                        {formatCurrency(plan.price.unitAmount, plan.price.currency)}
+                      </div>
+                      <div className="text-gray-500 text-sm">
+                        {formatCurrency(plan.price.unitAmount / plan.plan.credits, plan.price.currency)} {currentData.creditsLabel}
+                      </div>
+                      <div className="text-primary-600 font-medium mt-2">
+                        {currentData.creditsImage.replace('{1}', plan.plan.credits.toString())}
+                      </div>
+                    </div>
+
+                    <ul className="space-y-3 mb-6">
+                      {currentData.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start">
+                          <Check className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-700 text-sm">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <a
+                      href="https://app.mylinearts.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors ${
+                        isPopular
+                          ? 'bg-primary-500 text-white hover:bg-primary-600'
+                          : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                      }`}
+                      onClick={() => {
+                        posthog.capture('pricing_page_button_clicked', {
+                          plan: plan.name,
+                          price: plan.price.unitAmount,
+                          currency: plan.price.currency,
+                          credits: plan.plan.credits,
+                        });
+                      }}
+                    >
+                      {currentData.buttonText}
+                    </a>
                   </div>
                 </div>
-                <div className='flex justify-center py-4 mx-8'>
-                  <a href={`https://app.mylinearts.com/`}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='bg-primary-500 text-white rounded-xl p-4 w-full cursor-pointer text-center'
-                    onClick={() => {
-                      posthog.capture('pricing_page_button_clicked', {
-                        plan: plan.name,
-                        price: plan.price.unitAmount,
-                        currency: plan.price.currency,
-                        credits: plan.plan.credits,
-                      });
-                      <a href={`https://app.mylinearts.com/`}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                      >
-                        {currentData.plans[index]?.buttonText}
-                      </a>
-                    }}
-                  >
-                    {currentData.plans[index]?.buttonText}
-                  </a>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </Await>
         </div>
 
-        {/* Additional info */}
-        <div
-          className="text-center mt-16"
-        >
-          <div className="bg-white rounded-2xl shadow-md p-8 max-w-4xl mx-auto">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
+        {/* How it works */}
+        <div className="text-center mt-16">
+          <div className="bg-gray-50 rounded-xl p-8 max-w-4xl mx-auto">
+            <h3 className="text-xl font-semibold text-gray-900 mb-6">
               {currentData.howItWorks.title}
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-              {currentData.howItWorks.steps.map((step, index) => (
-                <div key={`step-${index}`} className="flex items-start">
-                  <div className="bg-primary-100 rounded-full p-2 mr-3 mt-1">
-                    <span className="text-primary-600 font-bold text-sm">{index + 1}</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {currentData.howItWorks.steps.map((step, stepIndex) => (
+                <div key={stepIndex} className="text-center">
+                  <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-medium">
+                    {stepIndex + 1}
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">{step.title}</h4>
-                    <p className="text-gray-600 text-sm">{step.description}</p>
-                  </div>
+                  <h4 className="font-medium text-gray-900 mb-2">{step.title}</h4>
+                  <p className="text-gray-600 text-sm">{step.description}</p>
                 </div>
               ))}
             </div>
@@ -280,14 +211,9 @@ const Pricing = () => {
         </div>
 
         {/* Trust indicators */}
-        <div
-          className="text-center mt-12"
-        >
-          <p className="text-gray-600 mb-2">
+        <div className="text-center mt-12 space-y-2">
+          <p className="text-gray-700 font-medium">
             {currentData.trustIndicators.included}
-          </p>
-          <p className="text-sm text-gray-500">
-            {currentData.trustIndicators.details}
           </p>
         </div>
       </div>

@@ -50,6 +50,24 @@ export default function LandingPage() {
 
   return (
     <div className="overflow-x-hidden">
+      {/* New Feature Banner */}
+      <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-sm md:text-base font-medium">
+              🎉 {t("landing.banner.newFeature")} 
+              <span className="ml-2 font-bold">{t("landing.banner.stickers")}</span>
+              <button
+                onClick={handleGetStartedClick}
+                className="ml-3 text-white underline hover:no-underline font-semibold cursor-pointer"
+              >
+                {t("landing.banner.tryNow")} →
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="relative py-4 md:py-6 bg-linear-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -81,7 +99,7 @@ export default function LandingPage() {
                   </button>
                   <button
                     onClick={handleSeeDemoClick}
-                    className="btn btn-outline flex items-center justify-center cursor-pointer flex-1 hidden md:flex"
+                    className="btn btn-outline items-center justify-center cursor-pointer flex-1 hidden md:flex"
                   >
                     <Play className="mr-2 h-5 w-5" />
                     {t("nav.seeDemo")}
@@ -148,12 +166,111 @@ export default function LandingPage() {
 
         <Trustedby />
 
-        <ToPrint />
-
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-10 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply opacity-20"></div>
           <div className="absolute bottom-1/4 right-10 w-80 h-80 bg-secondary-200 rounded-full mix-blend-multiply opacity-20"></div>
+        </div>
+      </section>
+
+      {/* Stickers Section */}
+      <section className="py-20 bg-gradient-to-br from-secondary-50 to-primary-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              {t("landing.stickers.title")}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              {t("landing.stickers.subtitle")}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Sticker Example 1 */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="relative aspect-square bg-gray-100 rounded-lg mb-4 overflow-hidden">
+                <img
+                  src="/turquia-sticker.png"
+                  alt="Custom sticker example"
+                  className="w-full h-full object-cover"
+                />
+                {/* Original image preview */}
+                <div className="absolute bottom-2 right-2 w-20 h-20 bg-white rounded-lg shadow-lg overflow-hidden border-2 border-white">
+                  <img
+                    src="/turquia-original.png"
+                    alt="Original image"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {t("landing.stickers.example1Title")}
+              </h3>
+              <p className="text-gray-600 text-sm">
+                {t("landing.stickers.example1Description")}
+              </p>
+            </div>
+
+            {/* Sticker Example 2 */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="relative aspect-square bg-gray-100 rounded-lg mb-4 overflow-hidden">
+                <img
+                  src="/cindy-sticker-nobg.png"
+                  alt="Custom sticker example"
+                  className="w-full h-full object-cover"
+                />
+                {/* Original image preview */}
+                <div className="absolute bottom-2 right-2 w-20 h-20 bg-white rounded-lg shadow-lg overflow-hidden border-2 border-white">
+                  <img
+                    src="/cindy-sticker.jpeg"
+                    alt="Original image"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {t("landing.stickers.example2Title")}
+              </h3>
+              <p className="text-gray-600 text-sm">
+                {t("landing.stickers.example2Description")}
+              </p>
+            </div>
+
+            {/* Sticker Example 3 */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="relative aspect-square bg-gray-100 rounded-lg mb-4 overflow-hidden">
+                <img
+                  src="/familia-sticker.png"
+                  alt="Custom sticker example"
+                  className="w-full h-full object-cover"
+                />
+                {/* Original image preview */}
+                <div className="absolute bottom-2 right-2 w-20 h-20 bg-white rounded-lg shadow-lg overflow-hidden border-2 border-white">
+                  <img
+                    src="/familia-2-depois.jpeg"
+                    alt="Original image"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {t("landing.stickers.example3Title")}
+              </h3>
+              <p className="text-gray-600 text-sm">
+                {t("landing.stickers.example3Description")}
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <button
+              onClick={handleGetStartedClick}
+              className="btn btn-primary inline-flex items-center"
+            >
+              {t("landing.stickers.ctaButton")}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </button>
+          </div>
         </div>
       </section>
 
@@ -170,7 +287,7 @@ export default function LandingPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {mockBeforeAfterImages.map((image, index) => (
+            {mockBeforeAfterImages.map((image) => (
               <div key={image.id} className="flex flex-col">
                 <div className="flex items-center justify-center h-64 md:h-80 gap-3 md:gap-4 mb-4">
                   {/* Before Image */}
@@ -203,6 +320,8 @@ export default function LandingPage() {
 
       {/* How It Works Section */}
       <HowItWorks />
+
+      <ToPrint />
 
       {/* Benefits Section */}
       <Benefits />
