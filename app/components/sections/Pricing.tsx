@@ -1,6 +1,6 @@
 import { Check } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
-import { Await, useLoaderData } from 'react-router';
+import { useLoaderData } from 'react-router';
 import posthog from 'posthog-js';
 
 const formatCurrency = (amount: number, currency: string) => {
@@ -123,71 +123,69 @@ const Pricing = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <Await resolve={plans} errorElement={<div className='text-center text-red-500'>Error loading prices</div>}>
-            {(data) => data.plans.map((plan: any, planIndex: number) => {
-              const isPopular = planIndex === Math.floor(data.plans.length / 2);
-              return (
-                <div
-                  key={`plan-${plan.name}-${planIndex}`}
-                  className={`relative bg-white rounded-xl shadow-lg border transition-all duration-200 hover:shadow-xl ${
-                    isPopular ? 'border-primary-500 ring-1 ring-primary-500' : 'border-gray-200'
-                  }`}
-                >
-                  {isPopular && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-primary-900 text-white text-sm font-medium px-3 py-1 rounded-full">
-                        {currentData.popularBadge}
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="p-6">
-                    <div className="text-center mb-6">
-                      <div className="text-3xl font-bold text-gray-900 mb-1">
-                        {formatCurrency(plan.price.unitAmount, plan.price.currency)}
-                      </div>
-                      <div className="text-gray-500 text-sm">
-                        {formatCurrency(plan.price.unitAmount / plan.plan.credits, plan.price.currency)} {currentData.creditsLabel}
-                      </div>
-                      <div className="text-primary-600 font-medium mt-2">
-                        {currentData.creditsImage.replace('{1}', plan.plan.credits.toString())}
-                      </div>
-                    </div>
-
-                    <ul className="space-y-3 mb-6">
-                      {currentData.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start">
-                          <Check className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <a
-                      href="https://app.mylinearts.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors ${
-                        isPopular
-                          ? 'bg-primary-500 text-white hover:bg-primary-600'
-                          : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                      }`}
-                      onClick={() => {
-                        posthog.capture('pricing_page_button_clicked', {
-                          plan: plan.name,
-                          price: plan.price.unitAmount,
-                          currency: plan.price.currency,
-                          credits: plan.plan.credits,
-                        });
-                      }}
-                    >
-                      {currentData.buttonText}
-                    </a>
+          {plans?.plans?.map((plan: any, planIndex: number) => {
+            const isPopular = planIndex === Math.floor(plans.plans.length / 2);
+            return (
+              <div
+                key={`plan-${plan.name}-${planIndex}`}
+                className={`relative bg-white rounded-xl shadow-lg border transition-all duration-200 hover:shadow-xl ${
+                  isPopular ? 'border-primary-500 ring-1 ring-primary-500' : 'border-gray-200'
+                }`}
+              >
+                {isPopular && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-primary-900 text-white text-sm font-medium px-3 py-1 rounded-full">
+                      {currentData.popularBadge}
+                    </span>
                   </div>
+                )}
+
+                <div className="p-6">
+                  <div className="text-center mb-6">
+                    <div className="text-3xl font-bold text-gray-900 mb-1">
+                      {formatCurrency(plan.price.unitAmount, plan.price.currency)}
+                    </div>
+                    <div className="text-gray-500 text-sm">
+                      {formatCurrency(plan.price.unitAmount / plan.plan.credits, plan.price.currency)} {currentData.creditsLabel}
+                    </div>
+                    <div className="text-primary-600 font-medium mt-2">
+                      {currentData.creditsImage.replace('{1}', plan.plan.credits.toString())}
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3 mb-6">
+                    {currentData.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start">
+                        <Check className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700 text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href="https://app.mylinearts.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors ${
+                      isPopular
+                        ? 'bg-primary-500 text-white hover:bg-primary-600'
+                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                    }`}
+                    onClick={() => {
+                      posthog.capture('pricing_page_button_clicked', {
+                        plan: plan.name,
+                        price: plan.price.unitAmount,
+                        currency: plan.price.currency,
+                        credits: plan.plan.credits,
+                      });
+                    }}
+                  >
+                    {currentData.buttonText}
+                  </a>
                 </div>
-              );
-            })}
-          </Await>
+              </div>
+            );
+          }) || <div className='text-center text-red-500'>Error loading prices</div>}
         </div>
 
         {/* How it works */}

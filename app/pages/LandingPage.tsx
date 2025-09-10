@@ -18,9 +18,16 @@ export const loader = async ({
   request,
   params,
 }: Route.LoaderArgs) => {
-  return {
-    plans: pricingLoader({ context, request, params }),
-  };
+  const plans = await pricingLoader({ context, request, params });
+  
+  return Response.json(
+    { plans },
+    {
+      headers: {
+        'Cache-Control': 'public, max-age=43200', // 12 hours = 43200 seconds
+      },
+    }
+  );
 };
 
 export default function LandingPage() {
