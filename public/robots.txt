@@ -2,4 +2,6 @@
 User-agent: *
 Allow: /
 
+Disallow: /sign-in
+
 Sitemap: https://mylinearts.com/sitemap.xml
