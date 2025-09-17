@@ -121,9 +121,7 @@ const Header = () => {
                   {t('nav.faq')}
                 </a>
                 <Link
-                  to={`https://blog.mylinearts.com`}
-                  target="_blank"
-                  rel="noopener"
+                  to={`/blog`}
                   className="text-gray-600 hover:text-primary-600 font-medium whitespace-nowrap"
                 >
                   {language === 'pt-BR' ? 'Blog' : 'Blog'}

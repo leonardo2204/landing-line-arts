@@ -3,38 +3,9 @@ import { Link, useLocation } from 'react-router';
 import { useLanguage } from '../context/LanguageContext';
 import SEOHead from '../components/SEOHead';
 import { blogListSEOData } from '../utils/seoData';
+import { blogPosts } from '../utils/blogContent';
 import posthog from 'posthog-js';
 
-interface BlogPost {
-    id: string;
-    title: string;
-    description: string;
-    date: string;
-    readTime: string;
-    author: {
-        name: string;
-        image: string;
-    };
-    image: string;
-    slug: string;
-}
-
-const blogPosts: BlogPost[] = [
-    {
-        id: '1',
-        title: 'Bobbie Goods: o guia completo para desenhos para colorir e imprimir',
-        description: 'Descubra o mundo dos Bobbie Goods: desenhos para colorir, dicas de impressão, ideias criativas e como criar seus próprios desenhos personalizados.',
-        date: '14 de junho, 2025',
-        readTime: '8 min de leitura',
-        author: {
-            name: 'Stefanie Szabo',
-            image: '/blog/1/ste.jpeg'
-        },
-        image: '/blog/1/banner.jpeg',
-        slug: 'bobbie-goods-guia-completo'
-    }
-    // Add more blog posts here as they are created
-];
 
 const BlogListPage: React.FC = () => {
     const { language } = useLanguage();
@@ -53,11 +24,10 @@ const BlogListPage: React.FC = () => {
         });
     }, [language]);
 
-    const handleBlogPostClick = (post: BlogPost) => {
+    const handleBlogPostClick = (post: typeof blogPosts[0]) => {
         posthog.capture('blog_post_clicked', {
-            post_id: post.id,
-            post_title: post.title,
             post_slug: post.slug,
+            post_title: post.title[language],
             post_author: post.author.name,
             post_date: post.date,
             language: language
@@ -76,23 +46,23 @@ const BlogListPage: React.FC = () => {
             </header>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {blogPosts.map((post) => (
-                    <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                        <Link 
+                {blogPosts.sort((a, b) => new Date(b.publishedTime).getTime() - new Date(a.publishedTime).getTime()).map((post) => (
+                    <article key={post.slug} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <Link
                             to={`${getLanguagePrefix()}/blog/${post.slug}`}
                             onClick={() => handleBlogPostClick(post)}
                         >
                             <img
-                                src={post.image}
-                                alt={post.title}
+                                src={post.bannerImage || '/blog/placeholder.jpg'}
+                                alt={post.title[language]}
                                 className="w-full h-48 object-cover"
                             />
                             <div className="p-6">
                                 <h2 className="text-xl font-semibold mb-3 line-clamp-2">
-                                    {post.title}
+                                    {post.title[language]}
                                 </h2>
                                 <p className="text-gray-600 mb-4 line-clamp-2">
-                                    {post.description}
+                                    {post.description[language]}
                                 </p>
                                 <div className="flex items-center justify-between text-sm text-gray-500">
                                     <div className="flex items-center">
@@ -104,8 +74,8 @@ const BlogListPage: React.FC = () => {
                                         <span>{post.author.name}</span>
                                     </div>
                                     <div className="flex items-center space-x-4">
-                                        <time dateTime={post.date}>{post.date}</time>
-                                        <span>{post.readTime}</span>
+                                        <time dateTime={post.publishedTime}>{post.date}</time>
+                                        <span>{post.readTime[language]}</span>
                                     </div>
                                 </div>
                             </div>
