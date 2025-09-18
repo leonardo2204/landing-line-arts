@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router';
 import { ArrowLeft, Eye, Palette, Image, Sparkles } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import SEOHead from '../components/SEOHead';
+import { gallerySEOData } from '../utils/seoData';
+import posthog from 'posthog-js';
 
 const ImageModal = ({
   isOpen,
@@ -82,6 +85,7 @@ const ImageModal = ({
 };
 
 const Cards = ({ item }: { item: { id: string; name: string } }) => {
+  const { language } = useLanguage();
   const [modalData, setModalData] = useState<{
     src: string;
     alt: string;
@@ -90,10 +94,19 @@ const Cards = ({ item }: { item: { id: string; name: string } }) => {
 
   const openModal = (src: string, alt: string, isAfter: boolean) => {
     setModalData({ src, alt, isAfter });
+    posthog.capture('gallery_image_clicked', {
+      image_id: item.id,
+      image_name: item.name,
+      is_after_image: isAfter
+    });
   };
 
   const closeModal = () => {
     setModalData(null);
+    posthog.capture('gallery_modal_closed', {
+      image_id: item.id,
+      image_name: item.name
+    });
   };
 
   const navigateModal = (toAfter: boolean) => {
@@ -101,18 +114,33 @@ const Cards = ({ item }: { item: { id: string; name: string } }) => {
     const newSrc = toAfter ? `/${item.id}-depois.jpeg` : `/${item.id}-antes.jpeg`;
     const newAlt = toAfter ? "after image" : "before image";
     setModalData({ src: newSrc, alt: newAlt, isAfter: toAfter });
+    posthog.capture('gallery_modal_navigation', {
+      image_id: item.id,
+      image_name: item.name,
+      direction: toAfter ? 'to_after' : 'to_before'
+    });
   };
 
   const handlePrevious = () => {
     if (!modalData) return;
     // Circular: if currently showing "before" (false), go to "after" (true)
     navigateModal(!modalData.isAfter);
+    posthog.capture('gallery_modal_previous_clicked', {
+      image_id: item.id,
+      image_name: item.name,
+      current_view: modalData.isAfter ? 'after' : 'before'
+    });
   };
 
   const handleNext = () => {
     if (!modalData) return;
     // Circular: if currently showing "after" (true), go to "before" (false)
     navigateModal(!modalData.isAfter);
+    posthog.capture('gallery_modal_next_clicked', {
+      image_id: item.id,
+      image_name: item.name,
+      current_view: modalData.isAfter ? 'after' : 'before'
+    });
   };
 
   return (
@@ -153,6 +181,13 @@ const Cards = ({ item }: { item: { id: string; name: string } }) => {
             />
           </div>
         </div>
+
+        {/* Click to expand instruction */}
+        <div className="text-center mt-4">
+          <p className="text-gray-500 text-sm">
+            {language === 'pt-BR' ? 'Clique para expandir' : 'Click to expand'}
+          </p>
+        </div>
       </div>
 
       <ImageModal
@@ -178,6 +213,11 @@ const GalleryPage = () => {
       ? 'Galeria | MylineArts'
       : 'Gallery | MylineArts';
     window.scrollTo(0, 0);
+
+    // Track page view
+    posthog.capture('gallery_page_viewed', {
+      language: language
+    });
   }, [language]);
 
   const getLanguagePrefix = () => {
@@ -187,7 +227,7 @@ const GalleryPage = () => {
   const galleryData = {
     'pt-BR': {
       title: 'Galeria de transformações',
-      subtitle: 'Veja como nossas transformações com IA dão vida às suas fotos, criando páginas para colorir únicas e adesivos personalizados',
+      subtitle: 'Veja como nossas transformações com IA dão vida às suas fotos, criando páginas para colorir únicas no estilo Bobbie Goods, prontas para imprimir',
       backToHome: 'Voltar para início',
       sections: [
         {
@@ -198,12 +238,12 @@ const GalleryPage = () => {
         {
           icon: <Palette className="w-6 h-6 text-primary-500" />,
           title: 'Arte personalizada',
-          description: 'Cada transformação mantém os detalhes importantes da foto original, criando páginas para colorir perfeitas para todas as idades.'
+          description: 'Cada transformação mantém os detalhes importantes da foto original, criando páginas para colorir no estilo Bobbie Goods, prontas para imprimir e perfeitas para todas as idades.'
         },
         {
           icon: <Image className="w-6 h-6 text-primary-500" />,
           title: 'Qualidade profissional',
-          description: 'Todas as imagens são processadas com nossa IA avançada, garantindo linhas nítidas e detalhes precisos para uma experiência de colorir excepcional.'
+          description: 'Todas as imagens são processadas com nossa IA avançada, garantindo linhas nítidas e detalhes precisos no estilo Bobbie Goods, prontas para imprimir com qualidade profissional.'
         },
         {
           icon: <Sparkles className="w-6 h-6 text-primary-500" />,
@@ -212,12 +252,12 @@ const GalleryPage = () => {
         }
       ],
       ctaTitle: 'Pronto para transformar suas fotos?',
-      ctaDescription: 'Crie suas próprias páginas para colorir personalizadas e adesivos únicos a partir de suas memórias favoritas.',
+      ctaDescription: 'Crie suas próprias páginas para colorir personalizadas no estilo Bobbie Goods, prontas para imprimir, a partir de suas memórias favoritas.',
       ctaButton: 'Começar agora'
     },
     'en': {
       title: 'Transformation gallery',
-      subtitle: 'See how our AI transformations bring your photos to life, creating unique coloring pages and personalized stickers',
+      subtitle: 'See how our AI transformations bring your photos to life, creating unique Bobbie Goods styled coloring pages, ready to print',
       backToHome: 'Back to home',
       sections: [
         {
@@ -228,12 +268,12 @@ const GalleryPage = () => {
         {
           icon: <Palette className="w-6 h-6 text-primary-500" />,
           title: 'Personalized art',
-          description: 'Each transformation preserves the important details of the original photo, creating perfect coloring pages for all ages.'
+          description: 'Each transformation preserves the important details of the original photo, creating Bobbie Goods styled coloring pages, ready to print and perfect for all ages.'
         },
         {
           icon: <Image className="w-6 h-6 text-primary-500" />,
           title: 'Professional quality',
-          description: 'All images are processed with our advanced AI, ensuring sharp lines and precise details for an exceptional coloring experience.'
+          description: 'All images are processed with our advanced AI, ensuring sharp lines and precise details in Bobbie Goods style, ready to print with professional quality.'
         },
         {
           icon: <Sparkles className="w-6 h-6 text-primary-500" />,
@@ -242,7 +282,7 @@ const GalleryPage = () => {
         }
       ],
       ctaTitle: 'Ready to transform your photos?',
-      ctaDescription: 'Create your own personalized coloring pages and unique stickers from your favorite memories.',
+      ctaDescription: 'Create your own personalized Bobbie Goods styled coloring pages, ready to print, from your favorite memories.',
       ctaButton: 'Get started'
     }
   };
@@ -266,6 +306,7 @@ const GalleryPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
+      <SEOHead seoData={gallerySEOData} />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -277,6 +318,11 @@ const GalleryPage = () => {
             <Link
               to={getLanguagePrefix() || '/'}
               className="inline-flex items-center text-primary-600 hover:text-primary-700 mb-6 transition-colors"
+              onClick={() => {
+                posthog.capture('gallery_back_to_home_clicked', {
+                  language: language
+                });
+              }}
             >
               <ArrowLeft className="h-5 w-5 mr-2" />
               {currentData.backToHome}
@@ -355,6 +401,12 @@ const GalleryPage = () => {
                 className="btn btn-primary inline-flex items-center"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  posthog.capture('gallery_cta_clicked', {
+                    language: language,
+                    button_text: currentData.ctaButton
+                  });
+                }}
               >
                 <Sparkles className="h-5 w-5 mr-2" />
                 {currentData.ctaButton}

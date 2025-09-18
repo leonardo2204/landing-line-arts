@@ -40,7 +40,7 @@ const LanguageSelector = () => {
       onChange={(e) => handleLanguageChange(e.target.value as 'en' | 'pt-BR')}
       className="bg-transparent text-gray-600 hover:text-primary-600 font-medium focus:outline-none cursor-pointer"
     >
-      <option value="pt-BR">Português (BR)</option>
+      <option value="pt-BR">Português</option>
       <option value="en">English</option>
     </select>
   );

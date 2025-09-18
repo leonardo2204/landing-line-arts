@@ -146,6 +146,12 @@ const Header = () => {
 
           {/* Mobile menu button - Shows on xl and smaller screens */}
           <div className="xl:hidden flex items-center space-x-4">
+            <Link
+              to={language === 'pt-BR' ? '/galeria' : '/en/gallery'}
+              className="text-white font-bold whitespace-nowrap bg-gradient-to-r from-primary-500 to-purple-500 px-3 py-1.5 rounded-full transition-all duration-300 shadow-lg shadow-primary-400/40 hover:shadow-purple-400/60 hover:shadow-lg hover:scale-105 animate-pulse text-sm"
+            >
+              {language === 'pt-BR' ? 'Galeria' : 'Gallery'}
+            </Link>
             <LanguageSelector />
             <button
               type="button"
@@ -183,12 +189,6 @@ const Header = () => {
                 >
                   {t('nav.benefits')}
                 </a>
-                <Link
-                  to={language === 'pt-BR' ? '/galeria' : '/en/gallery'}
-                  className="block py-3 text-white font-bold bg-gradient-to-r from-primary-500 to-purple-500 px-4 rounded-full transition-all duration-300 shadow-2xl shadow-primary-400/60 hover:shadow-purple-400/80 hover:shadow-2xl hover:scale-110 animate-pulse text-center"
-                >
-                  {language === 'pt-BR' ? 'Galeria' : 'Gallery'}
-                </Link>
                 <a
                   href="#pricing"
                   onClick={handlePricingClick}
