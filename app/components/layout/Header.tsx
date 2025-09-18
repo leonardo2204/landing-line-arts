@@ -99,13 +99,12 @@ const Header = () => {
                 >
                   {t('nav.benefits')}
                 </a>
-                <a
-                  href="#about-us"
-                  onClick={(e) => handleSectionScroll(e, 'about-us')}
-                  className="text-gray-600 hover:text-primary-600 font-medium whitespace-nowrap"
+                <Link
+                  to={language === 'pt-BR' ? '/galeria' : '/en/gallery'}
+                  className="text-white font-bold whitespace-nowrap bg-gradient-to-r from-primary-500 to-purple-500 px-4 py-2 rounded-full transition-all duration-300 shadow-2xl shadow-primary-400/60 hover:shadow-purple-400/80 hover:shadow-2xl hover:scale-110 animate-pulse"
                 >
-                  {language === 'pt-BR' ? 'Sobre nós' : 'About us'}
-                </a>
+                  {language === 'pt-BR' ? 'Galeria' : 'Gallery'}
+                </Link>
                 <a
                   href="#pricing"
                   onClick={handlePricingClick}
@@ -184,13 +183,12 @@ const Header = () => {
                 >
                   {t('nav.benefits')}
                 </a>
-                <a
-                  href="#about-us"
-                  onClick={(e) => handleSectionScroll(e, 'about-us')}
-                  className="block py-2 text-gray-600 hover:text-primary-600 font-medium"
+                <Link
+                  to={language === 'pt-BR' ? '/galeria' : '/en/gallery'}
+                  className="block py-3 text-white font-bold bg-gradient-to-r from-primary-500 to-purple-500 px-4 rounded-full transition-all duration-300 shadow-2xl shadow-primary-400/60 hover:shadow-purple-400/80 hover:shadow-2xl hover:scale-110 animate-pulse text-center"
                 >
-                  {language === 'pt-BR' ? 'Sobre nós' : 'About us'}
-                </a>
+                  {language === 'pt-BR' ? 'Galeria' : 'Gallery'}
+                </Link>
                 <a
                   href="#pricing"
                   onClick={handlePricingClick}

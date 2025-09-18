@@ -139,6 +139,70 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/lgpd"/>
   </url>
 
+  <!-- Gallery -->
+  <url>
+    <loc>https://mylinearts.com/galeria</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/galeria"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/galeria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/galeria"/>
+  </url>
+
+  <url>
+    <loc>https://mylinearts.com/en/gallery</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/galeria"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/galeria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/galeria"/>
+  </url>
+
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://mylinearts.com/blog/bobbie-goods-guia-completo</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/bobbie-goods-guia-completo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/bobbie-goods-guia-completo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/bobbie-goods-guia-completo"/>
+  </url>
+
+  <url>
+    <loc>https://mylinearts.com/en/blog/bobbie-goods-guia-completo</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/bobbie-goods-guia-completo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/bobbie-goods-guia-completo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/bobbie-goods-guia-completo"/>
+  </url>
+
+  <url>
+    <loc>https://mylinearts.com/blog/adesivos-personalizados-fotos-ia</loc>
+    <lastmod>2025-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/adesivos-personalizados-fotos-ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/adesivos-personalizados-fotos-ia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/adesivos-personalizados-fotos-ia"/>
+  </url>
+
+  <url>
+    <loc>https://mylinearts.com/en/blog/adesivos-personalizados-fotos-ia</loc>
+    <lastmod>2025-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/adesivos-personalizados-fotos-ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/adesivos-personalizados-fotos-ia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/adesivos-personalizados-fotos-ia"/>
+  </url>
+
   <!-- Pobre Goods -->
   <url>
     <loc>https://mylinearts.com/pobre-goods-imprimir</loc>

@@ -36,6 +36,9 @@ type Pages = {
   "/pobre-goods-imprimir": {
     params: {};
   };
+  "/galeria": {
+    params: {};
+  };
   "/en": {
     params: {};
   };
@@ -65,6 +68,9 @@ type Pages = {
   "/sitemap.xml": {
     params: {};
   };
+  "/en/gallery": {
+    params: {};
+  };
   "/*": {
     params: {
       "*": string;
@@ -75,7 +81,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/blog" | "/blog/:slug" | "/politica-de-privacidade" | "/termos-de-servico" | "/politica-de-cookies" | "/lgpd" | "/pobre-goods-imprimir" | "/en" | "/en/blog" | "/en/blog/:slug" | "/en/privacy-policy" | "/en/terms-of-service" | "/en/cookie-policy" | "/en/lgpd" | "/en/pobre-goods-imprimir" | "/sitemap.xml" | "/*";
+    page: "/" | "/blog" | "/blog/:slug" | "/politica-de-privacidade" | "/termos-de-servico" | "/politica-de-cookies" | "/lgpd" | "/pobre-goods-imprimir" | "/galeria" | "/en" | "/en/blog" | "/en/blog/:slug" | "/en/privacy-policy" | "/en/terms-of-service" | "/en/cookie-policy" | "/en/lgpd" | "/en/pobre-goods-imprimir" | "/sitemap.xml" | "/en/gallery" | "/*";
   };
   "pages/LandingPage.tsx": {
     id: "pages/LandingPage";
@@ -132,6 +138,13 @@ type RouteFiles = {
   } | {
     id: "pobre-goods-en";
     page: "/en/pobre-goods-imprimir";
+  };
+  "pages/GalleryPage.tsx": {
+    id: "pages/GalleryPage";
+    page: "/galeria";
+  } | {
+    id: "gallery-en";
+    page: "/en/gallery";
   };
   "pages/sitemap.xml.tsx": {
     id: "pages/sitemap.xml";

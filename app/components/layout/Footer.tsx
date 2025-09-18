@@ -140,6 +140,14 @@ const Footer = () => {
                     {language === 'pt-BR' ? 'Blog' : 'Blog'}
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to={`${getLanguagePrefix()}${language === 'pt-BR' ? '/galeria' : '/gallery'}`}
+                    className="text-gray-400 hover:text-white"
+                  >
+                    {language === 'pt-BR' ? 'Galeria' : 'Gallery'}
+                  </Link>
+                </li>
               </ul>
             </div>
 

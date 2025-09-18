@@ -1,5 +1,6 @@
 import { ArrowRight, Play, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router";
 import { useLanguage } from "../context/LanguageContext";
 import HowItWorks from "../components/sections/HowItWorks";
 import Benefits from "../components/sections/Benefits";
@@ -321,6 +322,19 @@ export default function LandingPage() {
                 <p className="text-gray-600">{image.description[language]}</p>
               </div>
             ))}
+          </div>
+
+          {/* Gallery Button */}
+          <div className="text-center mt-16">
+            <Link
+              to={language === 'pt-BR' ? '/galeria' : '/en/gallery'}
+              className="inline-flex items-center gap-3 px-8 py-4 text-white font-bold bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 rounded-full transition-all duration-500 shadow-2xl shadow-primary-400/50 hover:shadow-purple-500/70 hover:scale-110 hover:rotate-1 animate-pulse group"
+            >
+              <span className="text-lg">
+                {language === 'pt-BR' ? 'Ver mais na galeria' : 'See more in gallery'}
+              </span>
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>
