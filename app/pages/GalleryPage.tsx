@@ -112,7 +112,9 @@ const Cards = ({ item }: { item: { id: string; name: string } }) => {
   const navigateModal = (toAfter: boolean) => {
     if (!modalData) return;
     const newSrc = toAfter ? `/${item.id}-depois.jpeg` : `/${item.id}-antes.jpeg`;
-    const newAlt = toAfter ? "after image" : "before image";
+    const newAlt = toAfter
+      ? (language === 'pt-BR' ? `Depois ${item.name}, imagem estilo Bobbie Goods` : `After ${item.name}, Bobbie Goods style image`)
+      : (language === 'pt-BR' ? `Antes ${item.name}, imagem original` : `Before ${item.name}, original image`);
     setModalData({ src: newSrc, alt: newAlt, isAfter: toAfter });
     posthog.capture('gallery_modal_navigation', {
       image_id: item.id,
@@ -157,12 +159,12 @@ const Cards = ({ item }: { item: { id: string; name: string } }) => {
           <div className="absolute bottom-0 left-1/2 w-2/5 sm:w-1/2 h-full bg-white rounded-lg shadow-lg transform -translate-x-3/4 -rotate-8 origin-bottom-center z-10 transition-all duration-500 ease-in-out group-hover:-translate-x-full group-hover:-rotate-12 overflow-hidden">
             <img
               src={`/${item.id}-antes.jpeg`}
-              alt={"before image"}
+              alt={language === 'pt-BR' ? `Antes ${item.name}, imagem original` : `Before ${item.name}, original image`}
               className="w-full h-full object-cover rounded-lg cursor-pointer"
               width={320}
               height={120}
               onClick={() =>
-                openModal(`/${item.id}-antes.jpeg`, "before image", false)
+                openModal(`/${item.id}-antes.jpeg`, language === 'pt-BR' ? `Antes ${item.name}, imagem original` : `Before ${item.name}, original image`, false)
               }
             />
           </div>
@@ -171,12 +173,12 @@ const Cards = ({ item }: { item: { id: string; name: string } }) => {
           <div className="absolute bottom-0 left-1/3 w-2/5 sm:w-1/2 h-full bg-white rounded-lg shadow-xl transform translate-x-1/4 rotate-8 origin-bottom-center z-20 transition-all duration-500 ease-in-out group-hover:translate-x-1/3 group-hover:rotate-12 overflow-hidden">
             <img
               src={`/${item.id}-depois.jpeg`}
-              alt={"after image"}
+              alt={language === 'pt-BR' ? `Depois ${item.name}, imagem estilo Bobbie Goods` : `After ${item.name}, Bobbie Goods style image`}
               className="w-full h-full object-cover rounded-lg cursor-pointer"
               width={320}
               height={120}
               onClick={() =>
-                openModal(`/${item.id}-antes.jpeg`, "before image", false)
+                openModal(`/${item.id}-depois.jpeg`, language === 'pt-BR' ? `Depois ${item.name}, imagem estilo Bobbie Goods` : `After ${item.name}, Bobbie Goods style image`, true)
               }
             />
           </div>
