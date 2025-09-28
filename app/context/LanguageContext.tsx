@@ -118,7 +118,15 @@ const translations = {
     'faq.text.answer': 'Yes, you can add custom titles, captions, or messages to each page of your coloring book during the creation process.',
     'not-found.title': 'Page Not Found',
     'not-found.description': 'Sorry, we couldn\'t find the page you\'re looking for.',
-    'not-found.button': 'Back to Home'
+    'not-found.button': 'Back to Home',
+    'banner.promo.text': 'First 100 users get 30% off on their first purchase! (Credit card only)',
+    'banner.promo.code': 'Use code: 30off',
+    'banner.promo.timeLeft': 'Time left:',
+    'banner.promo.days': 'days',
+    'banner.promo.hours': 'hours',
+    'banner.promo.minutes': 'minutes',
+    'banner.promo.seconds': 'seconds',
+    'banner.promo.expired': 'Promotion expired'
   },
   'pt-BR': {
     'nav.howItWorks': 'Como funciona',
@@ -228,7 +236,15 @@ const translations = {
     'faq.text.answer': 'Sim, você pode adicionar títulos personalizados, legendas ou mensagens em cada página do seu livro de colorir durante o processo de criação.',
     'not-found.title': 'Página não encontrada',
     'not-found.description': 'Desculpe, não encontramos a página que você está procurando.',
-    'not-found.button': 'Voltar para a página inicial'
+    'not-found.button': 'Voltar para a página inicial',
+    'banner.promo.text': 'Os primeiros 100 usuários ganham 30% de desconto na primeira compra! (Apenas cartão de crédito)',
+    'banner.promo.code': 'Use o código: 30off',
+    'banner.promo.timeLeft': 'Tempo restante:',
+    'banner.promo.days': 'dias',
+    'banner.promo.hours': 'horas',
+    'banner.promo.minutes': 'minutos',
+    'banner.promo.seconds': 'segundos',
+    'banner.promo.expired': 'Promoção expirada'
   }
 };
 

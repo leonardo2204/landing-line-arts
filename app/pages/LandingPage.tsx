@@ -13,6 +13,7 @@ import { pricingLoader } from "../loaders/pricing-loader";
 import type { Route } from "./+types/LandingPage";
 import Trustedby from "../components/sections/Trustedby";
 import ToPrint from "../components/sections/ToPrint";
+import PromoCountdownBanner from "../components/PromoCountdownBanner";
 
 export const loader = async ({
   context,
@@ -58,23 +59,8 @@ export default function LandingPage() {
 
   return (
     <div className="overflow-x-hidden">
-      {/* New Feature Banner */}
-      <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-sm md:text-base font-medium">
-              🎉 {t("landing.banner.newFeature")} 
-              <span className="ml-2 font-bold">{t("landing.banner.stickers")}</span>
-              <button
-                onClick={handleGetStartedClick}
-                className="ml-3 text-white underline hover:no-underline font-semibold cursor-pointer"
-              >
-                {t("landing.banner.tryNow")} →
-              </button>
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Promotional Countdown Banner */}
+      <PromoCountdownBanner />
 
       {/* Hero Section */}
       <section className="relative py-4 md:py-6 bg-linear-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
