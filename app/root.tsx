@@ -13,8 +13,8 @@ import { LanguageProvider } from "./context/LanguageContext";
 import { PostHogProvider } from "posthog-js/react";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import { HelmetProvider } from "react-helmet-async";
 import SEOHead from "./components/SEOHead";
+import { HelmetProvider } from "@dr.pogodin/react-helmet";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

@@ -12,7 +12,7 @@ export default function PromoCountdownBanner() {
   });
 
   // Expiration date: September 30, 2025, 23:59 GMT+7
-  const expirationDate = useMemo(() => new Date('2025-09-30T23:59:00+07:00'), []);
+  const expirationDate = useMemo(() => new Date('2025-10-02T23:59:00+07:00'), []);
 
   useEffect(() => {
     const updateCountdown = () => {

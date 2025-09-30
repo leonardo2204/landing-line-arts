@@ -1,7 +1,7 @@
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../context/LanguageContext';
 import { useLocation } from 'react-router';
 import { defaultSEOData, BASE_URL } from '../utils/seoData';
+import { Helmet } from '@dr.pogodin/react-helmet';
 
 export interface SEOData {
   title: string;

@@ -99,7 +99,7 @@ const Pricing = () => {
         ]
       },
       trustIndicators: {
-        included: 'All plans include full platform access',
+        included: 'All prices include full platform access',
         details: `Prices in ${getCurrencySymbol(currency)} • Secure payment • No hidden fees`
       },
       popularBadge: 'Most popular',

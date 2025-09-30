@@ -20,8 +20,8 @@ export const defaultSEOData = {
     currency: 'BRL'
   },
   'en': {
-    title: 'Create Custom AI Coloring Books - Bobbie Goods Style',
-    description: 'Transform your photos into personalized coloring books with AI. Inspired by the viral Bobbie Goods success, we create unique coloring pages from your favorite memories. No artistic skills needed!',
+    title: 'Photo to sketch art generator - Bobbie Goods Style',
+    description: 'Turn your favorite memories into stunning sketch art in seconds. Bobbie Goods style :D',
     keywords: 'custom coloring book, Bobbie goods, personalized coloring pages, AI art, photo to drawing, family coloring book, personalized gift, coloring book creator, custom art, memories to drawings, line art generator, ready to print, bobbie goods styled',
     ogTitle: 'Create Custom AI Coloring Books - Bobbie Goods Style',
     ogDescription: 'Transform your photos into personalized coloring books with AI. Inspired by the viral Bobbie Goods success, we create unique coloring pages from your favorite memories. No artistic skills needed!',

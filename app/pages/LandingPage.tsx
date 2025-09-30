@@ -14,6 +14,7 @@ import type { Route } from "./+types/LandingPage";
 import Trustedby from "../components/sections/Trustedby";
 import ToPrint from "../components/sections/ToPrint";
 import PromoCountdownBanner from "../components/PromoCountdownBanner";
+import Testimonials from "../components/sections/Testimonials";
 
 export const loader = async ({
   context,
@@ -21,12 +22,12 @@ export const loader = async ({
   params,
 }: Route.LoaderArgs) => {
   const plans = await pricingLoader({ context, request, params });
-  
+
   return Response.json(
     { plans },
     {
       headers: {
-        'Cache-Control': 'public, max-age=43200', // 12 hours = 43200 seconds
+        "Cache-Control": "public, max-age=43200", // 12 hours = 43200 seconds
       },
     }
   );
@@ -158,14 +159,78 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <Trustedby />
-
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-10 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply opacity-20"></div>
           <div className="absolute bottom-1/4 right-10 w-80 h-80 bg-secondary-200 rounded-full mix-blend-multiply opacity-20"></div>
         </div>
       </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              {t("landing.seeTheMagic")}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              {t("landing.seeTheMagicSubtitle")}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {mockBeforeAfterImages.map((image) => (
+              <div key={image.id} className="flex flex-col">
+                <div className="flex items-center justify-center h-64 md:h-80 gap-3 md:gap-4 mb-4">
+                  {/* Before Image */}
+                  <div className="flex-1 h-full rounded-lg overflow-hidden shadow-lg">
+                    <img
+                      src={image.before}
+                      alt="Original photo"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* After Image */}
+                  <div className="flex-1 h-full rounded-lg overflow-hidden shadow-lg">
+                    <img
+                      src={image.after}
+                      alt="Transformed photo"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 my-2">
+                  {image.title[language]}
+                </h3>
+                <p className="text-gray-600">{image.description[language]}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Gallery Button */}
+          <div className="text-center mt-16">
+            <Link
+              to={language === "pt-BR" ? "/galeria" : "/en/gallery"}
+              className="inline-flex items-center gap-3 px-8 py-4 text-white font-bold bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 rounded-full transition-all duration-500 shadow-2xl shadow-primary-400/50 hover:shadow-purple-500/70 hover:scale-110 hover:rotate-1 animate-pulse group"
+            >
+              <span className="text-lg">
+                {language === "pt-BR"
+                  ? "Ver mais na galeria"
+                  : "See more in gallery"}
+              </span>
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <Benefits />
+
+      {/* How It Works Section */}
+      <HowItWorks />
+
+      <Testimonials />
 
       {/* Stickers Section */}
       <section className="py-20 bg-gradient-to-br from-secondary-50 to-primary-50">
@@ -204,6 +269,8 @@ export default function LandingPage() {
                 {t("landing.stickers.example1Description")}
               </p>
             </div>
+
+            <Trustedby />
 
             {/* Sticker Example 2 */}
             <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
@@ -268,70 +335,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Feature Samples Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              {t("landing.seeTheMagic")}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              {t("landing.seeTheMagicSubtitle")}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {mockBeforeAfterImages.map((image) => (
-              <div key={image.id} className="flex flex-col">
-                <div className="flex items-center justify-center h-64 md:h-80 gap-3 md:gap-4 mb-4">
-                  {/* Before Image */}
-                  <div className="flex-1 h-full rounded-lg overflow-hidden shadow-lg">
-                    <img
-                      src={image.before}
-                      alt="Original photo"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  {/* After Image */}
-                  <div className="flex-1 h-full rounded-lg overflow-hidden shadow-lg">
-                    <img
-                      src={image.after}
-                      alt="Transformed photo"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 my-2">
-                  {image.title[language]}
-                </h3>
-                <p className="text-gray-600">{image.description[language]}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Gallery Button */}
-          <div className="text-center mt-16">
-            <Link
-              to={language === 'pt-BR' ? '/galeria' : '/en/gallery'}
-              className="inline-flex items-center gap-3 px-8 py-4 text-white font-bold bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 rounded-full transition-all duration-500 shadow-2xl shadow-primary-400/50 hover:shadow-purple-500/70 hover:scale-110 hover:rotate-1 animate-pulse group"
-            >
-              <span className="text-lg">
-                {language === 'pt-BR' ? 'Ver mais na galeria' : 'See more in gallery'}
-              </span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <HowItWorks />
-
       <ToPrint />
-
-      {/* Benefits Section */}
-      <Benefits />
 
       {/* About Us Section */}
       <AboutUs />
