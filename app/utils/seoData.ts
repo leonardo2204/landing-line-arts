@@ -3,6 +3,11 @@ import type { SEOData } from '../components/SEOHead';
 // Base URL for the site
 export const BASE_URL = 'https://mylinearts.com';
 
+// Helper to detect language from pathname (same logic as LanguageContext)
+export const getLanguageFromPath = (pathname: string): 'en' | 'pt-BR' => {
+  return pathname.startsWith('/en') ? 'en' : 'pt-BR';
+};
+
 // Default SEO data for the main site
 export const defaultSEOData = {
   'pt-BR': {

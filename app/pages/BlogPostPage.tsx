@@ -3,6 +3,43 @@ import { useLanguage } from "../context/LanguageContext";
 import SEOHead from "../components/SEOHead";
 import { getBlogPostBySlug } from "../utils/blogContent";
 import posthog from "posthog-js";
+import type { Route } from "./+types/BlogPostPage";
+import { BASE_URL, getLanguageFromPath } from "../utils/seoData";
+
+export const meta: Route.MetaFunction = ({ params, location }) => {
+  const slug = params.slug || "";
+  const blogPost = getBlogPostBySlug(slug);
+
+  if (!blogPost) {
+    return [{ title: "Post not found | MylineArts" }];
+  }
+
+  const language = getLanguageFromPath(location.pathname);
+  const seo = blogPost.seoData[language];
+
+  return [
+    { title: seo.title },
+    { name: "description", content: seo.description },
+    { name: "keywords", content: seo.keywords },
+    { name: "author", content: blogPost.author.name },
+    { property: "og:title", content: seo.ogTitle || seo.title },
+    { property: "og:description", content: seo.ogDescription || seo.description },
+    { property: "og:image", content: `${BASE_URL}${blogPost.bannerImage}` },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:url", content: `${BASE_URL}${location.pathname}` },
+    { property: "og:type", content: "article" },
+    { property: "og:site_name", content: "MylineArts" },
+    { property: "og:locale", content: seo.locale },
+    { property: "article:published_time", content: blogPost.publishedTime },
+    { property: "article:author", content: blogPost.author.name },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: seo.twitterTitle || seo.title },
+    { name: "twitter:description", content: seo.twitterDescription || seo.description },
+    { name: "twitter:image", content: `${BASE_URL}${blogPost.bannerImage}` },
+    { name: "twitter:creator", content: "@mylinearts" },
+  ];
+};
 
 const BlogPostPage: React.FC = () => {
   const { language } = useLanguage();

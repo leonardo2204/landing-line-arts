@@ -417,6 +417,477 @@ const BobbieGoodsContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }
   );
 };
 
+// Content component for Labubu guide
+const LabubuContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }) => {
+  const getLanguagePrefix = () => {
+    return language === 'en' ? '/en' : '';
+  };
+
+  const handleCTAClick = (ctaName: string) => {
+    posthog.capture('blog_cta_clicked', {
+      cta_name: ctaName,
+      language: language,
+      page: 'blog_post'
+    });
+  };
+
+  return (
+    <>
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'What is Labubu? The viral sensation taking over 🌟' : 'O que é Labubu? A sensação viral que conquistou o mundo 🌟'}
+        </h2>
+        <p className="text-lg mb-4">
+          {language === 'en'
+            ? 'Labubu is a charming character designed by Hong Kong artist Kasing Lung that has become a global phenomenon. With its distinctive elf-like ears, mischievous smile and adorable personality, Labubu has captured the hearts of collectors, artists and creative enthusiasts worldwide. Originally part of The Monsters collection, this lovable creature has evolved into a cultural icon in the world of designer toys and art collectibles.'
+            : 'Labubu é um personagem encantador criado pelo artista de Hong Kong Kasing Lung que se tornou um fenômeno global. Com suas orelhas distintas de elfo, sorriso travesso e personalidade adorável, Labubu conquistou os corações de colecionadores, artistas e entusiastas criativos em todo o mundo. Originalmente parte da coleção The Monsters, esta criatura adorável evoluiu para um ícone cultural no mundo dos designer toys e colecionáveis de arte.'
+          }
+        </p>
+        <p className="text-lg mb-4">
+          {language === 'en'
+            ? 'What makes Labubu special is its versatility as an artistic subject. From vinyl figures to plush toys, from sketch art to coloring pages, Labubu has inspired countless creative interpretations. The character\'s simple yet expressive design makes it perfect for artists of all skill levels to draw, color and customize.'
+            : 'O que torna Labubu especial é sua versatilidade como objeto artístico. De figuras em vinil a pelúcias, de arte sketch a desenhos para colorir, Labubu inspirou inúmeras interpretações criativas. O design simples, porém expressivo do personagem, o torna perfeito para artistas de todos os níveis desenharem, colorirem e personalizarem.'
+          }
+        </p>
+        <div className="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-lg my-8 border border-pink-100">
+          <h3 className="text-xl font-bold mb-4">
+            {language === 'en' ? 'Transform your photos into Labubu-style drawings 🎨' : 'Transforme suas fotos em desenhos estilo Labubu 🎨'}
+          </h3>
+          <p className="mb-4">
+            {language === 'en'
+              ? 'With MyLineArts, you can create custom Labubu-inspired coloring pages from your own photos! Our AI-powered platform transforms your favorite memories into adorable sketch art perfect for coloring, printing and creative expression.'
+              : 'Com o MyLineArts, você pode criar páginas para colorir inspiradas em Labubu a partir de suas próprias fotos! Nossa plataforma com inteligência artificial transforma suas memórias favoritas em arte sketch adorável, perfeita para colorir, imprimir e expressão criativa.'
+            }
+          </p>
+          <Link
+            to={`${getLanguagePrefix()}/`}
+            className="inline-block bg-gradient-to-r from-pink-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-pink-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+            onClick={() => handleCTAClick('criar_labubu_agora')}
+          >
+            {language === 'en' ? 'Create My Labubu Art Now' : 'Criar Minha Arte Labubu Agora'}
+          </Link>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Labubu coloring pages and sketch art 🖍️' : 'Páginas para colorir e arte sketch de Labubu 🖍️'}
+        </h2>
+        <p className="text-lg mb-6">
+          {language === 'en'
+            ? 'Labubu coloring pages have become incredibly popular among both children and adults. The character\'s simple line art style, combined with its expressive features, makes it an ideal subject for coloring activities. Similar to Bobbie Goods style drawings, Labubu illustrations offer therapeutic benefits while providing endless creative possibilities.'
+            : 'As páginas para colorir de Labubu tornaram-se incrivelmente populares entre crianças e adultos. O estilo de arte em linha simples do personagem, combinado com suas características expressivas, o torna um objeto ideal para atividades de colorir. Similar aos desenhos estilo Bobbie Goods, as ilustrações de Labubu oferecem benefícios terapêuticos enquanto proporcionam infinitas possibilidades criativas.'
+          }
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
+            <h3 className="text-xl font-semibold mb-3 text-pink-700">
+              {language === 'en' ? 'Benefits of Labubu coloring' : 'Benefícios de colorir Labubu'}
+            </h3>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>{language === 'en' ? 'Develops fine motor skills and hand-eye coordination' : 'Desenvolve habilidades motoras finas e coordenação olho-mão'}</li>
+              <li>{language === 'en' ? 'Enhances creativity and artistic expression' : 'Aprimora a criatividade e expressão artística'}</li>
+              <li>{language === 'en' ? 'Provides stress relief and mindful relaxation' : 'Proporciona alívio do estresse e relaxamento consciente'}</li>
+              <li>{language === 'en' ? 'Connects fans with their favorite character' : 'Conecta fãs com seu personagem favorito'}</li>
+            </ul>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-500">
+            <h3 className="text-xl font-semibold mb-3 text-purple-700">
+              {language === 'en' ? 'Popular Labubu art styles' : 'Estilos populares de arte Labubu'}
+            </h3>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>{language === 'en' ? 'Classic outline sketch for traditional coloring' : 'Sketch de contorno clássico para colorir tradicional'}</li>
+              <li>{language === 'en' ? 'Detailed line art with intricate patterns' : 'Arte de linha detalhada com padrões intrincados'}</li>
+              <li>{language === 'en' ? 'Chibi-style simplified designs for kids' : 'Designs simplificados estilo chibi para crianças'}</li>
+              <li>{language === 'en' ? 'Bobbie Goods inspired gentle line work' : 'Trabalho de linha suave inspirado em Bobbie Goods'}</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Creating custom Labubu-inspired drawings from photos 📸' : 'Criando desenhos personalizados inspirados em Labubu de fotos 📸'}
+        </h2>
+        <p className="text-lg mb-6">
+          {language === 'en'
+            ? 'While official Labubu merchandise is beloved by collectors, creating your own Labubu-inspired art from personal photos adds a unique, personalized touch. MyLineArts specializes in transforming your favorite photos into custom sketch art and coloring pages that capture the whimsical essence of characters like Labubu while preserving your precious memories.'
+            : 'Embora os produtos oficiais de Labubu sejam amados pelos colecionadores, criar sua própria arte inspirada em Labubu a partir de fotos pessoais adiciona um toque único e personalizado. MyLineArts é especializado em transformar suas fotos favoritas em arte sketch personalizada e páginas para colorir que capturam a essência caprichosa de personagens como Labubu enquanto preservam suas memórias preciosas.'
+          }
+        </p>
+        <div className="bg-blue-50 p-6 rounded-lg my-8">
+          <h3 className="text-xl font-bold mb-4">
+            {language === 'en' ? 'How MyLineArts creates your custom drawings 🎯' : 'Como MyLineArts cria seus desenhos personalizados 🎯'}
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+            <div className="text-center">
+              <div className="bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">1</div>
+              <h4 className="font-semibold mb-2">
+                {language === 'en' ? 'Upload photo' : 'Envie foto'}
+              </h4>
+              <p className="text-sm">
+                {language === 'en' ? 'Choose your favorite image' : 'Escolha sua imagem favorita'}
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">2</div>
+              <h4 className="font-semibold mb-2">
+                {language === 'en' ? 'AI processing' : 'Processamento IA'}
+              </h4>
+              <p className="text-sm">
+                {language === 'en' ? 'Advanced sketch conversion' : 'Conversão avançada para sketch'}
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">3</div>
+              <h4 className="font-semibold mb-2">
+                {language === 'en' ? 'Customization' : 'Personalização'}
+              </h4>
+              <p className="text-sm">
+                {language === 'en' ? 'Choose your art style' : 'Escolha seu estilo de arte'}
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">4</div>
+              <h4 className="font-semibold mb-2">
+                {language === 'en' ? 'Download & print' : 'Baixe e imprima'}
+              </h4>
+              <p className="text-sm">
+                {language === 'en' ? 'Ready for coloring!' : 'Pronto para colorir!'}
+              </p>
+            </div>
+          </div>
+          <Link
+            to={`${getLanguagePrefix()}/`}
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            onClick={() => handleCTAClick('transformar_foto_labubu')}
+          >
+            {language === 'en' ? 'Transform My Photo Now' : 'Transformar Minha Foto Agora'}
+          </Link>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Labubu and the world of designer toys 🧸' : 'Labubu e o mundo dos designer toys 🧸'}
+        </h2>
+        <p className="text-lg mb-4">
+          {language === 'en'
+            ? 'Labubu belongs to the vibrant world of designer toys, collectible art figures created by independent artists. These limited-edition pieces have transformed from niche collectibles into mainstream cultural phenomena. Characters like Labubu, along with other popular designer toys and art figures, have created a global community of collectors and enthusiasts.'
+            : 'Labubu pertence ao vibrante mundo dos designer toys, figuras de arte colecionáveis criadas por artistas independentes. Essas peças de edição limitada se transformaram de colecionáveis de nicho em fenômenos culturais mainstream. Personagens como Labubu, junto com outros designer toys e figuras de arte populares, criaram uma comunidade global de colecionadores e entusiastas.'
+          }
+        </p>
+        <p className="text-lg mb-6">
+          {language === 'en'
+            ? 'The appeal of Labubu extends beyond physical collectibles. Fans create fan art, custom drawings, coloring pages and sketch art inspired by the character. This creative community celebrates the character through various artistic mediums, from traditional drawing and coloring to digital art and custom merchandise.'
+            : 'O apelo de Labubu se estende além dos colecionáveis físicos. Os fãs criam fan art, desenhos personalizados, páginas para colorir e arte sketch inspiradas no personagem. Esta comunidade criativa celebra o personagem através de vários meios artísticos, desde desenho e colorir tradicionais até arte digital e produtos personalizados.'
+          }
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <h3 className="text-lg font-semibold mb-2">
+              {language === 'en' ? 'Collectible figures' : 'Figuras colecionáveis'}
+            </h3>
+            <p>
+              {language === 'en'
+                ? 'Limited edition vinyl toys, plush versions and special collaboration pieces that fans collect worldwide.'
+                : 'Brinquedos de vinil de edição limitada, versões de pelúcia e peças de colaboração especial que fãs colecionam mundialmente.'
+              }
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <h3 className="text-lg font-semibold mb-2">
+              {language === 'en' ? 'Fan artwork' : 'Arte de fãs'}
+            </h3>
+            <p>
+              {language === 'en'
+                ? 'Custom drawings, sketch art, digital illustrations and coloring pages created by the passionate Labubu community.'
+                : 'Desenhos personalizados, arte sketch, ilustrações digitais e páginas para colorir criadas pela apaixonada comunidade Labubu.'
+              }
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <h3 className="text-lg font-semibold mb-2">
+              {language === 'en' ? 'DIY customs' : 'Customizações DIY'}
+            </h3>
+            <p>
+              {language === 'en'
+                ? 'Personalized Labubu-inspired creations, from hand-painted figures to custom coloring book pages.'
+                : 'Criações personalizadas inspiradas em Labubu, desde figuras pintadas à mão até páginas de livro para colorir personalizadas.'
+              }
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Labubu drawing tutorials and tips for artists 🎨' : 'Tutoriais de desenho Labubu e dicas para artistas 🎨'}
+        </h2>
+        <p className="text-lg mb-6">
+          {language === 'en'
+            ? 'Drawing Labubu is accessible to artists of all levels. The character\'s design, while distinctive, follows simple principles that make it perfect for learning sketch art and developing drawing skills. Whether you\'re creating coloring pages, fan art or personalized drawings, understanding Labubu\'s key features helps capture the character\'s charm.'
+            : 'Desenhar Labubu é acessível para artistas de todos os níveis. O design do personagem, embora distinto, segue princípios simples que o tornam perfeito para aprender arte sketch e desenvolver habilidades de desenho. Seja criando páginas para colorir, fan art ou desenhos personalizados, entender as características principais de Labubu ajuda a capturar o charme do personagem.'
+          }
+        </p>
+        <div className="bg-yellow-50 p-6 rounded-lg my-8">
+          <h3 className="text-xl font-bold mb-4">
+            {language === 'en' ? 'Key features to capture when drawing Labubu 💡' : 'Características principais ao desenhar Labubu 💡'}
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold mb-2">{language === 'en' ? 'Distinctive features' : 'Características distintas'}</h4>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>{language === 'en' ? 'Pointed elf-like ears with gentle curves' : 'Orelhas pontudas de elfo com curvas suaves'}</li>
+                <li>{language === 'en' ? 'Wide, expressive eyes with highlight details' : 'Olhos largos e expressivos com detalhes de destaque'}</li>
+                <li>{language === 'en' ? 'Characteristic mischievous smile with sharp teeth' : 'Sorriso travesso característico com dentes afiados'}</li>
+                <li>{language === 'en' ? 'Rounded, huggable body proportions' : 'Proporções corporais arredondadas e abraçáveis'}</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-2">{language === 'en' ? 'Sketch art tips' : 'Dicas de arte sketch'}</h4>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>{language === 'en' ? 'Start with basic shapes for structure' : 'Comece com formas básicas para estrutura'}</li>
+                <li>{language === 'en' ? 'Keep lines clean for coloring pages' : 'Mantenha linhas limpas para páginas de colorir'}</li>
+                <li>{language === 'en' ? 'Add personal touches while maintaining character essence' : 'Adicione toques pessoais mantendo a essência do personagem'}</li>
+                <li>{language === 'en' ? 'Experiment with different poses and expressions' : 'Experimente diferentes poses e expressões'}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Labubu coloring pages: therapeutic art for all ages 🌈' : 'Páginas para colorir Labubu: arte terapêutica para todas as idades 🌈'}
+        </h2>
+        <p className="text-lg mb-6">
+          {language === 'en'
+            ? 'Labubu coloring pages offer more than just entertainment. Similar to Bobbie Goods coloring books and other therapeutic art activities, coloring Labubu drawings provides significant mental health and developmental benefits. The combination of the character\'s appealing design with the meditative nature of coloring creates a perfect activity for stress relief and creative expression.'
+            : 'As páginas para colorir de Labubu oferecem mais do que apenas entretenimento. Similar aos livros para colorir Bobbie Goods e outras atividades artísticas terapêuticas, colorir desenhos de Labubu proporciona benefícios significativos para a saúde mental e desenvolvimento. A combinação do design atraente do personagem com a natureza meditativa de colorir cria uma atividade perfeita para alívio do estresse e expressão criativa.'
+          }
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <h3 className="text-xl font-semibold mb-3">
+              {language === 'en' ? 'Benefits for children' : 'Benefícios para crianças'}
+            </h3>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>{language === 'en' ? 'Improves concentration and focus through detailed coloring' : 'Melhora concentração e foco através de colorir detalhado'}</li>
+              <li>{language === 'en' ? 'Develops color recognition and artistic decision-making' : 'Desenvolve reconhecimento de cores e tomada de decisões artísticas'}</li>
+              <li>{language === 'en' ? 'Enhances fine motor control and pencil grip' : 'Aprimora controle motor fino e pegada do lápis'}</li>
+              <li>{language === 'en' ? 'Encourages completion and achievement satisfaction' : 'Encoraja conclusão e satisfação de realização'}</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-3">
+              {language === 'en' ? 'Benefits for adults' : 'Benefícios para adultos'}
+            </h3>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>{language === 'en' ? 'Provides mindful meditation and stress reduction' : 'Proporciona meditação consciente e redução de estresse'}</li>
+              <li>{language === 'en' ? 'Offers creative outlet without performance pressure' : 'Oferece expressão criativa sem pressão de desempenho'}</li>
+              <li>{language === 'en' ? 'Creates connection with beloved character designs' : 'Cria conexão com designs de personagens amados'}</li>
+              <li>{language === 'en' ? 'Combines nostalgia with artistic expression' : 'Combina nostalgia com expressão artística'}</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Printing your Labubu artwork: quality tips 🖨️' : 'Imprimindo sua arte Labubu: dicas de qualidade 🖨️'}
+        </h2>
+        <p className="text-lg mb-4">
+          {language === 'en'
+            ? 'Whether you\'re printing official Labubu coloring pages or custom drawings created with MyLineArts, getting the best print quality ensures your artwork looks professional and is enjoyable to color. Here are expert tips for printing sketch art and coloring pages.'
+            : 'Seja imprimindo páginas para colorir oficiais de Labubu ou desenhos personalizados criados com MyLineArts, obter a melhor qualidade de impressão garante que sua arte pareça profissional e seja agradável de colorir. Aqui estão dicas de especialistas para imprimir arte sketch e páginas para colorir.'
+          }
+        </p>
+        <div className="bg-purple-50 p-6 rounded-lg my-8 border border-purple-200">
+          <h3 className="text-xl font-bold mb-4">
+            {language === 'en' ? 'Printing guide for best results 📝' : 'Guia de impressão para melhores resultados 📝'}
+          </h3>
+          <ol className="list-decimal pl-6 space-y-4">
+            <li>
+              <strong>
+                {language === 'en' ? 'Paper selection:' : 'Seleção de papel:'}
+              </strong>
+              {' '}
+              {language === 'en'
+                ? 'Use high-quality A4 paper (80-100gsm) for pencil coloring. For markers or watercolors, choose thicker paper (120-160gsm) to prevent bleeding.'
+                : 'Use papel A4 de alta qualidade (80-100gsm) para colorir com lápis. Para canetinhas ou aquarela, escolha papel mais grosso (120-160gsm) para prevenir sangramento.'
+              }
+            </li>
+            <li>
+              <strong>
+                {language === 'en' ? 'Printer settings:' : 'Configurações da impressora:'}
+              </strong>
+              {' '}
+              {language === 'en'
+                ? 'Set printer to "Best Quality" or "High Quality" mode. Use "Black & White" or "Grayscale" setting for coloring pages to get crisp, dark lines.'
+                : 'Configure a impressora para modo "Melhor Qualidade" ou "Alta Qualidade". Use configuração "Preto e Branco" ou "Tons de Cinza" para páginas de colorir para obter linhas nítidas e escuras.'
+              }
+            </li>
+            <li>
+              <strong>
+                {language === 'en' ? 'Line thickness:' : 'Espessura da linha:'}
+              </strong>
+              {' '}
+              {language === 'en'
+                ? 'For young children or beginners, choose drawings with thicker lines. Advanced colorists may prefer more detailed sketch art with fine lines.'
+                : 'Para crianças pequenas ou iniciantes, escolha desenhos com linhas mais grossas. Coloristas avançados podem preferir arte sketch mais detalhada com linhas finas.'
+              }
+            </li>
+            <li>
+              <strong>
+                {language === 'en' ? 'Multiple copies:' : 'Múltiplas cópias:'}
+              </strong>
+              {' '}
+              {language === 'en'
+                ? 'Print several copies of your favorite Labubu drawings to experiment with different color schemes and techniques without pressure.'
+                : 'Imprima várias cópias dos seus desenhos favoritos de Labubu para experimentar diferentes esquemas de cores e técnicas sem pressão.'
+              }
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Creative projects with Labubu drawings 🎁' : 'Projetos criativos com desenhos de Labubu 🎁'}
+        </h2>
+        <p className="text-lg mb-6">
+          {language === 'en'
+            ? 'Beyond simple coloring, Labubu drawings can be incorporated into numerous creative projects. Whether using official designs or custom drawings created from your photos with MyLineArts, these ideas help you maximize your artistic creations.'
+            : 'Além de simplesmente colorir, desenhos de Labubu podem ser incorporados em numerosos projetos criativos. Seja usando designs oficiais ou desenhos personalizados criados de suas fotos com MyLineArts, essas ideias ajudam você a maximizar suas criações artísticas.'
+          }
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <h3 className="text-lg font-semibold mb-2">
+              {language === 'en' ? 'Personalized gifts' : 'Presentes personalizados'}
+            </h3>
+            <p>
+              {language === 'en'
+                ? 'Create custom coloring books, framed artwork or greeting cards featuring Labubu-inspired drawings for fellow collectors and fans.'
+                : 'Crie livros para colorir personalizados, arte emoldurada ou cartões de saudação com desenhos inspirados em Labubu para outros colecionadores e fãs.'
+              }
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <h3 className="text-lg font-semibold mb-2">
+              {language === 'en' ? 'Home decoration' : 'Decoração de casa'}
+            </h3>
+            <p>
+              {language === 'en'
+                ? 'Frame your best colored Labubu pages as wall art, create themed murals or design custom decor for your collection display area.'
+                : 'Emoldure suas melhores páginas coloridas de Labubu como arte de parede, crie murais temáticos ou desenhe decoração personalizada para sua área de exibição de coleção.'
+              }
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <h3 className="text-lg font-semibold mb-2">
+              {language === 'en' ? 'Educational activities' : 'Atividades educacionais'}
+            </h3>
+            <p>
+              {language === 'en'
+                ? 'Use Labubu coloring pages to teach art techniques, color theory or as rewards in educational settings for young fans.'
+                : 'Use páginas para colorir de Labubu para ensinar técnicas de arte, teoria das cores ou como recompensas em ambientes educacionais para jovens fãs.'
+              }
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Labubu in pop culture and the designer toy community 🌍' : 'Labubu na cultura pop e comunidade de designer toys 🌍'}
+        </h2>
+        <p className="text-lg mb-4">
+          {language === 'en'
+            ? 'The rise of Labubu reflects the growing mainstream acceptance of designer toys and art collectibles. What began as a niche hobby has evolved into a global cultural movement, with characters like Labubu leading the charge. The character has appeared in collaborations with major brands, fashion collections and has inspired countless artists worldwide.'
+            : 'A ascensão de Labubu reflete a crescente aceitação mainstream de designer toys e colecionáveis de arte. O que começou como um hobby de nicho evoluiu para um movimento cultural global, com personagens como Labubu liderando a carga. O personagem apareceu em colaborações com grandes marcas, coleções de moda e inspirou inúmeros artistas mundialmente.'
+          }
+        </p>
+        <p className="text-lg mb-6">
+          {language === 'en'
+            ? 'Social media platforms have amplified Labubu\'s popularity, with fans sharing their collections, custom drawings, colored artwork and creative interpretations. This online community celebrates the character through various forms of expression, from traditional sketch art to digital illustrations and personalized coloring pages.'
+            : 'Plataformas de mídia social amplificaram a popularidade de Labubu, com fãs compartilhando suas coleções, desenhos personalizados, arte colorida e interpretações criativas. Esta comunidade online celebra o personagem através de várias formas de expressão, desde arte sketch tradicional até ilustrações digitais e páginas para colorir personalizadas.'
+          }
+        </p>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Getting started with your Labubu creative journey 🚀' : 'Começando sua jornada criativa com Labubu 🚀'}
+        </h2>
+        <p className="text-lg mb-6">
+          {language === 'en'
+            ? 'Whether you\'re a longtime Labubu collector, a fan discovering the character for the first time, or an artist seeking inspiration, creating custom Labubu-style artwork offers endless possibilities. MyLineArts makes it easy to combine your love for this adorable character with your own personal memories and creative vision.'
+            : 'Seja você um colecionador de longa data de Labubu, um fã descobrindo o personagem pela primeira vez, ou um artista buscando inspiração, criar arte personalizada estilo Labubu oferece possibilidades infinitas. MyLineArts facilita combinar seu amor por este personagem adorável com suas próprias memórias pessoais e visão criativa.'
+          }
+        </p>
+        <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-8 rounded-xl text-center">
+          <h3 className="text-2xl font-bold mb-4">
+            {language === 'en' ? 'Transform your photos into Labubu-style art ✨' : 'Transforme suas fotos em arte estilo Labubu ✨'}
+          </h3>
+          <p className="text-lg mb-6 opacity-90">
+            {language === 'en'
+              ? 'Create custom coloring pages, sketch art and drawings inspired by Labubu from your favorite photos. Perfect for collectors, artists and fans who want to add a personal touch to their creative projects!'
+              : 'Crie páginas para colorir personalizadas, arte sketch e desenhos inspirados em Labubu de suas fotos favoritas. Perfeito para colecionadores, artistas e fãs que querem adicionar um toque pessoal aos seus projetos criativos!'
+            }
+          </p>
+          <Link
+            to={`${getLanguagePrefix()}/`}
+            className="inline-block bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+            onClick={() => handleCTAClick('iniciar_jornada_labubu')}
+          >
+            {language === 'en' ? 'Start Creating Now' : 'Começar a Criar Agora'}
+          </Link>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Conclusion: celebrating creativity with Labubu 🌟' : 'Conclusão: celebrando a criatividade com Labubu 🌟'}
+        </h2>
+        <p className="text-lg mb-4">
+          {language === 'en'
+            ? 'Labubu represents more than just a cute character - it embodies the joy of creative expression, the satisfaction of artistic creation and the connection between fans worldwide. Whether you\'re coloring official Labubu pages, drawing your own interpretations or creating custom sketch art from personal photos, this beloved character offers countless opportunities for creativity and self-expression.'
+            : 'Labubu representa mais do que apenas um personagem fofo - ele incorpora a alegria da expressão criativa, a satisfação da criação artística e a conexão entre fãs mundialmente. Seja colorindo páginas oficiais de Labubu, desenhando suas próprias interpretações ou criando arte sketch personalizada de fotos pessoais, este personagem amado oferece incontáveis oportunidades para criatividade e auto-expressão.'
+          }
+        </p>
+        <p className="text-lg mb-4">
+          {language === 'en'
+            ? 'With tools like MyLineArts, you can take your Labubu fandom to the next level by creating personalized coloring pages and drawings that combine the character\'s charming aesthetic with your own precious memories. Start your creative journey today and discover how this adorable character can inspire your artistic expression.'
+            : 'Com ferramentas como MyLineArts, você pode levar seu fandom de Labubu para o próximo nível criando páginas para colorir e desenhos personalizados que combinam a estética encantadora do personagem com suas próprias memórias preciosas. Comece sua jornada criativa hoje e descubra como este personagem adorável pode inspirar sua expressão artística.'
+          }
+        </p>
+        <p className="text-lg">
+          {language === 'en'
+            ? 'Ready to create your own Labubu-inspired masterpiece? '
+            : 'Pronto para criar sua própria obra-prima inspirada em Labubu? '
+          }
+          <Link
+            to={`${getLanguagePrefix()}/`}
+            className="text-pink-600 hover:text-pink-800 font-semibold"
+            onClick={() => handleCTAClick('criar_obra_prima_labubu')}
+          >
+            {language === 'en'
+              ? 'Transform your photos into custom drawings now'
+              : 'Transforme suas fotos em desenhos personalizados agora'
+            }
+          </Link>
+          {language === 'en'
+            ? ' and join the global community of Labubu fans and creators!'
+            : ' e junte-se à comunidade global de fãs e criadores de Labubu!'
+          }
+        </p>
+      </section>
+    </>
+  );
+};
+
 // Content component for Custom Stickers guide
 const CustomStickersContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }) => {
   const getLanguagePrefix = () => {
@@ -881,10 +1352,386 @@ export const customStickersContent: BlogPostContent = {
   content: CustomStickersContent
 };
 
+// Content component for Crazy Hair Day guide
+const CrazyHairContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }) => {
+  const getLanguagePrefix = () => {
+    return language === 'en' ? '/en' : '';
+  };
+
+  const handleCTAClick = (ctaName: string) => {
+    posthog.capture('blog_cta_clicked', {
+      cta_name: ctaName,
+      language: language,
+      page: 'blog_post'
+    });
+  };
+
+  return (
+    <>
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'What is crazy hair day? 💡' : 'O que é o dia do cabelo maluco? 💡'}
+        </h2>
+        <p className="text-lg mb-4">
+          {language === 'en'
+            ? 'Crazy hair day is a creative celebration that happens in schools and themed events. Children show up with extravagant hairstyles, using temporary paints, styling gels, toys, ribbons and even everyday objects. It\'s an explosion of colors and shapes that stimulates imagination and promotes self-expression.'
+            : 'O dia do cabelo maluco é uma celebração criativa que acontece em escolas e eventos temáticos. As crianças aparecem com penteados extravagantes, usando tintas temporárias, géis modeladores, brinquedos, laços e até objetos do cotidiano. É uma explosão de cores e formas que estimula a imaginação e promove a autoexpressão.'
+          }
+        </p>
+        <p className="text-lg mb-4">
+          {language === 'en'
+            ? 'This fun tradition has become a fever in schools and children\'s parties, creating magical moments where creativity takes center stage. Parents and children join forces to create the most original and fun hairstyles, making this day a memorable experience for everyone.'
+            : 'Essa tradição divertida virou febre nas escolas e festas infantis, criando momentos mágicos onde a criatividade toma conta. Pais e filhos unem forças para criar os penteados mais originais e divertidos, tornando esse dia uma experiência memorável para todos.'
+          }
+        </p>
+        <div className="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-lg my-8 border border-pink-100">
+          <h3 className="text-xl font-bold mb-4">
+            {language === 'en' ? 'Turn crazy hair into lasting art 🎨' : 'Transforme o cabelo maluco em arte duradoura 🎨'}
+          </h3>
+          <p className="mb-4">
+            {language === 'en'
+              ? 'At MyLineArts.com, you can immortalize your child\'s crazy hairstyle with a custom sticker or personalized coloring page. Transform this fun moment into a unique keepsake that will last forever!'
+              : 'No MyLineArts.com, você pode eternizar o penteado maluco do seu filho(a) com um adesivo exclusivo ou uma imagem para colorir personalizada. Transforme esse momento divertido em uma lembrança única que durará para sempre!'
+            }
+          </p>
+          <Link
+            to={`${getLanguagePrefix()}/`}
+            className="inline-block bg-gradient-to-r from-pink-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-pink-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+            onClick={() => handleCTAClick('criar_cabelo_maluco_agora')}
+          >
+            {language === 'en' ? 'Create My Crazy Hair Art Now' : 'Criar Minha Arte Agora'}
+          </Link>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Creative ideas for crazy hair ✨' : 'Ideias criativas para cabelo maluco ✨'}
+        </h2>
+        <p className="text-lg mb-6">
+          {language === 'en'
+            ? 'Looking for inspiration? Here are some ideas that are always a hit at crazy hair day celebrations. These creative hairstyles not only entertain but can also become art!'
+            : 'Se você está buscando inspiração, aqui vão algumas ideias que fazem sucesso nas celebrações do dia do cabelo maluco. Esses penteados criativos não só divertem, mas também podem virar arte!'
+          }
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
+            <h3 className="text-xl font-semibold mb-3 text-pink-700">
+              {language === 'en' ? 'Colorful hairstyles' : 'Penteados coloridos'}
+            </h3>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>{language === 'en' ? 'Rainbow hair: Use colorful sprays to create vibrant streaks' : 'Cabelo arco-íris: Use sprays coloridos para criar mechas vibrantes'}</li>
+              <li>{language === 'en' ? 'Ice cream hair: Paper cones and pompoms become ice cream scoops on top of the head' : 'Cabelo com sorvetes: Cones de papel e pompons viram bolas de sorvete no topo da cabeça'}</li>
+              <li>{language === 'en' ? 'Balloons or giant bows: Add volume and color with exaggerated accessories' : 'Balões ou laços gigantes: Adicione volume e cor com acessórios exagerados'}</li>
+            </ul>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-500">
+            <h3 className="text-xl font-semibold mb-3 text-purple-700">
+              {language === 'en' ? 'Themed hairstyles' : 'Penteados temáticos'}
+            </h3>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>{language === 'en' ? 'Dinosaur park hair: Mini toys and accessories create a Jurassic scene' : 'Cabelo parque dos dinossauros: Mini brinquedos e acessórios criam um cenário jurássico'}</li>
+              <li>{language === 'en' ? 'Soda bottle hair: A fun and easy classic to assemble' : 'Cabelo com garrafa de refrigerante: Um clássico divertido e fácil de montar'}</li>
+              <li>{language === 'en' ? 'Edible hair: Use candies, lollipops and other treats as decorations' : 'Cabelo comestível: Use doces, pirulitos e outras guloseimas como decoração'}</li>
+            </ul>
+          </div>
+        </div>
+        <div className="flex gap-4 my-8">
+          <div className="w-full">
+            <p className="text-sm text-gray-600 mb-2 italic">
+              {language === 'en' ? 'Example of a creative crazy hair before transformation:' : 'Exemplo de um cabelo maluco criativo antes da transformação:'}
+            </p>
+            <img
+              src="/blog/4/antes.jpeg"
+              alt={language === 'en' ? 'Original crazy hair photo example' : 'Exemplo de foto original com cabelo maluco'}
+              className="w-full h-96 object-cover rounded-lg shadow-md"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Transform the hairstyle into art 🎨' : 'Transforme o penteado em arte 🎨'}
+        </h2>
+        <p className="text-lg mb-6">
+          {language === 'en'
+            ? 'After the party, why not immortalize your child\'s crazy hairstyle with a creative gift? MyLineArts offers two amazing options to turn this special moment into lasting art.'
+            : 'Depois da festa, que tal eternizar o penteado maluco do seu filho(a) com um presente criativo? O MyLineArts oferece duas opções incríveis para transformar esse momento especial em arte duradoura.'
+          }
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="bg-blue-50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">
+              {language === 'en' ? '1. Custom sticker' : '1. Adesivo personalizado'}
+            </h3>
+            <p className="mb-4">
+              {language === 'en'
+                ? 'Send a photo of the crazy hairstyle and receive an exclusive sticker with the child\'s stylized face and hair. Perfect for sticking on notebooks, backpacks or even gifting to grandparents!'
+                : 'Envie uma foto do penteado maluco e receba um adesivo exclusivo com o rosto e cabelo estilizado da criança. Ideal para colar em cadernos, mochilas ou até presentear os avós!'
+              }
+            </p>
+            <div className="bg-white rounded-lg overflow-hidden shadow-md">
+              <img
+                src="/blog/4/sticker.jpeg"
+                alt={language === 'en' ? 'Custom crazy hair sticker example' : 'Exemplo de adesivo personalizado de cabelo maluco'}
+                className="w-full h-64 object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="bg-purple-50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">
+              {language === 'en' ? '2. Personalized coloring page' : '2. Imagem para colorir personalizada'}
+            </h3>
+            <p className="mb-4">
+              {language === 'en'
+                ? 'Turn the hairstyle into a coloring drawing! The child can color their own crazy hair with pencils, markers or chalk. It\'s a fun way to relive the moment and stimulate even more creativity.'
+                : 'Transforme o penteado em um desenho para colorir! A criança pode pintar seu próprio cabelo maluco com lápis, canetinhas ou giz. É uma forma divertida de reviver o momento e estimular ainda mais a criatividade.'
+              }
+            </p>
+            <div className="bg-white rounded-lg overflow-hidden shadow-md">
+              <img
+                src="/blog/4/sketch.jpeg"
+                alt={language === 'en' ? 'Personalized sketch art coloring page example' : 'Exemplo de arte sketch para colorir personalizada'}
+                className="w-full h-64 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-yellow-50 p-6 rounded-lg my-8 border-l-4 border-yellow-500">
+          <h3 className="text-xl font-bold mb-4">
+            {language === 'en' ? 'Benefits of personalizing crazy hair art 🌟' : 'Benefícios de personalizar a arte do cabelo maluco 🌟'}
+          </h3>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>{language === 'en' ? 'Creates a lasting memory of a special moment' : 'Cria uma lembrança duradoura de um momento especial'}</li>
+            <li>{language === 'en' ? 'Stimulates creativity through coloring' : 'Estimula a criatividade através da coloração'}</li>
+            <li>{language === 'en' ? 'Perfect gift for family and friends' : 'Presente perfeito para familiares e amigos'}</li>
+            <li>{language === 'en' ? 'Reinforces the child\'s identity and self-expression' : 'Reforça a identidade e autoexpressão da criança'}</li>
+            <li>{language === 'en' ? 'Fun activity to do together as a family' : 'Atividade divertida para fazer em família'}</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'How it works on MyLineArts.com 🛒' : 'Como funciona no MyLineArts.com 🛒'}
+        </h2>
+        <p className="text-lg mb-6">
+          {language === 'en'
+            ? 'Transforming your child\'s crazy hair into personalized art is quick and easy. Follow these simple steps:'
+            : 'Transformar o cabelo maluco do seu filho(a) em arte personalizada é rápido e fácil. Siga estes passos simples:'
+          }
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            <div className="text-4xl font-bold text-pink-600 mb-3">1</div>
+            <h3 className="text-lg font-semibold mb-2">
+              {language === 'en' ? 'Access' : 'Acesse'}
+            </h3>
+            <p className="text-sm">
+              {language === 'en' ? 'Visit mylinearts.com' : 'Visite mylinearts.com'}
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            <div className="text-4xl font-bold text-purple-600 mb-3">2</div>
+            <h3 className="text-lg font-semibold mb-2">
+              {language === 'en' ? 'Upload' : 'Envie'}
+            </h3>
+            <p className="text-sm">
+              {language === 'en' ? 'Send the crazy hair photo' : 'Envie a foto do penteado maluco'}
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            <div className="text-4xl font-bold text-blue-600 mb-3">3</div>
+            <h3 className="text-lg font-semibold mb-2">
+              {language === 'en' ? 'Choose' : 'Escolha'}
+            </h3>
+            <p className="text-sm">
+              {language === 'en' ? 'Select sticker or coloring page' : 'Escolha entre adesivo ou desenho para colorir'}
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            <div className="text-4xl font-bold text-green-600 mb-3">4</div>
+            <h3 className="text-lg font-semibold mb-2">
+              {language === 'en' ? 'Download' : 'Baixe'}
+            </h3>
+            <p className="text-sm">
+              {language === 'en' ? 'Download and enjoy!' : 'Faça o download e divirta-se!'}
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-pink-100 to-purple-100 p-6 rounded-lg my-8">
+          <h3 className="text-xl font-bold mb-4">
+            {language === 'en' ? 'Ready to create? 🎨' : 'Pronto para criar? 🎨'}
+          </h3>
+          <p className="mb-4">
+            {language === 'en'
+              ? 'Crazy hair is more than a hairstyle: it\'s an expression of joy, creativity and identity. With MyLineArts.com, you transform this moment into art, memory and lasting fun. Explore, create and immortalize!'
+              : 'O cabelo maluco é mais do que um penteado: é uma expressão de alegria, criatividade e identidade. Com MyLineArts.com, você transforma esse momento em arte, memória e diversão duradoura. Explore, crie e eternize!'
+            }
+          </p>
+          <Link
+            to={`${getLanguagePrefix()}/`}
+            className="inline-block bg-gradient-to-r from-pink-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-pink-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+            onClick={() => handleCTAClick('criar_arte_cabelo_maluco')}
+          >
+            {language === 'en' ? 'Start Creating Now' : 'Começar a Criar Agora'}
+          </Link>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === 'en' ? 'Tips for the perfect crazy hair day 💡' : 'Dicas para o dia do cabelo maluco perfeito 💡'}
+        </h2>
+        <div className="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h3 className="text-lg font-semibold mb-3">
+            {language === 'en' ? 'Preparation tips:' : 'Dicas de preparação:'}
+          </h3>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>{language === 'en' ? 'Plan ahead: Think about the theme and gather materials in advance' : 'Planeje com antecedência: Pense no tema e reúna os materiais com antecedência'}</li>
+            <li>{language === 'en' ? 'Use temporary and safe products: Prefer washable paints and gels' : 'Use produtos temporários e seguros: Prefira tintas e géis laváveis'}</li>
+            <li>{language === 'en' ? 'Do a test first: Try the hairstyle before the big day' : 'Faça um teste antes: Experimente o penteado antes do grande dia'}</li>
+            <li>{language === 'en' ? 'Take lots of photos: Capture every angle to turn into art later!' : 'Tire muitas fotos: Capture todos os ângulos para transformar em arte depois!'}</li>
+          </ul>
+        </div>
+
+        <div className="bg-blue-50 p-6 rounded-lg">
+          <h3 className="text-lg font-semibold mb-3">
+            {language === 'en' ? 'Photography tips for best results:' : 'Dicas de fotografia para melhores resultados:'}
+          </h3>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>{language === 'en' ? 'Good lighting: Natural light or well-lit environment' : 'Boa iluminação: Luz natural ou ambiente bem iluminado'}</li>
+            <li>{language === 'en' ? 'Neutral background: Simple background highlights the hairstyle' : 'Fundo neutro: Fundo simples destaca o penteado'}</li>
+            <li>{language === 'en' ? 'Different angles: Front, side and top photos' : 'Ângulos diferentes: Fotos de frente, lado e cima'}</li>
+            <li>{language === 'en' ? 'Child\'s joy: Capture genuine smiles and expressions' : 'Alegria da criança: Capture sorrisos e expressões genuínas'}</li>
+          </ul>
+        </div>
+      </section>
+    </>
+  );
+};
+
+// Blog post content for "Crazy Hair Day: Creative ideas + custom stickers and coloring pages"
+export const crazyHairGuideContent: BlogPostContent = {
+  slug: 'cabelo-maluco-infantil-ideias-adesivos-colorir',
+  title: {
+    'pt-BR': 'Cabelo maluco infantil: ideias criativas + adesivos e imagens para colorir personalizadas',
+    'en': 'Crazy hair day for kids: creative ideas + custom stickers and coloring pages'
+  },
+  description: {
+    'pt-BR': 'Descubra ideias criativas para o dia do cabelo maluco e aprenda como transformar o penteado em adesivos personalizados ou imagens para colorir que eternizam esse momento especial.',
+    'en': 'Discover creative ideas for crazy hair day and learn how to turn the hairstyle into custom stickers or coloring pages that immortalize this special moment.'
+  },
+  date: '10 de outubro, 2025',
+  readTime: {
+    'pt-BR': '8 min de leitura',
+    'en': '8 min read'
+  },
+  author: {
+    name: 'Stefanie Szabo',
+    image: '/blog/1/ste.jpeg'
+  },
+  bannerImage: '/blog/4/antes.jpeg',
+  publishedTime: '2025-10-10T00:00:00Z',
+  seoData: {
+    'pt-BR': {
+      title: 'Cabelo Maluco Infantil: Ideias Criativas + Adesivos Personalizados | MyLineArts',
+      description: 'Guia completo do dia do cabelo maluco: ideias criativas, penteados incríveis e como transformar o momento em adesivos e desenhos para colorir personalizados. Eternize essa memória especial!',
+      keywords: 'cabelo maluco, dia do cabelo maluco, penteado maluco, cabelo maluco infantil, ideias cabelo maluco, cabelo maluco criativo, adesivo personalizado, desenho para colorir, arte personalizada, MyLineArts, penteados criativos, cabelo arco-íris, festa infantil, escola, atividade criativa, memória infantil, foto para adesivo, foto para desenho',
+      ogTitle: 'Cabelo Maluco Infantil: Ideias Criativas + Adesivos e Desenhos Personalizados',
+      ogDescription: 'Transforme o penteado maluco do seu filho(a) em adesivos exclusivos ou desenhos para colorir personalizados. Ideias criativas e como eternizar esse momento especial com MyLineArts.',
+      twitterTitle: 'Cabelo Maluco: Ideias + Adesivos Personalizados | MyLineArts',
+      twitterDescription: 'Descubra ideias criativas para cabelo maluco e aprenda a transformar em arte personalizada. Eternize esse momento especial!',
+      locale: 'pt_BR',
+      language: 'Portuguese',
+      hreflang: 'pt-br',
+      price: '5.00',
+      currency: 'BRL'
+    },
+    'en': {
+      title: 'Crazy Hair Day for Kids: Creative Ideas + Custom Stickers | MyLineArts',
+      description: 'Complete guide to crazy hair day: creative ideas, amazing hairstyles and how to turn the moment into custom stickers and coloring pages. Immortalize this special memory!',
+      keywords: 'crazy hair day, crazy hair ideas, kids crazy hair, creative hairstyles, custom sticker, coloring page, personalized art, MyLineArts, creative hairstyles, rainbow hair, children\'s party, school, creative activity, childhood memory, photo to sticker, photo to drawing',
+      ogTitle: 'Crazy Hair Day for Kids: Creative Ideas + Custom Stickers and Coloring Pages',
+      ogDescription: 'Turn your child\'s crazy hairstyle into exclusive stickers or personalized coloring pages. Creative ideas and how to immortalize this special moment with MyLineArts.',
+      twitterTitle: 'Crazy Hair Day: Ideas + Custom Stickers | MyLineArts',
+      twitterDescription: 'Discover creative ideas for crazy hair day and learn to turn it into personalized art. Immortalize this special moment!',
+      locale: 'en_US',
+      language: 'English',
+      hreflang: 'en',
+      price: '2.00',
+      currency: 'USD'
+    }
+  },
+  content: CrazyHairContent
+};
+
+// Blog post content for "Labubu: coloring pages and sketch art guide"
+export const labubuGuideContent: BlogPostContent = {
+  slug: 'labubu-desenhos-colorir-sketch-art',
+  title: {
+    'pt-BR': 'Labubu: desenhos para colorir, sketch art e guia completo do personagem viral',
+    'en': 'Labubu: coloring pages, sketch art and complete guide to the viral character'
+  },
+  description: {
+    'pt-BR': 'Descubra tudo sobre Labubu: páginas para colorir, sketch art, dicas de desenho e como criar arte personalizada inspirada neste personagem adorável de designer toy.',
+    'en': 'Discover everything about Labubu: coloring pages, sketch art, drawing tips and how to create custom art inspired by this adorable designer toy character.'
+  },
+  date: '6 de outubro, 2025',
+  readTime: {
+    'pt-BR': '10 min de leitura',
+    'en': '10 min read'
+  },
+  author: {
+    name: 'Stefanie Szabo',
+    image: '/blog/1/ste.jpeg'
+  },
+  bannerImage: '/blog/3/labubu-depois.jpeg',
+  publishedTime: '2025-10-06T00:00:00Z',
+  seoData: {
+    'pt-BR': {
+      title: 'Labubu: Desenhos para Colorir, Sketch Art e Guia Completo | MyLineArts',
+      description: 'Guia completo sobre Labubu: páginas para colorir, sketch art, dicas de desenho, designer toys e como criar arte personalizada inspirada neste personagem viral. Perfeito para colecionadores e artistas!',
+      keywords: 'Labubu, Labubu desenhos para colorir, Labubu coloring pages, Labubu sketch art, designer toys, Kasing Lung, Labubu art, desenhos Labubu, Bobbie goods, arte para colorir, coloring book, páginas para colorir, sketch drawings, line art, Labubu fan art, designer toy collectibles, art toys, cute character drawings, Labubu tutorial, how to draw Labubu, Labubu printables, Labubu coloring book, therapeutic coloring',
+      ogTitle: 'Labubu: Desenhos para Colorir, Sketch Art e Guia Completo do Personagem Viral',
+      ogDescription: 'Descubra tudo sobre Labubu: páginas para colorir, sketch art, dicas de desenho e como criar arte personalizada inspirada neste adorável personagem de designer toy.',
+      twitterTitle: 'Labubu: Desenhos para Colorir e Sketch Art | MyLineArts',
+      twitterDescription: 'Guia completo sobre Labubu com páginas para colorir, sketch art e dicas para criar sua própria arte inspirada neste personagem viral.',
+      locale: 'pt_BR',
+      language: 'Portuguese',
+      hreflang: 'pt-br',
+      price: '5.00',
+      currency: 'BRL'
+    },
+    'en': {
+      title: 'Labubu: Coloring Pages, Sketch Art & Complete Guide | MyLineArts',
+      description: 'Complete guide to Labubu: coloring pages, sketch art, drawing tips, designer toys and how to create custom art inspired by this viral character. Perfect for collectors and artists!',
+      keywords: 'Labubu, Labubu coloring pages, Labubu sketch art, designer toys, Kasing Lung, Labubu art, Labubu drawings, Bobbie goods, coloring art, coloring book, coloring pages, sketch drawings, line art, Labubu fan art, designer toy collectibles, art toys, cute character drawings, Labubu tutorial, how to draw Labubu, Labubu printables, Labubu coloring book, therapeutic coloring',
+      ogTitle: 'Labubu: Coloring Pages, Sketch Art & Complete Guide to the Viral Character',
+      ogDescription: 'Discover everything about Labubu: coloring pages, sketch art, drawing tips and how to create custom art inspired by this adorable designer toy character.',
+      twitterTitle: 'Labubu: Coloring Pages and Sketch Art | MyLineArts',
+      twitterDescription: 'Complete guide to Labubu with coloring pages, sketch art and tips to create your own art inspired by this viral character.',
+      locale: 'en_US',
+      language: 'English',
+      hreflang: 'en',
+      price: '2.00',
+      currency: 'USD'
+    }
+  },
+  content: LabubuContent
+};
+
 // Central registry of all blog posts
 export const blogPosts: BlogPostContent[] = [
   bobbieGoodsGuideContent,
-  customStickersContent
+  customStickersContent,
+  labubuGuideContent,
+  crazyHairGuideContent
 ];
 
 // Helper function to get blog post by slug

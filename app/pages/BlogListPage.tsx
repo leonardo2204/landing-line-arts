@@ -2,10 +2,35 @@ import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { useLanguage } from '../context/LanguageContext';
 import SEOHead from '../components/SEOHead';
-import { blogListSEOData } from '../utils/seoData';
+import { blogListSEOData, BASE_URL, getLanguageFromPath } from '../utils/seoData';
 import { blogPosts } from '../utils/blogContent';
 import posthog from 'posthog-js';
+import type { Route } from './+types/BlogListPage';
 
+export const meta: Route.MetaFunction = ({ location }) => {
+  const language = getLanguageFromPath(location.pathname);
+  const seo = blogListSEOData[language];
+
+  return [
+    { title: seo.title },
+    { name: "description", content: seo.description },
+    { name: "keywords", content: seo.keywords },
+    { property: "og:title", content: seo.ogTitle || seo.title },
+    { property: "og:description", content: seo.ogDescription || seo.description },
+    { property: "og:image", content: `${BASE_URL}/logo.png` },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:url", content: `${BASE_URL}${location.pathname}` },
+    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: "MylineArts" },
+    { property: "og:locale", content: seo.locale },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: seo.twitterTitle || seo.title },
+    { name: "twitter:description", content: seo.twitterDescription || seo.description },
+    { name: "twitter:image", content: `${BASE_URL}/logo.png` },
+    { name: "twitter:creator", content: "@mylinearts" },
+  ];
+};
 
 const BlogListPage: React.FC = () => {
     const { language } = useLanguage();

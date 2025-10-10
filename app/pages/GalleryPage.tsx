@@ -4,8 +4,34 @@ import { Link, useLocation } from 'react-router';
 import { ArrowLeft, Eye, Palette, Image, Sparkles } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import SEOHead from '../components/SEOHead';
-import { gallerySEOData } from '../utils/seoData';
+import { gallerySEOData, BASE_URL, getLanguageFromPath } from '../utils/seoData';
 import posthog from 'posthog-js';
+import type { Route } from './+types/GalleryPage';
+
+export const meta: Route.MetaFunction = ({ location }) => {
+  const language = getLanguageFromPath(location.pathname);
+  const seo = gallerySEOData[language];
+
+  return [
+    { title: seo.title },
+    { name: "description", content: seo.description },
+    { name: "keywords", content: seo.keywords },
+    { property: "og:title", content: seo.ogTitle || seo.title },
+    { property: "og:description", content: seo.ogDescription || seo.description },
+    { property: "og:image", content: `${BASE_URL}/logo.png` },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:url", content: `${BASE_URL}${location.pathname}` },
+    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: "MylineArts" },
+    { property: "og:locale", content: seo.locale },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: seo.twitterTitle || seo.title },
+    { name: "twitter:description", content: seo.twitterDescription || seo.description },
+    { name: "twitter:image", content: `${BASE_URL}/logo.png` },
+    { name: "twitter:creator", content: "@mylinearts" },
+  ];
+};
 
 const ImageModal = ({
   isOpen,
