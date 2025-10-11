@@ -3,15 +3,14 @@ import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router';
 import { ArrowLeft, Scale, UserCheck, FileText, Shield, Eye, Mail } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import SEOHead from '../components/SEOHead';
+import { lgpdSEOData } from '../utils/seoData';
 
 const LGPDPage = () => {
   const { language } = useLanguage();
   const location = useLocation();
 
   useEffect(() => {
-    document.title = language === 'pt-BR' 
-      ? 'LGPD - Lei Geral de Proteção de Dados | MylineArts' 
-      : 'GDPR - General Data Protection Regulation | MylineArts';
     window.scrollTo(0, 0);
   }, [language]);
 
@@ -239,7 +238,9 @@ const LGPDPage = () => {
   const currentData = lgpdData[language] || lgpdData['pt-BR'];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <>
+      <SEOHead seoData={lgpdSEOData} />
+      <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -358,6 +359,7 @@ const LGPDPage = () => {
         </motion.div>
       </div>
     </div>
+    </>
   );
 };
 

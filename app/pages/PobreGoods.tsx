@@ -1,9 +1,12 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router";
+import SEOHead from "../components/SEOHead";
+import { pobreGoodsSEOData } from "../utils/seoData";
 
 export default function PobreGoods() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+      <SEOHead seoData={pobreGoodsSEOData} image="/caramelo.png" type="website" />
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"

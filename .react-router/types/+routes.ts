@@ -6,6 +6,7 @@ declare module "react-router" {
   interface Register {
     pages: Pages
     routeFiles: RouteFiles
+    routeModules: RouteModules
   }
 }
 
@@ -154,4 +155,28 @@ type RouteFiles = {
     id: "not-found";
     page: "/*";
   };
+};
+
+type RouteModules = {
+  "root": typeof import("./app/root.tsx");
+  "pages/LandingPage": typeof import("./app/pages/LandingPage.tsx");
+  "pages/BlogListPage": typeof import("./app/pages/BlogListPage.tsx");
+  "pages/BlogPostPage": typeof import("./app/pages/BlogPostPage.tsx");
+  "pages/PrivacyPolicyPage": typeof import("./app/pages/PrivacyPolicyPage.tsx");
+  "pages/TermsOfServicePage": typeof import("./app/pages/TermsOfServicePage.tsx");
+  "pages/CookiePolicyPage": typeof import("./app/pages/CookiePolicyPage.tsx");
+  "pages/LGPDPage": typeof import("./app/pages/LGPDPage.tsx");
+  "pages/PobreGoods": typeof import("./app/pages/PobreGoods.tsx");
+  "pages/GalleryPage": typeof import("./app/pages/GalleryPage.tsx");
+  "landing-en": typeof import("./app/pages/LandingPage.tsx");
+  "blog-list-en": typeof import("./app/pages/BlogListPage.tsx");
+  "blog-post-en": typeof import("./app/pages/BlogPostPage.tsx");
+  "privacy-en": typeof import("./app/pages/PrivacyPolicyPage.tsx");
+  "terms-en": typeof import("./app/pages/TermsOfServicePage.tsx");
+  "cookies-en": typeof import("./app/pages/CookiePolicyPage.tsx");
+  "lgpd-en": typeof import("./app/pages/LGPDPage.tsx");
+  "pobre-goods-en": typeof import("./app/pages/PobreGoods.tsx");
+  "pages/sitemap.xml": typeof import("./app/pages/sitemap.xml.tsx");
+  "gallery-en": typeof import("./app/pages/GalleryPage.tsx");
+  "not-found": typeof import("./app/pages/NotFoundPage.tsx");
 };

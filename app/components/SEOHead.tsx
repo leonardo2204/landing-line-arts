@@ -16,6 +16,7 @@ export interface SEOData {
   hreflang: string;
   price: string;
   currency: string;
+  canonical?: string;
 }
 
 interface SEOHeadProps {
@@ -53,6 +54,29 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   // Use provided SEO data or fall back to defaults
   const finalSEOData = seoData || defaultSEOData;
   const currentSEO = finalSEOData[language] || finalSEOData['en'];
+
+  // Use canonical URL from SEO data if provided, otherwise use current URL
+  const canonicalUrl = currentSEO.canonical || currentUrl;
+
+  // Generate alternate language URLs based on current path
+  const getAlternateUrl = (lang: 'en' | 'pt-BR'): string => {
+    const pathname = location.pathname;
+
+    if (lang === 'en') {
+      // If already English, return as is; otherwise add /en prefix
+      return pathname.startsWith('/en')
+        ? `${BASE_URL}${pathname}`
+        : `${BASE_URL}/en${pathname}`;
+    } else {
+      // For Portuguese, remove /en prefix if present
+      return pathname.startsWith('/en')
+        ? `${BASE_URL}${pathname.replace(/^\/en/, '')}`
+        : `${BASE_URL}${pathname}`;
+    }
+  };
+
+  const enUrl = getAlternateUrl('en');
+  const ptUrl = getAlternateUrl('pt-BR');
 
   const structuredData: any = {
     "@context": "https://schema.org",
@@ -140,13 +164,13 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="twitter:creator" content="@mylinearts" />
 
       {/* Canonical URL */}
-      <link rel="canonical" href={currentUrl} />
+      <link rel="canonical" href={canonicalUrl} />
 
       {/* Alternate Languages */}
-      <link rel="alternate" hrefLang="en" href={`${BASE_URL}/en`} />
-      <link rel="alternate" hrefLang="pt-br" href={BASE_URL} />
-      <link rel="alternate" hrefLang="pt" href={`${BASE_URL}/`} />
-      <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/en`} />
+      <link rel="alternate" hrefLang="en" href={enUrl} />
+      <link rel="alternate" hrefLang="pt-br" href={ptUrl} />
+      <link rel="alternate" hrefLang="pt" href={ptUrl} />
+      <link rel="alternate" hrefLang="x-default" href={enUrl} />
 
       {/* Structured Data */}
       <script type="application/ld+json">

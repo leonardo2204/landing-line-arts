@@ -282,7 +282,7 @@ export default function LandingPage() {
                 {/* Original image preview */}
                 <div className="absolute bottom-2 right-2 w-20 h-20 bg-white rounded-lg shadow-lg overflow-hidden border-2 border-white">
                   <img
-                    src="/turquia-original.png"
+                    src="/turquia-original.jpeg"
                     alt="Original image"
                     className="w-full h-full object-cover"
                   />

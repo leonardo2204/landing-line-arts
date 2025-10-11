@@ -24,29 +24,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://mylinearts.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/"/>
-  </url>
-  
-  <!-- Blog List -->
-  <url>
-    <loc>https://blog.mylinearts.com</loc>
-    <lastmod>2025-07-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="pt-br" href="https://blog.mylinearts.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blog.mylinearts.com/en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blog.mylinearts.com"/>
-  </url>
-  
-  <url>
-    <loc>https://blog.mylinearts.com/en</loc>
-    <lastmod>2025-07-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="pt-br" href="https://blog.mylinearts.com"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blog.mylinearts.com/en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blog.mylinearts.com"/>
-  </url>
-  
+  </url>  
   <!-- Privacy Policy -->
   <url>
     <loc>https://mylinearts.com/politica-de-privacidade</loc>

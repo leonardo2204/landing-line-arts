@@ -37,6 +37,7 @@ export interface BlogPostContent {
       hreflang: string;
       price: string;
       currency: string;
+      canonical: string;
     };
     'en': {
       title: string;
@@ -51,6 +52,7 @@ export interface BlogPostContent {
       hreflang: string;
       price: string;
       currency: string;
+      canonical: string;
     };
   };
   content: React.ComponentType<{ language: 'en' | 'pt-BR' }>;
@@ -1277,7 +1279,8 @@ export const bobbieGoodsGuideContent: BlogPostContent = {
       language: 'Portuguese',
       hreflang: 'pt-br',
       price: '5.00',
-      currency: 'BRL'
+      currency: 'BRL',
+      canonical: 'https://mylinearts.com/blog/bobbie-goods-guia-completo'
     },
     'en': {
       title: 'Bobbie Goods: The Complete Guide to Coloring Drawings and Printing',
@@ -1291,7 +1294,8 @@ export const bobbieGoodsGuideContent: BlogPostContent = {
       language: 'English',
       hreflang: 'en',
       price: '2.00',
-      currency: 'USD'
+      currency: 'USD',
+      canonical: 'https://mylinearts.com/en/blog/bobbie-goods-guia-completo'
     }
   },
   content: BobbieGoodsContent
@@ -1332,7 +1336,8 @@ export const customStickersContent: BlogPostContent = {
       language: 'Portuguese',
       hreflang: 'pt-br',
       price: '5.00',
-      currency: 'BRL'
+      currency: 'BRL',
+      canonical: 'https://mylinearts.com/blog/adesivos-personalizados-fotos-ia'
     },
     'en': {
       title: 'Custom Photo Stickers with AI | MyLineArts',
@@ -1346,7 +1351,8 @@ export const customStickersContent: BlogPostContent = {
       language: 'English',
       hreflang: 'en',
       price: '2.00',
-      currency: 'USD'
+      currency: 'USD',
+      canonical: 'https://mylinearts.com/en/blog/adesivos-personalizados-fotos-ia'
     }
   },
   content: CustomStickersContent
@@ -1651,7 +1657,8 @@ export const crazyHairGuideContent: BlogPostContent = {
       language: 'Portuguese',
       hreflang: 'pt-br',
       price: '5.00',
-      currency: 'BRL'
+      currency: 'BRL',
+      canonical: 'https://mylinearts.com/blog/cabelo-maluco-infantil-ideias-adesivos-colorir'
     },
     'en': {
       title: 'Crazy Hair Day for Kids: Creative Ideas + Custom Stickers | MyLineArts',
@@ -1665,7 +1672,8 @@ export const crazyHairGuideContent: BlogPostContent = {
       language: 'English',
       hreflang: 'en',
       price: '2.00',
-      currency: 'USD'
+      currency: 'USD',
+      canonical: 'https://mylinearts.com/en/blog/cabelo-maluco-infantil-ideias-adesivos-colorir'
     }
   },
   content: CrazyHairContent
@@ -1706,7 +1714,8 @@ export const labubuGuideContent: BlogPostContent = {
       language: 'Portuguese',
       hreflang: 'pt-br',
       price: '5.00',
-      currency: 'BRL'
+      currency: 'BRL',
+      canonical: 'https://mylinearts.com/blog/labubu-desenhos-colorir-sketch-art'
     },
     'en': {
       title: 'Labubu: Coloring Pages, Sketch Art & Complete Guide | MyLineArts',
@@ -1720,7 +1729,8 @@ export const labubuGuideContent: BlogPostContent = {
       language: 'English',
       hreflang: 'en',
       price: '2.00',
-      currency: 'USD'
+      currency: 'USD',
+      canonical: 'https://mylinearts.com/en/blog/labubu-desenhos-colorir-sketch-art'
     }
   },
   content: LabubuContent

@@ -3,15 +3,14 @@ import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router';
 import { ArrowLeft, Cookie, Settings, BarChart3, Shield, Users, Mail } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import SEOHead from '../components/SEOHead';
+import { cookiePolicySEOData } from '../utils/seoData';
 
 const CookiePolicyPage = () => {
   const { language } = useLanguage();
   const location = useLocation();
 
   useEffect(() => {
-    document.title = language === 'pt-BR' 
-      ? 'Política de Cookies | MylineArts' 
-      : 'Cookie Policy | MylineArts';
     window.scrollTo(0, 0);
   }, [language]);
 
@@ -211,7 +210,9 @@ const CookiePolicyPage = () => {
   const currentData = cookieData[language] || cookieData['pt-BR'];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <>
+      <SEOHead seoData={cookiePolicySEOData} />
+      <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -325,6 +326,7 @@ const CookiePolicyPage = () => {
         </motion.div>
       </div>
     </div>
+    </>
   );
 };
 

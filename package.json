@@ -14,10 +14,10 @@
   },
   "dependencies": {
     "@dr.pogodin/react-helmet": "^3.0.4",
-    "framer-motion": "^12.23.23",
+    "framer-motion": "^12.23.24",
     "isbot": "^5.1.31",
     "lucide-react": "^0.544.0",
-    "posthog-js": "^1.274.3",
+    "posthog-js": "^1.275.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router": "^7.9.4",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.13.12",
-    "@cloudflare/workers-types": "^4.20251008.0",
+    "@cloudflare/workers-types": "^4.20251011.0",
     "@eslint/js": "^9.37.0",
     "@react-router/dev": "^7.9.4",
     "@tailwindcss/vite": "^4.1.14",

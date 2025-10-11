@@ -173,7 +173,7 @@ export const createPageSEOData = (
   title: { 'en': string; 'pt-BR': string },
   description: { 'en': string; 'pt-BR': string },
   keywords: { 'en': string; 'pt-BR': string },
-  customData?: Partial<SEOData>
+  customData?: Partial<Record<'en' | 'pt-BR', Partial<SEOData>>>
 ) => {
   return {
     'pt-BR': {
@@ -189,7 +189,7 @@ export const createPageSEOData = (
       hreflang: 'pt-br',
       price: '5.00',
       currency: 'BRL',
-      ...customData
+      ...customData?.['pt-BR']
     },
     'en': {
       title: title['en'],
@@ -204,10 +204,146 @@ export const createPageSEOData = (
       hreflang: 'en',
       price: '2.00',
       currency: 'USD',
-      ...customData
+      ...customData?.['en']
     }
   } as const;
 };
+
+// LGPD/GDPR page SEO data
+export const lgpdSEOData = {
+  'pt-BR': {
+    title: 'LGPD - Lei Geral de Proteção de Dados | MylineArts',
+    description: 'Entenda como o MylineArts está em conformidade com a LGPD (Lei Geral de Proteção de Dados). Conheça seus direitos, nossa política de privacidade e como protegemos seus dados pessoais.',
+    keywords: 'LGPD, lei geral de proteção de dados, proteção de dados, privacidade, ANPD, direitos do titular, dados pessoais, consentimento, segurança de dados',
+    ogTitle: 'LGPD - Lei Geral de Proteção de Dados | MylineArts',
+    ogDescription: 'Entenda como o MylineArts está em conformidade com a LGPD (Lei Geral de Proteção de Dados). Conheça seus direitos, nossa política de privacidade e como protegemos seus dados pessoais.',
+    twitterTitle: 'LGPD - Lei Geral de Proteção de Dados | MylineArts',
+    twitterDescription: 'Entenda como o MylineArts está em conformidade com a LGPD. Conheça seus direitos e como protegemos seus dados pessoais.',
+    locale: 'pt_BR',
+    language: 'Portuguese',
+    hreflang: 'pt-br',
+    price: '5.00',
+    currency: 'BRL',
+    canonical: `${BASE_URL}/lgpd`
+  },
+  'en': {
+    title: 'GDPR - General Data Protection Regulation | MylineArts',
+    description: 'Learn how MylineArts complies with GDPR (General Data Protection Regulation). Know your rights, our privacy policy and how we protect your personal data.',
+    keywords: 'GDPR, general data protection regulation, data protection, privacy, data rights, personal data, consent, data security',
+    ogTitle: 'GDPR - General Data Protection Regulation | MylineArts',
+    ogDescription: 'Learn how MylineArts complies with GDPR (General Data Protection Regulation). Know your rights, our privacy policy and how we protect your personal data.',
+    twitterTitle: 'GDPR - General Data Protection Regulation | MylineArts',
+    twitterDescription: 'Learn how MylineArts complies with GDPR. Know your rights and how we protect your personal data.',
+    locale: 'en_US',
+    language: 'English',
+    hreflang: 'en',
+    price: '2.00',
+    currency: 'USD',
+    canonical: `${BASE_URL}/en/lgpd`
+  }
+} as const;
+
+// Cookie Policy page SEO data
+export const cookiePolicySEOData = {
+  'pt-BR': {
+    title: 'Política de Cookies | MylineArts',
+    description: 'Saiba como o MylineArts utiliza cookies para melhorar sua experiência. Entenda os tipos de cookies, como gerenciá-los e suas opções de privacidade.',
+    keywords: 'política de cookies, cookies, privacidade, navegador, configurações de cookies, cookies essenciais, cookies analíticos, gerenciamento de cookies',
+    ogTitle: 'Política de Cookies | MylineArts',
+    ogDescription: 'Saiba como o MylineArts utiliza cookies para melhorar sua experiência. Entenda os tipos de cookies, como gerenciá-los e suas opções de privacidade.',
+    twitterTitle: 'Política de Cookies | MylineArts',
+    twitterDescription: 'Saiba como o MylineArts utiliza cookies para melhorar sua experiência.',
+    locale: 'pt_BR',
+    language: 'Portuguese',
+    hreflang: 'pt-br',
+    price: '5.00',
+    currency: 'BRL',
+    canonical: `${BASE_URL}/cookie-policy`
+  },
+  'en': {
+    title: 'Cookie Policy | MylineArts',
+    description: 'Learn how MylineArts uses cookies to improve your experience. Understand cookie types, how to manage them and your privacy options.',
+    keywords: 'cookie policy, cookies, privacy, browser, cookie settings, essential cookies, analytics cookies, cookie management',
+    ogTitle: 'Cookie Policy | MylineArts',
+    ogDescription: 'Learn how MylineArts uses cookies to improve your experience. Understand cookie types, how to manage them and your privacy options.',
+    twitterTitle: 'Cookie Policy | MylineArts',
+    twitterDescription: 'Learn how MylineArts uses cookies to improve your experience.',
+    locale: 'en_US',
+    language: 'English',
+    hreflang: 'en',
+    price: '2.00',
+    currency: 'USD',
+    canonical: `${BASE_URL}/en/cookie-policy`
+  }
+} as const;
+
+// Pobre Goods page SEO data (Portuguese only)
+export const pobreGoodsSEOData = {
+  'pt-BR': {
+    title: 'Pobre Goods: Pacote de 10 Desenhos para Imprimir e Colorir',
+    description: 'Compre o pacote Pobre Goods com 10 desenhos únicos e exclusivos para colorir, criados especialmente para brasileiros, com situações engraçadas e cotidianas. Download imediato por apenas R$29,91.',
+    keywords: 'pobre goods, desenhos para colorir, imprimir, brasileiro, bobbie goods, arte digital, atividades infantis, desenhos engraçados, download imediato, alta qualidade',
+    ogTitle: 'Pobre Goods: Pacote de 10 Desenhos para Imprimir e Colorir',
+    ogDescription: 'Compre o pacote Pobre Goods com 10 desenhos únicos e exclusivos para colorir, criados especialmente para brasileiros. Download imediato por apenas R$29,91.',
+    twitterTitle: 'Pobre Goods: Pacote de 10 Desenhos para Imprimir e Colorir',
+    twitterDescription: 'Compre o pacote Pobre Goods com 10 desenhos únicos e exclusivos para colorir. Download imediato por apenas R$29,91.',
+    locale: 'pt_BR',
+    language: 'Portuguese',
+    hreflang: 'pt-br',
+    price: '29.91',
+    currency: 'BRL',
+    canonical: `${BASE_URL}/pobre-goods-imprimir`
+  },
+  'en': {
+    title: 'Pobre Goods: Package of 10 Drawings to Print and Color',
+    description: 'Buy the Pobre Goods package with 10 unique and exclusive coloring drawings, created especially for Brazilians, with funny and everyday situations. Instant download for only R$29.91.',
+    keywords: 'pobre goods, coloring drawings, print, brazilian, bobbie goods, digital art, children activities, funny drawings, instant download, high quality',
+    ogTitle: 'Pobre Goods: Package of 10 Drawings to Print and Color',
+    ogDescription: 'Buy the Pobre Goods package with 10 unique and exclusive coloring drawings, created especially for Brazilians. Instant download for only R$29.91.',
+    twitterTitle: 'Pobre Goods: Package of 10 Drawings to Print and Color',
+    twitterDescription: 'Buy the Pobre Goods package with 10 unique and exclusive coloring drawings. Instant download for only R$29.91.',
+    locale: 'en_US',
+    language: 'English',
+    hreflang: 'en',
+    price: '29.91',
+    currency: 'BRL',
+    canonical: `${BASE_URL}/en/pobre-goods-imprimir`
+  }
+} as const;
+
+// Terms of Service page SEO data
+export const termsOfServiceSEOData = {
+  'pt-BR': {
+    title: 'Termos de Serviço | MylineArts',
+    description: 'Leia os Termos de Serviço do MylineArts. Entenda as regras de uso, direitos autorais, política de reembolso e outras informações importantes sobre nossos serviços.',
+    keywords: 'termos de serviço, termos de uso, condições de uso, política de reembolso, direitos autorais, uso aceitável, mylinearts',
+    ogTitle: 'Termos de Serviço | MylineArts',
+    ogDescription: 'Leia os Termos de Serviço do MylineArts. Entenda as regras de uso, direitos autorais, política de reembolso e outras informações importantes sobre nossos serviços.',
+    twitterTitle: 'Termos de Serviço | MylineArts',
+    twitterDescription: 'Leia os Termos de Serviço do MylineArts.',
+    locale: 'pt_BR',
+    language: 'Portuguese',
+    hreflang: 'pt-br',
+    price: '5.00',
+    currency: 'BRL',
+    canonical: `${BASE_URL}/terms-of-service`
+  },
+  'en': {
+    title: 'Terms of Service | MylineArts',
+    description: 'Read the MylineArts Terms of Service. Understand usage rules, copyright, refund policy and other important information about our services.',
+    keywords: 'terms of service, terms of use, usage conditions, refund policy, copyright, acceptable use, mylinearts',
+    ogTitle: 'Terms of Service | MylineArts',
+    ogDescription: 'Read the MylineArts Terms of Service. Understand usage rules, copyright, refund policy and other important information about our services.',
+    twitterTitle: 'Terms of Service | MylineArts',
+    twitterDescription: 'Read the MylineArts Terms of Service.',
+    locale: 'en_US',
+    language: 'English',
+    hreflang: 'en',
+    price: '2.00',
+    currency: 'USD',
+    canonical: `${BASE_URL}/en/terms-of-service`
+  }
+} as const;
 
 // Export all SEO data configurations
 export const seoConfigurations = {
@@ -215,5 +351,9 @@ export const seoConfigurations = {
   blogPost: blogPostSEOData,
   blogList: blogListSEOData,
   gallery: gallerySEOData,
-  pricing: pricingSEOData
+  pricing: pricingSEOData,
+  lgpd: lgpdSEOData,
+  cookiePolicy: cookiePolicySEOData,
+  pobreGoods: pobreGoodsSEOData,
+  termsOfService: termsOfServiceSEOData
 } as const; 
