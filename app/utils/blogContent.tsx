@@ -1738,10 +1738,6 @@ export const labubuGuideContent: BlogPostContent = {
 
 // Content component for Halloween guide
 const HalloweenContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }) => {
-  const getLanguagePrefix = () => {
-    return language === 'en' ? '/en' : '';
-  };
-
   const handleCTAClick = (ctaName: string) => {
     posthog.capture('blog_cta_clicked', {
       cta_name: ctaName,
@@ -1778,13 +1774,15 @@ const HalloweenContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }) 
               : 'Com MyLineArts, você pode transformar qualquer foto em desenhos para colorir temáticos de Halloween! Nossa plataforma com inteligência artificial converte suas imagens em bela arte sketch com linhas limpas, perfeitas para colorir com lápis, canetinhas ou ferramentas digitais. Gere desenhos personalizados de Halloween apresentando sua família, amigos, pets ou fantasias favoritas.'
             }
           </p>
-          <Link
-            to={`${getLanguagePrefix()}/`}
+          <a
+            href="https://app.mylinearts.com"
             className="inline-block bg-gradient-to-r from-orange-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-orange-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
             onClick={() => handleCTAClick('criar_halloween_agora')}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {language === 'en' ? 'Generate My Halloween Art Now' : 'Gerar Minha Arte de Halloween Agora'}
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -1885,13 +1883,15 @@ const HalloweenContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }) 
               </p>
             </div>
           </div>
-          <Link
-            to={`${getLanguagePrefix()}/`}
+          <a
+            href="https://app.mylinearts.com"
             className="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors"
             onClick={() => handleCTAClick('transformar_foto_halloween')}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {language === 'en' ? 'Start Creating Now' : 'Começar a Criar Agora'}
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -1992,13 +1992,15 @@ const HalloweenContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }) 
               : 'Não se limite a fotos de fantasias! MyLineArts pode transformar qualquer imagem em arte sketch. Experimente fotos de família no outono, campos de abóbora, casas decoradas, pets ou até fotos antigas de Halloween de anos anteriores. Cada imagem se torna um desenho para colorir único esperando para ganhar vida com suas escolhas criativas de cores.'
             }
           </p>
-          <Link
-            to={`${getLanguagePrefix()}/`}
+          <a
+            href="https://app.mylinearts.com"
             className="inline-block bg-yellow-600 text-white px-6 py-3 rounded-lg hover:bg-yellow-700 transition-colors"
             onClick={() => handleCTAClick('criar_arte_halloween')}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {language === 'en' ? 'Create My Halloween Coloring Pages' : 'Criar Minhas Páginas de Halloween'}
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -2190,13 +2192,15 @@ const HalloweenContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }) 
             <li>{language === 'en' ? 'Works with any photo - costumes, decorations, pets, and more' : 'Funciona com qualquer foto - fantasias, decorações, pets e mais'}</li>
             <li>{language === 'en' ? 'Create unlimited Halloween coloring pages' : 'Crie páginas ilimitadas de colorir de Halloween'}</li>
           </ul>
-          <Link
-            to={`${getLanguagePrefix()}/`}
+          <a
+            href="https://app.mylinearts.com"
             className="inline-block bg-gradient-to-r from-orange-600 to-purple-600 text-white px-8 py-4 rounded-lg hover:from-orange-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 font-semibold text-lg"
             onClick={() => handleCTAClick('criar_halloween_final')}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {language === 'en' ? 'Generate Halloween Sketch Art Now' : 'Gerar Arte Sketch de Halloween Agora'}
-          </Link>
+          </a>
         </div>
       </section>
     </>
