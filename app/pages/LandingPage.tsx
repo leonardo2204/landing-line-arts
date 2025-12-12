@@ -12,10 +12,13 @@ import { mockBeforeAfterImages } from "../utils/mockData";
 import { pricingLoader } from "../loaders/pricing-loader";
 import type { Route } from "./+types/LandingPage";
 import Trustedby from "../components/sections/Trustedby";
-import ToPrint from "../components/sections/ToPrint";
 import PromoCountdownBanner from "../components/PromoCountdownBanner";
 import Testimonials from "../components/sections/Testimonials";
-import { defaultSEOData, BASE_URL, getLanguageFromPath } from "../utils/seoData";
+import {
+  defaultSEOData,
+  BASE_URL,
+  getLanguageFromPath,
+} from "../utils/seoData";
 
 export const meta: Route.MetaFunction = ({ location }) => {
   const language = getLanguageFromPath(location.pathname);
@@ -26,7 +29,10 @@ export const meta: Route.MetaFunction = ({ location }) => {
     { name: "description", content: seo.description },
     { name: "keywords", content: seo.keywords },
     { property: "og:title", content: seo.ogTitle || seo.title },
-    { property: "og:description", content: seo.ogDescription || seo.description },
+    {
+      property: "og:description",
+      content: seo.ogDescription || seo.description,
+    },
     { property: "og:image", content: `${BASE_URL}/logo.png` },
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
@@ -36,7 +42,10 @@ export const meta: Route.MetaFunction = ({ location }) => {
     { property: "og:locale", content: seo.locale },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: seo.twitterTitle || seo.title },
-    { name: "twitter:description", content: seo.twitterDescription || seo.description },
+    {
+      name: "twitter:description",
+      content: seo.twitterDescription || seo.description,
+    },
     { name: "twitter:image", content: `${BASE_URL}/logo.png` },
     { name: "twitter:creator", content: "@mylinearts" },
   ];
@@ -361,8 +370,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <ToPrint />
-
       {/* About Us Section */}
       <AboutUs />
 
@@ -400,20 +407,6 @@ export default function LandingPage() {
 
       {/* FAQ Section */}
       <FAQ />
-
-      <div className="flex justify-center items-center">
-        <a
-          href="https://fazier.com/launches/mylinearts.com"
-          target="_blank"
-          rel="noopener"
-        >
-          <img
-            src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=neutral"
-            width={120}
-            alt="Fazier badge"
-          />
-        </a>
-      </div>
 
       {/* YouTube Video Modal */}
       {isVideoModalOpen && (

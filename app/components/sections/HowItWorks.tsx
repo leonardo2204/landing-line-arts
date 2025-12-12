@@ -100,24 +100,6 @@ const HowItWorks = () => {
                 {step.title}
               </h3>
               <p className="text-gray-600">{step.description}</p>
-
-              {index < currentData.steps.length - 1 && (
-                <div className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2">
-                  <svg
-                    className="w-8 h-8 text-primary-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </div>
-              )}
             </div>
           ))}
         </div>
