@@ -16,6 +16,7 @@
   "placement": {
     "mode": "smart",
   },
+  "send_metrics": false,
   "vars": {
     "VITE_POSTHOG_API_KEY": "phc_LPqbRjBsBw8uGbzLfIoocPm12AGJqbVBAhMQHyVGirO",
     "VITE_POSTHOG_HOST": "https://us.i.posthog.com",

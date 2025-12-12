@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router";
 import { useLanguage } from "../context/LanguageContext";
 import SEOHead from "../components/SEOHead";
-import { getBlogPostBySlug } from "../utils/blogContent";
+import { getBlogPostBySlug } from "../utils/blog";
 import posthog from "posthog-js";
 import type { Route } from "./+types/BlogPostPage";
 import { BASE_URL, getLanguageFromPath } from "../utils/seoData";

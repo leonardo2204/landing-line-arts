@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router';
 import { useLanguage } from '../context/LanguageContext';
 import SEOHead from '../components/SEOHead';
 import { blogListSEOData, BASE_URL, getLanguageFromPath } from '../utils/seoData';
-import { blogPosts } from '../utils/blogContent';
+import { blogPosts } from '../utils/blog';
 import posthog from 'posthog-js';
 import type { Route } from './+types/BlogListPage';
 
