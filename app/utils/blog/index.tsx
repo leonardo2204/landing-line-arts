@@ -4,13 +4,15 @@ import { customStickersContent } from './posts/custom-stickers';
 import { labubuGuideContent } from './posts/labubu-guide';
 import { crazyHairGuideContent } from './posts/crazy-hair-guide';
 import { halloweenGuideContent } from './posts/halloween-guide';
+import { christmasGuideContent } from './posts/christmas-guide';
 
 export const blogPosts: BlogPostContent[] = [
-  bobbieGoodsGuideContent,
-  customStickersContent,
-  labubuGuideContent,
+  halloweenGuideContent,
   crazyHairGuideContent,
-  halloweenGuideContent
+  labubuGuideContent,
+  customStickersContent,
+  bobbieGoodsGuideContent,
+  christmasGuideContent
 ];
 
 // Helper function to get blog post by slug
