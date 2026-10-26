@@ -1,4 +1,5 @@
-import { Instagram, Facebook, Linkedin, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { Instagram, Facebook, Linkedin } from '../ui/BrandIcons';
 import { useLanguage } from '../../context/LanguageContext';
 
 const SocialMedia = () => {

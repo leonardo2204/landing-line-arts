@@ -1,4 +1,5 @@
-import { Heart, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Heart } from 'lucide-react';
+import { Instagram, Facebook, Linkedin } from '../ui/BrandIcons';
 import { Link, useLocation } from 'react-router';
 import { useLanguage } from '../../context/LanguageContext';
 

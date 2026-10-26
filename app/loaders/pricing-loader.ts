@@ -2,12 +2,14 @@ import { Stripe } from "stripe";
 import { plans } from "./plans";
 import type { Route } from "../+types/root";
 import { getCurrencyFromCountry } from "../utils/currency";
+import { cloudflareContext } from "../cloudflare";
 
-export async function pricingLoader({ context, request }: Route.LoaderArgs) {
-    const stripe = new Stripe(context.cloudflare.env.STRIPE_API_KEY as string);
+export async function pricingLoader({ context, request }: Pick<Route.LoaderArgs, "context" | "request" | "params">) {
+    const { env, cf } = context.get(cloudflareContext);
+    const stripe = new Stripe(env.STRIPE_API_KEY as string);
 
     // Get country from Cloudflare context
-    const cfCountry = context.cloudflare.cf?.country;
+    const cfCountry = cf?.country;
     const cfIpCountry = request.headers.get('cf-ipcountry');
 
     // Use the best available country information

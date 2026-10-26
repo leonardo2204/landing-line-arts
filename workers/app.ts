@@ -1,32 +1,6 @@
 /// <reference types="@cloudflare/workers-types" />
-import { createRequestHandler } from "react-router";
-
-declare module "react-router" {
-  export interface AppLoadContext {
-    cloudflare: {
-      env: any;
-      ctx: ExecutionContext;
-      cf?: {
-        country?: string;
-        city?: string;
-        timezone?: string;
-        continent?: string;
-        latitude?: string;
-        longitude?: string;
-        postalCode?: string;
-        region?: string;
-        asn?: number;
-        colo?: string;
-        ipVersion?: string;
-        metroCode?: string;
-        network?: string;
-        botManagement?: any;
-        tlsVersion?: string;
-        tlsCipher?: string;
-      };
-    };
-  }
-}
+import { createRequestHandler, RouterContextProvider } from "react-router";
+import { cloudflareContext } from "../app/cloudflare";
 
 const requestHandler = createRequestHandler(
   () => import("virtual:react-router/server-build"),
@@ -37,13 +11,9 @@ export default {
   async fetch(request: Request, env: any, ctx: ExecutionContext) {
     // Extract cf object from request and pass it through load context
     const cf = (request as any).cf;
-    
-    return requestHandler(request, {
-      cloudflare: { 
-        env, 
-        ctx,
-        cf 
-      },
-    });
+    const context = new RouterContextProvider();
+    context.set(cloudflareContext, { env, ctx, cf });
+
+    return requestHandler(request, context);
   },
 } satisfies ExportedHandler<any>;
