@@ -5,9 +5,8 @@ import type { BlogPostContent } from '../types';
 
 // Content component for Bobbie Goods guide
 const BobbieGoodsContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }) => {
-  const getLanguagePrefix = () => {
-    return language === 'en' ? '/en' : '';
-  };
+  // CTAs point to the matching landing page instead of the home page
+  const ctaPath = language === 'en' ? '/en/bobbie-goods-style-coloring-pages' : '/bobbie-goods-personalizado-com-fotos';
 
   const handleCTAClick = (ctaName: string) => {
     posthog.capture('blog_cta_clicked', {
@@ -46,7 +45,7 @@ const BobbieGoodsContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }
             }
           </p>
           <Link
-            to={`${getLanguagePrefix()}/`}
+            to={ctaPath}
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             onClick={() => handleCTAClick('criar_bobbie_goods_agora')}
           >
@@ -148,7 +147,7 @@ const BobbieGoodsContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }
             }
           </p>
           <Link
-            to={`${getLanguagePrefix()}/`}
+            to={ctaPath}
             className="inline-block bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600 transition-colors"
             onClick={() => handleCTAClick('experimente_agora')}
           >
@@ -282,7 +281,7 @@ const BobbieGoodsContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }
           </ol>
           <div className="mt-6">
             <Link
-              to={`${getLanguagePrefix()}/`}
+              to={ctaPath}
               className="inline-block bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600 transition-colors"
               onClick={() => handleCTAClick('criar_desenho_agora')}
             >
@@ -345,7 +344,7 @@ const BobbieGoodsContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }
             : 'Que tal começar sua jornada criativa hoje? '
           }
           <Link
-            to={`${getLanguagePrefix()}/`}
+            to={ctaPath}
             className="text-blue-600 hover:text-blue-800"
             onClick={() => handleCTAClick('criar_primeiro_bobbie_goods')}
           >

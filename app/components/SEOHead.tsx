@@ -1,6 +1,6 @@
 import { useLanguage } from '../context/LanguageContext';
 import { useLocation } from 'react-router';
-import { defaultSEOData, BASE_URL } from '../utils/seoData';
+import { defaultSEOData, BASE_URL, getLocalizedPaths } from '../utils/seoData';
 import { Helmet } from '@dr.pogodin/react-helmet';
 
 export interface SEOData {
@@ -53,30 +53,15 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 
   // Use provided SEO data or fall back to defaults
   const finalSEOData = seoData || defaultSEOData;
-  const currentSEO = finalSEOData[language] || finalSEOData['en'];
+  const currentSEO: SEOData = finalSEOData[language] || finalSEOData['en'];
 
   // Use canonical URL from SEO data if provided, otherwise use current URL
   const canonicalUrl = currentSEO.canonical || currentUrl;
 
-  // Generate alternate language URLs based on current path
-  const getAlternateUrl = (lang: 'en' | 'pt-BR'): string => {
-    const pathname = location.pathname;
-
-    if (lang === 'en') {
-      // If already English, return as is; otherwise add /en prefix
-      return pathname.startsWith('/en')
-        ? `${BASE_URL}${pathname}`
-        : `${BASE_URL}/en${pathname}`;
-    } else {
-      // For Portuguese, remove /en prefix if present
-      return pathname.startsWith('/en')
-        ? `${BASE_URL}${pathname.replace(/^\/en/, '')}`
-        : `${BASE_URL}${pathname}`;
-    }
-  };
-
-  const enUrl = getAlternateUrl('en');
-  const ptUrl = getAlternateUrl('pt-BR');
+  // Alternate language URLs (slugs may differ between languages)
+  const localized = getLocalizedPaths(location.pathname);
+  const enUrl = `${BASE_URL}${localized.en}`;
+  const ptUrl = `${BASE_URL}${localized.pt}`;
 
   const structuredData: any = {
     "@context": "https://schema.org",
@@ -124,13 +109,11 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     <Helmet>
       {/* Primary Meta Tags */}
       <title>{currentSEO.title}</title>
-      <meta name="title" content={currentSEO.title} />
       <meta name="description" content={currentSEO.description} />
       <meta name="keywords" content={currentSEO.keywords} />
       <meta name="author" content={author || "MylineArts"} />
       <meta name="robots" content="index, follow" />
       <meta name="language" content={currentSEO.language} />
-      <meta name="revisit-after" content="7 days" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
@@ -140,6 +123,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:image" content={`${BASE_URL}${image}`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={currentSEO.title} />
       <meta property="og:site_name" content="MylineArts" />
       <meta property="og:locale" content={currentSEO.locale} />
       <meta property="og:locale:alternate" content={isEnglish ? "pt_BR" : "en_US"} />
@@ -170,7 +154,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <link rel="alternate" hrefLang="en" href={enUrl} />
       <link rel="alternate" hrefLang="pt-br" href={ptUrl} />
       <link rel="alternate" hrefLang="pt" href={ptUrl} />
-      <link rel="alternate" hrefLang="x-default" href={enUrl} />
+      <link rel="alternate" hrefLang="x-default" href={ptUrl} />
 
       {/* Structured Data */}
       <script type="application/ld+json">

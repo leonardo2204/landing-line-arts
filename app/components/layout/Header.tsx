@@ -120,7 +120,7 @@ const Header = () => {
                   {t('nav.faq')}
                 </a>
                 <Link
-                  to={`/blog`}
+                  to={`${getLanguagePrefix()}/blog`}
                   className="text-gray-600 hover:text-primary-600 font-medium whitespace-nowrap"
                 >
                   {language === 'pt-BR' ? 'Blog' : 'Blog'}

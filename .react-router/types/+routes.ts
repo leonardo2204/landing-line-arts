@@ -40,6 +40,30 @@ type Pages = {
   "/galeria": {
     params: {};
   };
+  "/livro-de-colorir-personalizado": {
+    params: {};
+  };
+  "/figurinhas-adesivos-personalizados": {
+    params: {};
+  };
+  "/bobbie-goods-personalizado-com-fotos": {
+    params: {};
+  };
+  "/desenho-de-natal-para-colorir-com-foto": {
+    params: {};
+  };
+  "/en/custom-coloring-book-from-photos": {
+    params: {};
+  };
+  "/en/custom-stickers-from-photos": {
+    params: {};
+  };
+  "/en/bobbie-goods-style-coloring-pages": {
+    params: {};
+  };
+  "/en/personalized-christmas-coloring-pages": {
+    params: {};
+  };
   "/en": {
     params: {};
   };
@@ -82,7 +106,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/blog" | "/blog/:slug" | "/politica-de-privacidade" | "/termos-de-servico" | "/politica-de-cookies" | "/lgpd" | "/pobre-goods-imprimir" | "/galeria" | "/en" | "/en/blog" | "/en/blog/:slug" | "/en/privacy-policy" | "/en/terms-of-service" | "/en/cookie-policy" | "/en/lgpd" | "/en/pobre-goods-imprimir" | "/sitemap.xml" | "/en/gallery" | "/*";
+    page: "/" | "/blog" | "/blog/:slug" | "/politica-de-privacidade" | "/termos-de-servico" | "/politica-de-cookies" | "/lgpd" | "/pobre-goods-imprimir" | "/galeria" | "/livro-de-colorir-personalizado" | "/figurinhas-adesivos-personalizados" | "/bobbie-goods-personalizado-com-fotos" | "/desenho-de-natal-para-colorir-com-foto" | "/en/custom-coloring-book-from-photos" | "/en/custom-stickers-from-photos" | "/en/bobbie-goods-style-coloring-pages" | "/en/personalized-christmas-coloring-pages" | "/en" | "/en/blog" | "/en/blog/:slug" | "/en/privacy-policy" | "/en/terms-of-service" | "/en/cookie-policy" | "/en/lgpd" | "/en/pobre-goods-imprimir" | "/sitemap.xml" | "/en/gallery" | "/*";
   };
   "pages/LandingPage.tsx": {
     id: "pages/LandingPage";
@@ -147,6 +171,31 @@ type RouteFiles = {
     id: "gallery-en";
     page: "/en/gallery";
   };
+  "pages/UseCasePage.tsx": {
+    id: "coloring-book";
+    page: "/livro-de-colorir-personalizado";
+  } | {
+    id: "stickers";
+    page: "/figurinhas-adesivos-personalizados";
+  } | {
+    id: "bobbie-goods";
+    page: "/bobbie-goods-personalizado-com-fotos";
+  } | {
+    id: "christmas";
+    page: "/desenho-de-natal-para-colorir-com-foto";
+  } | {
+    id: "coloring-book-en";
+    page: "/en/custom-coloring-book-from-photos";
+  } | {
+    id: "stickers-en";
+    page: "/en/custom-stickers-from-photos";
+  } | {
+    id: "bobbie-goods-en";
+    page: "/en/bobbie-goods-style-coloring-pages";
+  } | {
+    id: "christmas-en";
+    page: "/en/personalized-christmas-coloring-pages";
+  };
   "pages/sitemap.xml.tsx": {
     id: "pages/sitemap.xml";
     page: "/sitemap.xml";
@@ -168,6 +217,14 @@ type RouteModules = {
   "pages/LGPDPage": typeof import("./app/pages/LGPDPage.tsx");
   "pages/PobreGoods": typeof import("./app/pages/PobreGoods.tsx");
   "pages/GalleryPage": typeof import("./app/pages/GalleryPage.tsx");
+  "coloring-book": typeof import("./app/pages/UseCasePage.tsx");
+  "stickers": typeof import("./app/pages/UseCasePage.tsx");
+  "bobbie-goods": typeof import("./app/pages/UseCasePage.tsx");
+  "christmas": typeof import("./app/pages/UseCasePage.tsx");
+  "coloring-book-en": typeof import("./app/pages/UseCasePage.tsx");
+  "stickers-en": typeof import("./app/pages/UseCasePage.tsx");
+  "bobbie-goods-en": typeof import("./app/pages/UseCasePage.tsx");
+  "christmas-en": typeof import("./app/pages/UseCasePage.tsx");
   "landing-en": typeof import("./app/pages/LandingPage.tsx");
   "blog-list-en": typeof import("./app/pages/BlogListPage.tsx");
   "blog-post-en": typeof import("./app/pages/BlogPostPage.tsx");

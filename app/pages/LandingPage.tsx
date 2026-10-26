@@ -7,7 +7,7 @@ import Benefits from "../components/sections/Benefits";
 import AboutUs from "../components/sections/AboutUs";
 import Pricing from "../components/sections/Pricing";
 import SocialMedia from "../components/sections/SocialMedia";
-import FAQ from "../components/sections/FAQ";
+import FAQ, { faqData } from "../components/sections/FAQ";
 import { mockBeforeAfterImages } from "../utils/mockData";
 import { pricingLoader } from "../loaders/pricing-loader";
 import type { Route } from "./+types/LandingPage";
@@ -23,32 +23,82 @@ import {
 export const meta: Route.MetaFunction = ({ location }) => {
   const language = getLanguageFromPath(location.pathname);
   const seo = defaultSEOData[language];
+  const isEnglish = language === 'en';
+
+  const canonicalUrl = isEnglish ? `${BASE_URL}/en` : `${BASE_URL}/`;
+  const ogImageAlt = isEnglish
+    ? "MyLineArts — turn your photo into a coloring page with AI"
+    : "MyLineArts — transforme sua foto em desenho para colorir com IA";
+
+  const webAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "MylineArts",
+    "description": seo.description,
+    "url": BASE_URL,
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": seo.price,
+      "priceCurrency": seo.currency,
+      "description": isEnglish ? "Credits to transform photos into coloring pages" : "Créditos para transformar fotos em páginas para colorir"
+    },
+    "creator": { "@type": "Organization", "name": "MylineArts", "url": BASE_URL },
+    "keywords": seo.keywords,
+    "inLanguage": isEnglish ? "en-US" : "pt-BR",
+    "potentialAction": { "@type": "UseAction", "target": "https://app.mylinearts.com" }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData[language].questions.map(({ question, answer }) => ({
+      "@type": "Question",
+      "name": question,
+      "acceptedAnswer": { "@type": "Answer", "text": answer }
+    }))
+  };
 
   return [
     { title: seo.title },
     { name: "description", content: seo.description },
     { name: "keywords", content: seo.keywords },
-    { property: "og:title", content: seo.ogTitle || seo.title },
-    {
-      property: "og:description",
-      content: seo.ogDescription || seo.description,
-    },
+    { tagName: "link", rel: "canonical", href: canonicalUrl },
+    { property: "og:title", content: seo.ogTitle },
+    { property: "og:description", content: seo.ogDescription },
     { property: "og:image", content: `${BASE_URL}/logo.png` },
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
+    { property: "og:image:alt", content: ogImageAlt },
     { property: "og:url", content: `${BASE_URL}${location.pathname}` },
     { property: "og:type", content: "website" },
     { property: "og:site_name", content: "MylineArts" },
     { property: "og:locale", content: seo.locale },
     { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: seo.twitterTitle || seo.title },
-    {
-      name: "twitter:description",
-      content: seo.twitterDescription || seo.description,
-    },
+    { name: "twitter:title", content: seo.twitterTitle },
+    { name: "twitter:description", content: seo.twitterDescription },
     { name: "twitter:image", content: `${BASE_URL}/logo.png` },
+    { name: "twitter:image:alt", content: ogImageAlt },
     { name: "twitter:creator", content: "@mylinearts" },
+    { "script:ld+json": webAppSchema },
+    { "script:ld+json": faqSchema },
   ];
+};
+
+const createCards = {
+  "pt-BR": [
+    { to: "/galeria", image: "/gato-depois.jpeg", title: "Desenhos para colorir", description: "Qualquer foto vira uma página com traços limpos, pronta para imprimir em A4." },
+    { to: "/livro-de-colorir-personalizado", image: "/casamento-depois.jpeg", title: "Livro de colorir personalizado", description: "Junte várias fotos num livro único para presentear ou usar como lembrancinha." },
+    { to: "/figurinhas-adesivos-personalizados", image: "/turquia-sticker.png", title: "Figurinhas e adesivos", description: "Adesivos ilustrados para WhatsApp, Telegram ou papel adesivo." },
+    { to: "/bobbie-goods-personalizado-com-fotos", image: "/ste-depois.jpeg", title: "Bobbie Goods personalizado", description: "Desenhos no estilo que viralizou, com você e sua família." },
+  ],
+  en: [
+    { to: "/en/gallery", image: "/gato-depois.jpeg", title: "Coloring pages", description: "Any photo becomes a page with clean lines, ready to print." },
+    { to: "/en/custom-coloring-book-from-photos", image: "/casamento-depois.jpeg", title: "Custom coloring book", description: "Put several photos together in a one-of-a-kind book for gifts or party favors." },
+    { to: "/en/custom-stickers-from-photos", image: "/turquia-sticker.png", title: "Custom stickers", description: "Illustrated stickers for WhatsApp, Telegram or sticker paper." },
+    { to: "/en/bobbie-goods-style-coloring-pages", image: "/ste-depois.jpeg", title: "Bobbie Goods style", description: "Coloring pages in the style that went viral, featuring you and your family." },
+  ],
 };
 
 export const loader = async ({
@@ -154,7 +204,7 @@ export default function LandingPage() {
                     <div className="flex-1 h-64 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-lg overflow-hidden shadow-lg">
                       <img
                         src={"/familia-2-depois.jpeg"}
-                        alt="Original cover photo"
+                        alt={language === "pt-BR" ? "Foto original de família em aniversário" : "Original family birthday photo"}
                         className="object-cover w-full h-full"
                       />
                     </div>
@@ -163,7 +213,7 @@ export default function LandingPage() {
                     <div className="flex-1 h-64 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-lg overflow-hidden shadow-lg">
                       <img
                         src={"/familia2-antes.jpeg"}
-                        alt="Transformed cover photo"
+                        alt={language === "pt-BR" ? "Foto de família transformada em desenho para colorir com IA" : "Family photo turned into a coloring page with AI"}
                         className="object-cover object-[50%_60px] md:object-[50%_0%] w-full h-full"
                       />
                     </div>
@@ -174,7 +224,7 @@ export default function LandingPage() {
                     <div className="flex-1 h-64 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-lg overflow-hidden shadow-lg">
                       <img
                         src={"/ste-antes.jpeg"}
-                        alt="Original photo"
+                        alt={language === "pt-BR" ? "Foto original de retrato" : "Original portrait photo"}
                         className="object-cover w-full h-full"
                       />
                     </div>
@@ -183,7 +233,7 @@ export default function LandingPage() {
                     <div className="flex-1 h-64 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-lg overflow-hidden shadow-lg">
                       <img
                         src={"/ste-depois.jpeg"}
-                        alt="Transformed photo"
+                        alt={language === "pt-BR" ? "Retrato transformado em desenho para colorir pronto para imprimir" : "Portrait turned into a printable coloring page"}
                         className="object-cover w-full h-full"
                       />
                     </div>
@@ -220,7 +270,8 @@ export default function LandingPage() {
                   <div className="flex-1 h-full rounded-lg overflow-hidden shadow-lg">
                     <img
                       src={image.before}
-                      alt="Original photo"
+                      alt={`${image.title[language]} — ${language === "pt-BR" ? "foto original" : "original photo"}`}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -229,7 +280,8 @@ export default function LandingPage() {
                   <div className="flex-1 h-full rounded-lg overflow-hidden shadow-lg">
                     <img
                       src={image.after}
-                      alt="Transformed photo"
+                      alt={`${image.title[language]} — ${language === "pt-BR" ? "desenho para colorir gerado com IA" : "coloring page generated with AI"}`}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -255,6 +307,37 @@ export default function LandingPage() {
               </span>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* What you can create — links to the use case pages */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            {language === "pt-BR"
+              ? "O que você pode criar com suas fotos"
+              : "What you can make from your photos"}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {createCards[language].map((card) => (
+              <Link
+                key={card.to}
+                to={card.to}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  loading="lazy"
+                  className="w-full aspect-square object-contain rounded-lg mb-4"
+                />
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {card.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{card.description}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -285,14 +368,14 @@ export default function LandingPage() {
               <div className="relative aspect-square bg-gray-100 rounded-lg mb-4 overflow-hidden">
                 <img
                   src="/turquia-sticker.png"
-                  alt="Custom sticker example"
+                  alt="Family photo converted to custom personalized sticker with AI"
                   className="w-full h-full object-cover"
                 />
                 {/* Original image preview */}
                 <div className="absolute bottom-2 right-2 w-20 h-20 bg-white rounded-lg shadow-lg overflow-hidden border-2 border-white">
                   <img
                     src="/turquia-original.jpeg"
-                    alt="Original image"
+                    alt="Original family photo used for AI sticker generation"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -312,14 +395,14 @@ export default function LandingPage() {
               <div className="relative aspect-square bg-gray-100 rounded-lg mb-4 overflow-hidden">
                 <img
                   src="/cindy-sticker-nobg.png"
-                  alt="Custom sticker example"
+                  alt="Pet portrait converted to cute personalized sticker using AI"
                   className="w-full h-full object-cover"
                 />
                 {/* Original image preview */}
                 <div className="absolute bottom-2 right-2 w-20 h-20 bg-white rounded-lg shadow-lg overflow-hidden border-2 border-white">
                   <img
                     src="/cindy-sticker.jpeg"
-                    alt="Original image"
+                    alt="Original pet photo used for AI sticker creation"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -337,14 +420,14 @@ export default function LandingPage() {
               <div className="relative aspect-square bg-gray-100 rounded-lg mb-4 overflow-hidden">
                 <img
                   src="/familia-sticker.png"
-                  alt="Custom sticker example"
+                  alt="Special occasion photo turned into custom AI sticker for WhatsApp and Telegram"
                   className="w-full h-full object-cover"
                 />
                 {/* Original image preview */}
                 <div className="absolute bottom-2 right-2 w-20 h-20 bg-white rounded-lg shadow-lg overflow-hidden border-2 border-white">
                   <img
                     src="/familia-2-depois.jpeg"
-                    alt="Original image"
+                    alt="Original photo used for personalized sticker generation"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -366,6 +449,16 @@ export default function LandingPage() {
               {t("landing.stickers.ctaButton")}
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
+            <p className="mt-4">
+              <Link
+                to={language === "pt-BR" ? "/figurinhas-adesivos-personalizados" : "/en/custom-stickers-from-photos"}
+                className="text-primary-700 hover:text-primary-900 underline"
+              >
+                {language === "pt-BR"
+                  ? "Saiba mais sobre figurinhas e adesivos personalizados"
+                  : "Learn more about custom stickers from photos"}
+              </Link>
+            </p>
           </div>
         </div>
       </section>

@@ -5,9 +5,8 @@ import type { BlogPostContent } from '../types';
 
 // Content component for Custom Stickers guide
 const CustomStickersContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ language }) => {
-  const getLanguagePrefix = () => {
-    return language === 'en' ? '/en' : '';
-  };
+  // CTAs point to the matching landing page instead of the home page
+  const ctaPath = language === 'en' ? '/en/custom-stickers-from-photos' : '/figurinhas-adesivos-personalizados';
 
   const handleCTAClick = (ctaName: string) => {
     posthog.capture('blog_cta_clicked', {
@@ -46,7 +45,7 @@ const CustomStickersContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ languag
             }
           </p>
           <Link
-            to={`${getLanguagePrefix()}/`}
+            to={ctaPath}
             className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105"
             onClick={() => handleCTAClick('criar_adesivos_agora')}
           >
@@ -345,7 +344,7 @@ const CustomStickersContent: React.FC<{ language: 'en' | 'pt-BR' }> = ({ languag
             }
           </p>
           <Link
-            to={`${getLanguagePrefix()}/`}
+            to={ctaPath}
             className="inline-block bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
             onClick={() => handleCTAClick('criar_primeiros_adesivos')}
           >

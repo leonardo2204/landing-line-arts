@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -17,8 +18,10 @@ import SEOHead from "./components/SEOHead";
 import { HelmetProvider } from "@dr.pogodin/react-helmet";
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const { pathname } = useLocation();
+
   return (
-    <html>
+    <html lang={pathname.startsWith("/en") ? "en" : "pt-BR"}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -1,4 +1,5 @@
 import type { SEOData } from '../components/SEOHead';
+import { useCasePages } from './useCasePages';
 
 // Base URL for the site
 export const BASE_URL = 'https://mylinearts.com';
@@ -8,16 +9,40 @@ export const getLanguageFromPath = (pathname: string): 'en' | 'pt-BR' => {
   return pathname.startsWith('/en') ? 'en' : 'pt-BR';
 };
 
+// PT path -> EN path for pages whose slugs differ between languages.
+// Anything not listed here just gains/loses the /en prefix.
+const localizedPaths: Record<string, string> = {
+  '/': '/en',
+  '/galeria': '/en/gallery',
+  '/politica-de-privacidade': '/en/privacy-policy',
+  '/termos-de-servico': '/en/terms-of-service',
+  '/politica-de-cookies': '/en/cookie-policy',
+  ...Object.fromEntries(
+    Object.entries(useCasePages)
+      .filter(([, page]) => page.language === 'pt-BR')
+      .map(([path, page]) => [path, page.alternate])
+  ),
+};
+
+// Returns the PT and EN versions of any path, used for hreflang alternates
+export const getLocalizedPaths = (pathname: string) => {
+  const path = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname;
+  const pt =
+    Object.keys(localizedPaths).find((key) => localizedPaths[key] === path) ??
+    (path.startsWith('/en') ? path.replace(/^\/en/, '') || '/' : path);
+  return { pt, en: localizedPaths[pt] ?? `/en${pt}` };
+};
+
 // Default SEO data for the main site
 export const defaultSEOData = {
   'pt-BR': {
-    title: 'Crie Livros de Colorir Personalizados com IA - Estilo Bobbie Goods',
-    description: 'Transforme suas fotos em livros de colorir personalizados com IA. Inspirado no sucesso viral do Bobbie Goods, criamos páginas únicas para colorir das suas memórias favoritas. Sem habilidades artísticas necessárias!',
-    keywords: 'livro de colorir personalizado, Bobbie goods, páginas para colorir personalizadas, arte com IA, foto para desenho, livro de colorir família, presente personalizado, criador de livro de colorir, arte personalizada, memórias em desenhos, gerador de arte linear, pronto para imprimir, estilo bobbie goods',
-    ogTitle: 'Crie Livros de Colorir Personalizados com IA - Estilo Bobbie Goods',
-    ogDescription: 'Transforme suas fotos em livros de colorir personalizados com IA. Inspirado no sucesso viral do Bobbie Goods, criamos páginas únicas para colorir das suas memórias favoritas. Sem habilidades artísticas necessárias!',
-    twitterTitle: 'Crie Livros de Colorir Personalizados com IA - Estilo Bobbie Goods',
-    twitterDescription: 'Transforme suas fotos em livros de colorir personalizados com IA. Inspirado no sucesso viral do Bobbie Goods, criamos páginas únicas para colorir das suas memórias favoritas.',
+    title: 'Transformar foto em desenho para colorir com IA | MyLineArts',
+    description: 'Transforme qualquer foto em desenho para colorir em segundos com IA. Crie páginas, livros de colorir personalizados e figurinhas prontos para imprimir.',
+    keywords: 'transformar foto em desenho para colorir, foto em desenho para colorir, transformar foto em desenho, transformar foto em desenho ia, desenho de foto, desenhos personalizados para imprimir, desenho para colorir personalizado, livro de colorir personalizado, figurinha personalizada, gerador de desenho para colorir, ia para criar livro de colorir',
+    ogTitle: 'Transformar foto em desenho para colorir com IA | MyLineArts',
+    ogDescription: 'Transforme qualquer foto em desenho para colorir em segundos com IA. Crie páginas, livros de colorir personalizados e figurinhas.',
+    twitterTitle: 'Transformar foto em desenho para colorir com IA | MyLineArts',
+    twitterDescription: 'Transforme qualquer foto em desenho para colorir em segundos com IA. Pronto para imprimir.',
     locale: 'pt_BR',
     language: 'Portuguese',
     hreflang: 'pt-br',
@@ -25,13 +50,13 @@ export const defaultSEOData = {
     currency: 'BRL'
   },
   'en': {
-    title: 'Photo to sketch art generator - Bobbie Goods Style',
-    description: 'Turn your favorite memories into stunning sketch art in seconds. Bobbie Goods style :D',
-    keywords: 'custom coloring book, Bobbie goods, personalized coloring pages, AI art, photo to drawing, family coloring book, personalized gift, coloring book creator, custom art, memories to drawings, line art generator, ready to print, bobbie goods styled',
-    ogTitle: 'Create Custom AI Coloring Books - Bobbie Goods Style',
-    ogDescription: 'Transform your photos into personalized coloring books with AI. Inspired by the viral Bobbie Goods success, we create unique coloring pages from your favorite memories. No artistic skills needed!',
-    twitterTitle: 'Create Custom AI Coloring Books - Bobbie Goods Style',
-    twitterDescription: 'Transform your photos into personalized coloring books with AI. Inspired by the viral Bobbie Goods success, we create unique coloring pages from your favorite memories.',
+    title: 'Photo to coloring page converter with AI | MyLineArts',
+    description: 'Turn any photo into a printable coloring page in seconds with AI. Make custom coloring books and stickers from your family, pet and wedding photos.',
+    keywords: 'photo to coloring page, turn photo into coloring page, ai coloring page generator, photo to coloring page converter, picture to coloring page, image to coloring page, photo to line art, custom coloring book from photos, custom stickers from photos',
+    ogTitle: 'Photo to coloring page converter with AI | MyLineArts',
+    ogDescription: 'Turn any photo into a printable coloring page in seconds with AI. Make custom coloring books and stickers too.',
+    twitterTitle: 'Photo to coloring page converter with AI | MyLineArts',
+    twitterDescription: 'Turn any photo into a printable coloring page in seconds with AI.',
     locale: 'en_US',
     language: 'English',
     hreflang: 'en',
@@ -108,10 +133,10 @@ export const blogListSEOData = {
 export const gallerySEOData = {
   'pt-BR': {
     title: 'Galeria de Transformações | Livros de Colorir Personalizados - MylineArts',
-    description: 'Veja exemplos reais de transformações com IA. Fotos transformadas em páginas para colorir únicas, prontas para imprimir, no estilo Bobbie Goods.',
-    keywords: 'galeria transformações, exemplos livros colorir, antes e depois, Bobbie goods, páginas para colorir personalizadas, pronto para imprimir, estilo bobbie goods, transformação IA',
+    description: 'Veja exemplos reais de fotos transformadas em desenhos para colorir com IA: família, pets, casamentos e mais. Antes e depois, prontos para imprimir.',
+    keywords: 'galeria transformações, foto em desenho para colorir, antes e depois, exemplos desenho de foto, páginas para colorir personalizadas, pronto para imprimir, transformação IA',
     ogTitle: 'Galeria de Transformações | Livros de Colorir Personalizados - MylineArts',
-    ogDescription: 'Veja exemplos reais de transformações com IA. Fotos transformadas em páginas para colorir únicas, prontas para imprimir, no estilo Bobbie Goods.',
+    ogDescription: 'Veja exemplos reais de fotos transformadas em desenhos para colorir com IA: família, pets, casamentos e mais.',
     twitterTitle: 'Galeria de Transformações | MylineArts',
     twitterDescription: 'Veja exemplos reais de transformações com IA. Fotos transformadas em páginas para colorir únicas.',
     locale: 'pt_BR',
@@ -122,10 +147,10 @@ export const gallerySEOData = {
   },
   'en': {
     title: 'Transformation Gallery | Custom Coloring Books - MylineArts',
-    description: 'See real examples of AI transformations. Photos transformed into unique coloring pages, ready to print, in Bobbie Goods style.',
-    keywords: 'transformation gallery, coloring book examples, before and after, Bobbie goods, personalized coloring pages, ready to print, bobbie goods styled, AI transformation',
+    description: 'See real examples of photos turned into coloring pages with AI: family, pets, weddings and more. Before and after, ready to print.',
+    keywords: 'transformation gallery, photo to coloring page examples, before and after, personalized coloring pages, ready to print, AI transformation',
     ogTitle: 'Transformation Gallery | Custom Coloring Books - MylineArts',
-    ogDescription: 'See real examples of AI transformations. Photos transformed into unique coloring pages, ready to print, in Bobbie Goods style.',
+    ogDescription: 'See real examples of photos turned into coloring pages with AI: family, pets, weddings and more.',
     twitterTitle: 'Transformation Gallery | MylineArts',
     twitterDescription: 'See real examples of AI transformations. Photos transformed into unique coloring pages.',
     locale: 'en_US',
@@ -258,7 +283,7 @@ export const cookiePolicySEOData = {
     hreflang: 'pt-br',
     price: '5.00',
     currency: 'BRL',
-    canonical: `${BASE_URL}/cookie-policy`
+    canonical: `${BASE_URL}/politica-de-cookies`
   },
   'en': {
     title: 'Cookie Policy | MylineArts',
@@ -326,7 +351,7 @@ export const termsOfServiceSEOData = {
     hreflang: 'pt-br',
     price: '5.00',
     currency: 'BRL',
-    canonical: `${BASE_URL}/terms-of-service`
+    canonical: `${BASE_URL}/termos-de-servico`
   },
   'en': {
     title: 'Terms of Service | MylineArts',

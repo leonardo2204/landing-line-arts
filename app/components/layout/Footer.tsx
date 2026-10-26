@@ -2,6 +2,7 @@ import { Heart } from 'lucide-react';
 import { Instagram, Facebook, Linkedin } from '../ui/BrandIcons';
 import { Link, useLocation } from 'react-router';
 import { useLanguage } from '../../context/LanguageContext';
+import { useCasePages } from '../../utils/useCasePages';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -149,6 +150,15 @@ const Footer = () => {
                     {language === 'pt-BR' ? 'Galeria' : 'Gallery'}
                   </Link>
                 </li>
+                {Object.entries(useCasePages)
+                  .filter(([, page]) => page.language === language)
+                  .map(([path, page]) => (
+                    <li key={path}>
+                      <Link to={path} className="text-gray-400 hover:text-white">
+                        {page.h1}
+                      </Link>
+                    </li>
+                  ))}
               </ul>
             </div>
 
@@ -181,7 +191,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to={`${getLanguagePrefix()}${language === 'pt-BR' ? '/lgpd' : '/gdpr'}`}
+                    to={`${getLanguagePrefix()}/lgpd`}
                     className="text-gray-400 hover:text-white"
                   >
                     {t('footer.gdpr')}

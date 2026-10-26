@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="https://www.w3.org/1999/xhtml"
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <!-- Landing Page -->
   <url>
     <loc>https://mylinearts.com/</loc>
-    <lastmod>2025-07-26</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/"/>
@@ -17,7 +17,7 @@
   
   <url>
     <loc>https://mylinearts.com/en</loc>
-    <lastmod>2025-07-26</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/"/>
@@ -25,6 +25,114 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/"/>
   </url>  
+  <!-- Use case: Custom coloring book -->
+  <url>
+    <loc>https://mylinearts.com/livro-de-colorir-personalizado</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mylinearts.com/casamento-depois.jpeg</image:loc>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/livro-de-colorir-personalizado"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/custom-coloring-book-from-photos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/livro-de-colorir-personalizado"/>
+  </url>
+
+  <url>
+    <loc>https://mylinearts.com/en/custom-coloring-book-from-photos</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mylinearts.com/casamento-depois.jpeg</image:loc>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/livro-de-colorir-personalizado"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/custom-coloring-book-from-photos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/livro-de-colorir-personalizado"/>
+  </url>
+
+  <!-- Use case: Stickers -->
+  <url>
+    <loc>https://mylinearts.com/figurinhas-adesivos-personalizados</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mylinearts.com/turquia-sticker.png</image:loc>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/figurinhas-adesivos-personalizados"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/custom-stickers-from-photos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/figurinhas-adesivos-personalizados"/>
+  </url>
+
+  <url>
+    <loc>https://mylinearts.com/en/custom-stickers-from-photos</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mylinearts.com/turquia-sticker.png</image:loc>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/figurinhas-adesivos-personalizados"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/custom-stickers-from-photos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/figurinhas-adesivos-personalizados"/>
+  </url>
+
+  <!-- Use case: Bobbie Goods style -->
+  <url>
+    <loc>https://mylinearts.com/bobbie-goods-personalizado-com-fotos</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mylinearts.com/ste-depois.jpeg</image:loc>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/bobbie-goods-personalizado-com-fotos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/bobbie-goods-style-coloring-pages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/bobbie-goods-personalizado-com-fotos"/>
+  </url>
+
+  <url>
+    <loc>https://mylinearts.com/en/bobbie-goods-style-coloring-pages</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mylinearts.com/ste-depois.jpeg</image:loc>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/bobbie-goods-personalizado-com-fotos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/bobbie-goods-style-coloring-pages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/bobbie-goods-personalizado-com-fotos"/>
+  </url>
+
+  <!-- Use case: Christmas -->
+  <url>
+    <loc>https://mylinearts.com/desenho-de-natal-para-colorir-com-foto</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mylinearts.com/blog/6/christmas-family.png</image:loc>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/desenho-de-natal-para-colorir-com-foto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/personalized-christmas-coloring-pages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/desenho-de-natal-para-colorir-com-foto"/>
+  </url>
+
+  <url>
+    <loc>https://mylinearts.com/en/personalized-christmas-coloring-pages</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mylinearts.com/blog/6/christmas-family.png</image:loc>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/desenho-de-natal-para-colorir-com-foto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/personalized-christmas-coloring-pages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/desenho-de-natal-para-colorir-com-foto"/>
+  </url>
+
   <!-- Privacy Policy -->
   <url>
     <loc>https://mylinearts.com/politica-de-privacidade</loc>
@@ -323,6 +431,90 @@
     <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/adesivos-personalizados-fotos-ia"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/adesivos-personalizados-fotos-ia"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/adesivos-personalizados-fotos-ia"/>
+  </url>
+
+  <!-- Blog Post: halloween-desenhos-colorir-sketch-art -->
+  <url>
+    <loc>https://mylinearts.com/blog/halloween-desenhos-colorir-sketch-art</loc>
+    <lastmod>2025-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/halloween-desenhos-colorir-sketch-art"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/halloween-desenhos-colorir-sketch-art"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/halloween-desenhos-colorir-sketch-art"/>
+  </url>
+
+  <url>
+    <loc>https://mylinearts.com/en/blog/halloween-desenhos-colorir-sketch-art</loc>
+    <lastmod>2025-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/halloween-desenhos-colorir-sketch-art"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/halloween-desenhos-colorir-sketch-art"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/halloween-desenhos-colorir-sketch-art"/>
+  </url>
+
+  <!-- Blog Post: labubu-desenhos-colorir-sketch-art -->
+  <url>
+    <loc>https://mylinearts.com/blog/labubu-desenhos-colorir-sketch-art</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/labubu-desenhos-colorir-sketch-art"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/labubu-desenhos-colorir-sketch-art"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/labubu-desenhos-colorir-sketch-art"/>
+  </url>
+
+  <url>
+    <loc>https://mylinearts.com/en/blog/labubu-desenhos-colorir-sketch-art</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/labubu-desenhos-colorir-sketch-art"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/labubu-desenhos-colorir-sketch-art"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/labubu-desenhos-colorir-sketch-art"/>
+  </url>
+
+  <!-- Blog Post: cabelo-maluco-infantil-ideias-adesivos-colorir -->
+  <url>
+    <loc>https://mylinearts.com/blog/cabelo-maluco-infantil-ideias-adesivos-colorir</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/cabelo-maluco-infantil-ideias-adesivos-colorir"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/cabelo-maluco-infantil-ideias-adesivos-colorir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/cabelo-maluco-infantil-ideias-adesivos-colorir"/>
+  </url>
+
+  <url>
+    <loc>https://mylinearts.com/en/blog/cabelo-maluco-infantil-ideias-adesivos-colorir</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/cabelo-maluco-infantil-ideias-adesivos-colorir"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/cabelo-maluco-infantil-ideias-adesivos-colorir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/cabelo-maluco-infantil-ideias-adesivos-colorir"/>
+  </url>
+
+  <!-- Blog Post: desenhos-natal-colorir-ideias-criativas -->
+  <url>
+    <loc>https://mylinearts.com/blog/desenhos-natal-colorir-ideias-criativas</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/desenhos-natal-colorir-ideias-criativas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/desenhos-natal-colorir-ideias-criativas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/desenhos-natal-colorir-ideias-criativas"/>
+  </url>
+
+  <url>
+    <loc>https://mylinearts.com/en/blog/desenhos-natal-colorir-ideias-criativas</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://mylinearts.com/blog/desenhos-natal-colorir-ideias-criativas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mylinearts.com/en/blog/desenhos-natal-colorir-ideias-criativas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mylinearts.com/blog/desenhos-natal-colorir-ideias-criativas"/>
   </url>
 
   <!-- Pobre Goods -->
